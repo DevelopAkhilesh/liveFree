@@ -196,7 +196,7 @@
 }
 
 @media (max-width: 768px) {
-  .hero { min-height: 100vh; min-height: 100dvh; height: 100vh; height: 100dvh; }
+  .hero { min-height: 100vh; min-height: 100dvh; height: 100vh; height: 100dvh;padding-top: 75px; }
   .headline { font-size: clamp(2.4rem, 10vw, 4rem); }
   .subline { max-width: 100%; }
   .scrollCue { display: none; }
