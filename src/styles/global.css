@@ -145,7 +145,7 @@ input, textarea, select { font-family: inherit; }
   border-radius: var(--radius-full);
   font-family: var(--font-body);
   font-weight: 700;
-  font-size: 0.88rem;
+  /* font-size: 0.88rem; */
   letter-spacing: 0.3px;
   transition: var(--transition);
   border: none;
