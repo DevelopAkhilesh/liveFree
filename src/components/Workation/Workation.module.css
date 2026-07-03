@@ -236,7 +236,7 @@
 .visual {
   position: relative;
   width: 100%;
-  align-self: start;
+  align-self: center;
 }
 
 .photoWrap {
@@ -260,11 +260,11 @@
   position: relative;
   z-index: 1;
   width: min(100%, 505px);
-  min-height:610px ;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1 / 1;    /* Forces a perfect square */
   border-radius: 50%;
   overflow: hidden;
   box-shadow: 0 24px 54px rgba(120, 70, 30, 0.16);
+  margin-top: auto;
 }
 
 .photoCircle img {
