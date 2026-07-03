@@ -30,8 +30,8 @@ export default function Workation() {
   return (
     <section id="workation" className={styles.section}>
       <div className="container">
-        <div className={styles.topEyebrowRow}>
-          <span className={styles.eyebrow}>Workations</span>
+        <div className="section-head">
+          <span className="section-label">Workations</span>
         </div>
 
         <div className={styles.inner}>
