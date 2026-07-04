@@ -1,18 +1,18 @@
-
 .section {
   position: relative;
-  /* padding: clamp(48px, 8vw, 50px) 0; */
+  padding: clamp(40px, 6vw, 72px) 0;
   background: #faf8f6;
   overflow: hidden;
   width: 100%;
 }
 
-/* ---------- CONTAINER (relative anchor for buttons) ---------- */
+/* ---------- CONTAINER ---------- */
 .container {
-  position: relative;  /* buttons position against this */
+  position: relative;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px;     /* standard container padding */
+  padding: 0 clamp(16px, 4vw, 24px);
+  box-sizing: border-box;
 }
 
 /* ---------- HEADER ---------- */
@@ -20,27 +20,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 35px;
-  padding: 0 80px;      /* breathing room for the title (doesn't affect buttons) */
+  margin-bottom: clamp(20px, 4vw, 35px);
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
-
-
-/* ---------- NAV BUTTONS (left & right of the card grid) ---------- */
-.navBtns {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  transform: translateY(-50%);
-  pointer-events: none;
-  display: flex;
-  justify-content: space-between;
-  padding: 0  100px;      /* match container padding – aligns with card edges */
-  z-index: 10;
-}
 .navBtn {
-  pointer-events: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -57,7 +42,7 @@
 }
 
 .navBtn:hover:not(:disabled) {
-  background:var(--primary);
+  background: var(--primary);
   border-color: var(--primary);
   color: #fff;
   box-shadow: 0 6px 20px rgba(45, 42, 36, 0.15);
@@ -72,13 +57,49 @@
 
 .navBtn svg {
   display: block;
+  width: 18px;
+  height: 18px;
 }
 
-/* ---------- CAROUSEL ---------- */
+.carouselWrap {
+  position: relative;
+  padding: 0 clamp(36px, 4.5vw, 56px);
+  box-sizing: border-box;
+}
+
+/* Desktop-only side arrows — sit inside carouselWrap's own padding, so they
+   never get clipped by .section's overflow:hidden and never overlap cards.
+   top is overridden inline from JS with the image's real center (see JSX). */
+.navBtnsDesktop {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  pointer-events: none;
+  display: flex;
+  justify-content: space-between;
+  z-index: 10;
+}
+
+.navBtnsDesktop .navBtn {
+  pointer-events: auto;
+}
+
+/* Compact arrow row shown centered below the carousel on tablet/mobile — never overlaps cards */
+.navBtnsCompact {
+  display: none; /* hidden on desktop by default */
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+/* ---------- CAROUSEL GRID (auto column count by screen size) ---------- */
 .carousel {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  gap: clamp(14px, 2vw, 24px);
   margin-top: 8px;
 }
 
@@ -92,6 +113,10 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
 }
 
 .card:hover {
@@ -100,7 +125,10 @@
 }
 
 .cardImg {
-  height: 200px;
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 4 / 3;
+  height: auto;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -113,10 +141,12 @@
 }
 
 .cardBody {
-  padding: 20px 22px 26px;
+  padding: clamp(14px, 3vw, 20px) clamp(16px, 3vw, 22px) clamp(18px, 3vw, 26px);
   flex: 1;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
+  min-width: 0;
 }
 
 .iconWrap {
@@ -139,20 +169,24 @@
 }
 
 .title {
-  font-size: 1.1rem;
+  font-size: clamp(0.98rem, 1.5vw, 1.1rem);
   font-weight: 600;
   color: #2d2a24;
   margin: 0 0 8px 0;
   line-height: 1.3;
   letter-spacing: -0.01em;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .desc {
-  font-size: 0.92rem;
+  font-size: clamp(0.82rem, 1.3vw, 0.92rem);
   line-height: 1.6;
   color: #6b6258;
   margin: 0;
   flex: 1;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 /* ---------- DOTS ---------- */
@@ -160,7 +194,7 @@
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin-top: 15px;
+  margin-top: 18px;
 }
 
 .dot {
@@ -185,30 +219,40 @@
   border-radius: 6px;
 }
 
-/* ---------- RESPONSIVE ---------- */
+/* =========================================================
+   RESPONSIVE COLUMN LOGIC: 4 -> 3 -> 2 -> 1
+   Purely screen-width driven — same on Mac, iPad, Android, Windows.
+   ========================================================= */
 
-/* Tablets */
-@media (max-width: 1024px) {
-  .section {
-    padding: 60px 0 48px;
+/* Large desktop / laptop: 4 cards (default above) */
+
+/* Small laptop / large tablet landscape: 3 cards */
+@media (max-width: 1180px) {
+  .carousel {
+    grid-template-columns: repeat(3, 1fr);
   }
 
-  .header {
-    padding: 0 60px;
-    margin-bottom: 36px;
+  .carouselWrap {
+    padding: 0 clamp(30px, 4vw, 44px);
   }
+}
 
-  .header :global(.section-head h2) {
-    font-size: 1.8rem;
-  }
-
+/* Tablets (iPad portrait, Android tablets): 2 cards, arrows move below carousel */
+@media (max-width: 900px) {
   .carousel {
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
   }
 
-  .cardImg {
-    height: 180px;
+  .navBtnsDesktop {
+    display: none;
+  }
+
+  .carouselWrap {
+    padding: 0;
+  }
+
+  .navBtnsCompact {
+    display: flex;
   }
 
   .navBtn {
@@ -217,21 +261,14 @@
   }
 }
 
-/* Mobile */
+/* Mobile phones (all brands): 1 card, swipeable, compact arrows + dots */
 @media (max-width: 640px) {
   .section {
-    padding: 48px 0 36px;
-  }
-
-  .container {
-    padding: 0 16px;
+    padding: 40px 0 32px;
   }
 
   .header {
-    padding: 0 16px;
-    margin-bottom: 28px;
-    flex-direction: column;
-    gap: 12px;
+    margin-bottom: 20px;
   }
 
   .header :global(.section-head h2) {
@@ -243,24 +280,15 @@
     padding: 3px 12px;
   }
 
-  /* Buttons still on left/right of cards, but smaller */
-  .navBtns {
-    padding: 0 16px;   /* match container padding */
-  }
-
-  .navBtn {
-    width: 38px;
-    height: 38px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  }
-
   .carousel {
     grid-template-columns: 1fr;
     gap: 16px;
   }
 
-  .cardImg {
-    height: 160px;
+  .navBtn {
+    width: 36px;
+    height: 36px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   }
 
   .cardBody {
@@ -272,38 +300,12 @@
     height: 38px;
     margin-bottom: 10px;
   }
-
-  .title {
-    font-size: 1rem;
-  }
-
-  .desc {
-    font-size: 0.85rem;
-  }
-
-  .dots {
-    margin-top: 28px;
-    gap: 8px;
-  }
-
-  .dot {
-    width: 8px;
-    height: 8px;
-  }
-
-  .dotActive {
-    width: 24px;
-  }
 }
 
-/* Small phones */
+/* Small / narrow phones (older Android, small iPhones): fine-tuning only */
 @media (max-width: 400px) {
   .header :global(.section-head h2) {
     font-size: 1.2rem;
-  }
-
-  .cardImg {
-    height: 140px;
   }
 
   .cardBody {
@@ -313,5 +315,19 @@
   .navBtn {
     width: 34px;
     height: 34px;
+  }
+
+  .dots {
+    margin-top: 20px;
+    gap: 8px;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  .dotActive {
+    width: 22px;
   }
 }
