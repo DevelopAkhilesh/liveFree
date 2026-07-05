@@ -598,7 +598,7 @@ function ReachUsSection({ meta, dest }) {
                 </div>
               ))}
             </div>
-            <div style={{ marginTop: 20, fontSize: '0.7rem', color: 'rgba(255,255,255,0.3)', fontStyle: 'italic' }}>Nearby attractions shown on map →</div>
+            {/* <div style={{ marginTop: 20, fontSize: '0.7rem', color: 'rgba(255,255,255,0.3)', fontStyle: 'italic' }}>Nearby attractions shown on map →</div> */}
           </div>
         </div>
         <div className={styles.directionsGrid}>
