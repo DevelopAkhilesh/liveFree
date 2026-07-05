@@ -5,39 +5,39 @@
 export const FEATURES = [
   {
     id: 'Prime Location',
-    icon: 'Monitor',
+    icon: 'MapPin',
     title: 'Prime Location',
     desc: 'Prime Location/Zero Commute Stress - Skip the long rides and dive straight into the fun. With attractions, great food, transport, and local experiences just minutes away, every moment of your trip goes further. ✨🌍✨',
   },
   {
     id: 'cafe',
     icon: 'Coffee',
-    title: 'In‑House Café',
+    title: 'In-House Café',
     desc: 'In-house Café - Start your day with fresh coffee, enjoy delicious meals, or unwind with evening snacks in a warm, welcoming space. Our in-house café offers comfort, convenience, and great flavors just steps from your room.',
   },
   {
     id: 'events',
-    icon: 'CalendarHeart',
+    icon: 'Sofa',
     title: 'Spacious Common Areas',
-    desc: `Spacious Common Areas - Relax, connect, or work in thoughtfully designed shared areas that offer ample space to unwind. Whether you're socializing with fellow travelers, catching up on work, or simply enjoying a quiet moment, our spacious common spaces create the perfect balance of comfort, community, and freedom.`,
+    desc:`Spacious Common Areas - Relax, connect, or work in thoughtfully designed shared areas that offer ample space to unwind. Whether you're socializing with fellow travelers, catching up on work, or simply enjoying a quiet moment, our spacious common spaces create the perfect balance of comfort, community, and freedom.`,
   },
   {
     id: 'wifi',
-    icon: 'Wifi',
-    title: 'Hostel Events',
-    desc: `Hostel Events - More than just a stay, Live Free brings travelers together through fun events, games, music sessions, local walks, and community gatherings. It's the perfect way to meet new people, share stories, and create unforgettable travel memories.`,
+    icon:'PartyPopper',
+    title:'Hostel Events',
+    desc:`Hostel Events - More than just a stay, Live Free brings travelers together through fun events, games, music sessions, local walks, and community gatherings. It's the perfect way to meet new people, share stories, and create unforgettable travel memories.`,
   },
   {
     id: 'travel',
-    icon: 'Backpack',
+    icon: 'Sunset',
     title: 'Rooftops with a View',
     desc: 'Rooftops with a View - Relax above it all with open-air rooftop spaces offering scenic views, fresh air, and a laid-back vibe—perfect for sunsets, conversations, and memorable evenings.',
   },
   {
-    id: 'comfort',
-    icon: 'BedDouble',
-    title: 'Pet-Friendly / Inclusive',
-    desc: 'A True Pet-Friendly Haven or Connect with fellow travelers or Inclusivity or Sustainability or community first',
+    id:'comfort',
+    icon:'PawPrint',
+    title:'Pet-Friendly / Inclusive',
+    desc:'A True Pet-Friendly Haven or Connect with fellow travelers or Inclusivity or Sustainability or community first',
   },
 ]
 

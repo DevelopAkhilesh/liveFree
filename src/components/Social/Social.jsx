@@ -10,8 +10,9 @@ export default function Social() {
   const [slideDirection, setSlideDirection] = useState('next')
 
   const total = SOCIAL_IMGS.length
+  // Render one extra image so a slice of it peeks out on the right
+  const renderCount = 5
 
-  // Lock body scroll while the lightbox is open, and support keyboard nav
   useEffect(() => {
     if (!isOpen) return
     document.body.style.overflow = 'hidden'
@@ -38,8 +39,7 @@ export default function Social() {
     })
   }
 
-  // Show 3 images at a time
-  const visibleImages = [0, 1, 2].map((offset) => {
+  const visibleImages = Array.from({ length: renderCount }, (_, offset) => {
     const index = (currentIndex + offset) % total
     return { index, src: SOCIAL_IMGS[index] }
   })
@@ -49,14 +49,29 @@ export default function Social() {
     setIsOpen(true)
   }
 
+  const PLACEHOLDER_IMG =
+    "data:image/svg+xml;utf8," +
+    encodeURIComponent(
+      `<svg xmlns='http://www.w3.org/2000/svg' width='600' height='400'>
+        <rect width='100%' height='100%' fill='#e8dfd6'/>
+        <text x='50%' y='50%' font-family='sans-serif' font-size='20' fill='#a89f93' text-anchor='middle' dominant-baseline='middle'>Live Free</text>
+      </svg>`
+    )
+
   const handleImageError = (event) => {
-    if (event.currentTarget.dataset.fallbackApplied) return
-    event.currentTarget.dataset.fallbackApplied = 'true'
-    event.currentTarget.src = fallbackImg
+    const stage = event.currentTarget.dataset.fallbackStage
+    if (!stage) {
+      event.currentTarget.dataset.fallbackStage = 'local'
+      event.currentTarget.src = fallbackImg
+    } else if (stage === 'local') {
+      event.currentTarget.dataset.fallbackStage = 'svg'
+      event.currentTarget.src = PLACEHOLDER_IMG
+    }
   }
 
-  // Progress: currentIndex / total — actual position based
-  const progressPercent = ((currentIndex + 1) / total) * 100
+  // Scrollbar-style thumb: width = visible portion (4 full cards), position = current offset
+  const thumbWidthPercent = (4 / total) * 100
+  const thumbLeftPercent = (currentIndex / total) * 100
 
   return (
     <section className={`section ${styles.section}`} id="social">
@@ -68,54 +83,45 @@ export default function Social() {
         </div>
       </div>
 
-      {/* Slider: Left Arrow | 3 Images | Right Arrow */}
       <div className={styles.previewContainer}>
         <div className={styles.sliderWrapper}>
-          <button
-            className={styles.arrowBtn}
-            onClick={() => scroll(-1)}
-            aria-label="Previous"
-          >
+          <button className={styles.arrowBtn} onClick={() => scroll(-1)} aria-label="Previous">
             <ChevronLeft size={24} />
           </button>
 
-          <div className={`${styles.previewGrid} ${styles[`slide-${slideDirection}`]}`}>
-            {visibleImages.map(({ index, src }) => (
-              <button
-                key={`${index}-${currentIndex}`}
-                className={styles.previewBox}
-                onClick={() => openImage(index)}
-                aria-label={`Open social image ${index + 1}`}
-              >
-                <img
-                  src={src}
-                  alt={`Social preview ${index + 1}`}
-                  loading="lazy"
-                  onError={handleImageError}
-                />
-              </button>
-            ))}
+          <div className={styles.previewViewport}>
+            <div className={`${styles.previewGrid} ${styles[`slide-${slideDirection}`]}`}>
+              {visibleImages.map(({ index, src }) => (
+                <button
+                  key={`${index}-${currentIndex}`}
+                  className={styles.previewBox}
+                  onClick={() => openImage(index)}
+                  aria-label={`Open social image ${index + 1}`}
+                >
+                  <img
+                    src={src}
+                    alt={`Social preview ${index + 1}`}
+                    loading="lazy"
+                    onError={handleImageError}
+                  />
+                </button>
+              ))}
+            </div>
           </div>
 
-          <button
-            className={styles.arrowBtn}
-            onClick={() => scroll(1)}
-            aria-label="Next"
-          >
+          <button className={styles.arrowBtn} onClick={() => scroll(1)} aria-label="Next">
             <ChevronRight size={24} />
           </button>
         </div>
 
-        {/* Progress Bar — moves with currentIndex */}
         <div className={styles.progressBar}>
           <div
             className={styles.progressFill}
-            style={{ width: `${progressPercent}%` }}
+            style={{ width: `${thumbWidthPercent}%`, left: `${thumbLeftPercent}%` }}
           />
         </div>
       </div>
 
-      {/* Modal Slideshow */}
       {isOpen && (
         <div className={styles.modal} onClick={() => setIsOpen(false)}>
           <button className={styles.closeBtn} onClick={() => setIsOpen(false)} aria-label="Close">

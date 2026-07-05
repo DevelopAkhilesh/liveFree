@@ -1,10 +1,12 @@
 import { useState, useEffect, useRef } from 'react'
-import { Monitor, Coffee, CalendarHeart, Wifi, Backpack, BedDouble, ChevronLeft, ChevronRight } from 'lucide-react'
+import { Coffee, MapPin, Sofa, PartyPopper, Sunset, PawPrint, ChevronLeft, ChevronRight } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FEATURES } from '../../data/siteData'
 import styles from './WhyLiveSection.module.css'
 
-const ICON_MAP = { Monitor, Coffee, CalendarHeart, Wifi, Backpack, BedDouble }
+
+
+const ICON_MAP = { MapPin, Coffee, Sofa, PartyPopper, Sunset, PawPrint }
 const FEATURE_IMAGES = [
   'https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=800&q=80',
   'https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&q=80',

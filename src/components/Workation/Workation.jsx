@@ -1,13 +1,12 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { ChevronDown, Coffee, Laptop2, MessageCircle, PartyPopper, Sun, Wifi } from 'lucide-react'
 import styles from './Workation.module.css'
 
 const stays = [
-  'The Hosteller Bir',
-  'The Hosteller Rishikesh',
-  'The Hosteller Varanasi',
-  'The Hosteller Dehradun',
+  'Live Free Rishikesh',
+  'Live Free Varanasi',
+  'Live Free Dehradun',
 ]
 
 const badges = [
@@ -18,10 +17,45 @@ const badges = [
   { label: 'Lots of fun', icon: PartyPopper, className: 'badgeFun' },
 ]
 
+// --- Helpers for default dates ---
+const getToday = () => new Date().toISOString().split('T')[0]
+const getTomorrow = () => {
+  const d = new Date()
+  d.setDate(d.getDate() + 1)
+  return d.toISOString().split('T')[0]
+}
+
 export default function Workation() {
   const [stay, setStay] = useState('')
-  const [checkIn, setCheckIn] = useState('2026-06-29')
-  const [checkOut, setCheckOut] = useState('2026-07-06')
+  const [checkIn, setCheckIn] = useState(getToday())
+  const [checkOut, setCheckOut] = useState(getTomorrow())
+
+  const checkInRef = useRef(null)
+  const checkOutRef = useRef(null)
+
+  // --- Auto-update checkout when check-in changes ---
+  useEffect(() => {
+    if (checkIn) {
+      const d = new Date(checkIn)
+      d.setDate(d.getDate() + 1)
+      const nextDay = d.toISOString().split('T')[0]
+      // Only update if checkout is empty or earlier than nextDay
+      if (!checkOut || checkOut <= checkIn) {
+        setCheckOut(nextDay)
+      }
+    }
+  }, [checkIn])
+
+  const openDatePicker = (ref) => {
+    const input = ref.current
+    if (!input) return
+    try {
+      input.showPicker()
+    } catch {
+      input.focus()
+      input.click()
+    }
+  }
 
   const handleBook = () => {
     console.log({ stay, checkIn, checkOut })
@@ -43,7 +77,6 @@ export default function Workation() {
             transition={{ duration: 0.6, ease: [0.2, 0.9, 0.4, 1] }}
           >
             <h2>Escape the office<br></br>Keep the Wi-Fi</h2>
-            {/* <p className={styles.tagline}>Escape the office. Keep the Wi-Fi.</p> */}
 
             <h3>Enjoy 15–25% off when you book for 7+ nights.</h3>
             <p>
@@ -74,7 +107,7 @@ export default function Workation() {
                       onChange={(e) => setStay(e.target.value)}
                     >
                       <option value="" disabled>
-                        Eg: The Hosteller Bir
+                        Eg: Live Free Varanasi
                       </option>
                       {stays.map((s) => (
                         <option key={s} value={s}>
@@ -86,27 +119,41 @@ export default function Workation() {
                   </div>
                 </div>
 
+                {/* Check-in – wrapper opens the picker */}
                 <div className={styles.field}>
                   <label htmlFor="check-in">Check-in</label>
-                  <input
-                    id="check-in"
-                    type="date"
-                    className={styles.dateInput}
-                    value={checkIn}
-                    onChange={(e) => setCheckIn(e.target.value)}
-                  />
+                  <div
+                    className={styles.dateWrapper}
+                    onClick={() => openDatePicker(checkInRef)}
+                  >
+                    <input
+                      ref={checkInRef}
+                      id="check-in"
+                      type="date"
+                      className={styles.dateInput}
+                      value={checkIn}
+                      onChange={(e) => setCheckIn(e.target.value)}
+                    />
+                  </div>
                 </div>
 
+                {/* Check-out – wrapper opens the picker */}
                 <div className={styles.field}>
                   <label htmlFor="check-out">Check-out</label>
-                  <input
-                    id="check-out"
-                    type="date"
-                    className={styles.dateInput}
-                    value={checkOut}
-                    min={checkIn}
-                    onChange={(e) => setCheckOut(e.target.value)}
-                  />
+                  <div
+                    className={styles.dateWrapper}
+                    onClick={() => openDatePicker(checkOutRef)}
+                  >
+                    <input
+                      ref={checkOutRef}
+                      id="check-out"
+                      type="date"
+                      className={styles.dateInput}
+                      value={checkOut}
+                      min={checkIn}
+                      onChange={(e) => setCheckOut(e.target.value)}
+                    />
+                  </div>
                 </div>
               </div>
 
@@ -114,11 +161,6 @@ export default function Workation() {
                 Book now
               </button>
             </div>
-
-            {/* <button type="button" className={styles.groupEnquiry}>
-              <MessageCircle size={18} />
-              Send enquiry for group booking
-            </button> */}
           </motion.div>
 
           <motion.div
@@ -130,26 +172,6 @@ export default function Workation() {
           >
             <div className={styles.photoWrap}>
               <span className={styles.glow} aria-hidden="true" />
-
-              {/* <span className={`${styles.leaf} ${styles.leafTopRight}`} aria-hidden="true">
-                <LeafIcon />
-              </span>
-              <span className={`${styles.leaf} ${styles.leafLeft}`} aria-hidden="true">
-                <LeafIcon />
-              </span>
-              <span className={`${styles.leaf} ${styles.leafBottomLeft}`} aria-hidden="true">
-                <LeafIcon />
-              </span>
-              <span className={`${styles.leaf} ${styles.leafBottomRight}`} aria-hidden="true">
-                <LeafIcon />
-              </span>
-
-              <span className={`${styles.quoteMark} ${styles.quoteTopLeft}`} aria-hidden="true">
-                "
-              </span>
-              <span className={`${styles.quoteMark} ${styles.quoteBottomRight}`} aria-hidden="true">
-                "
-              </span> */}
 
               <div className={styles.photoCircle}>
                 <img

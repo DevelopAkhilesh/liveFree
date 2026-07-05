@@ -17,17 +17,25 @@
   align-items: center;
   gap: 20px;
   width: min(1080px, calc(100% - 48px));
+  max-width: 100%;
+}
+
+/* NEW: clips the peeking 5th card */
+.previewViewport {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .previewGrid {
-  flex: 1;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(14px, 2vw, 24px);
+  --gap: clamp(14px, 2vw, 24px);
+  display: flex;
+  gap: var(--gap);
 }
 
 .previewBox {
-  width: 100%;
+  /* 4.3 → shows 4 full cards + a ~30% slice of the 5th */
+  flex: 0 0 calc((100% - 4 * var(--gap)) / 4.3);
   aspect-ratio: 1 / 1;
   border-radius: 16px;
   overflow: hidden;
@@ -71,7 +79,7 @@
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.24);
 }
 
-/* === Arrow Buttons — WHITE === */
+/* === Arrow Buttons === */
 .arrowBtn {
   width: 48px;
   height: 48px;
@@ -90,7 +98,7 @@
 }
 
 .arrowBtn:hover {
-  background:var(--primary);
+  background: var(--primary);
   border-color: var(--primary);
   color: #fff;
   box-shadow: 0 6px 20px rgba(45, 42, 36, 0.15);
@@ -101,22 +109,25 @@
   transform: scale(0.95);
 }
 
-/* === Progress Bar — position based === */
-/* .progressBar {
+/* === Progress Bar — scrollbar style === */
+.progressBar {
   width: min(1080px, calc(100% - 48px));
-  height: 4px;
-  background: rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  height: 6px;
+  background: rgba(0, 0, 0, 0.08);
   border-radius: 999px;
   overflow: hidden;
   position: relative;
 }
 
 .progressFill {
+  position: absolute;
+  top: 0;
   height: 100%;
   border-radius: 999px;
   background: var(--primary);
-  transition: width 0.4s ease;
-} */
+  transition: left 0.4s ease, width 0.4s ease;
+}
 
 /* Modal */
 .modal {
@@ -218,6 +229,12 @@
 }
 
 /* Responsive */
+@media (max-width: 900px) {
+  .previewBox {
+    flex: 0 0 calc((100% - 3 * var(--gap)) / 3.3);
+  }
+}
+
 @media (max-width: 768px) {
   .section { padding: 56px 0; }
 
@@ -265,8 +282,8 @@
 }
 
 @media (max-width: 520px) {
-  .previewGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .previewBox {
+    flex: 0 0 calc((100% - 2 * var(--gap)) / 2.3);
   }
 
   .previewContainer { padding: 20px 12px 32px; gap: 18px; }

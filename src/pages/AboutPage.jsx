@@ -1,6 +1,6 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { motion, useAnimationFrame } from 'framer-motion';
-import { Heart, Globe, Home, Users, AlertCircle } from 'lucide-react';
+import { Heart, Globe, Home, Users, AlertCircle, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const VALUES = [
   { icon: Users, title: 'People First, Always', desc: 'Our staff are travelers too. They know what matters — a genuine smile, local tips, and a door that always feels open. At Live Free Hostels, People First, Always is more than a philosophy—it is the heart of everything we do. Because at the end of the day, hostels are not just buildings—they are collections of stories, friendships, and experiences shared by people from around the world.' },
@@ -68,7 +68,7 @@ const styles = {
 
   sustainSection: { padding: '70px 0', background: 'var(--surface-alt)' },
   sustainHeaderRow: { maxWidth: 1050, margin: '0 auto', padding: '0 24px 24px', textAlign: 'center' },
-  sustainSub: { color: 'var(--text-muted)', fontSize: '1.05rem', fontWeight: 600, lineHeight: 1.8, maxWidth: 1050, margin: '12px auto 0' },
+  sustainSub: { color: 'black', fontSize: '1.05rem', fontWeight: 700, lineHeight: 1.8, maxWidth: 1050, margin: '12px auto 0' },
   sustainBody: { display: 'flex', flexWrap: 'wrap', alignItems: 'stretch', maxWidth: 1300, margin: '40px auto 0', padding: '0 24px' },
   sustainImageWrapper: { flex: '1 1 480px', maxWidth: 560, aspectRatio: '4 / 3', borderRadius: 'var(--radius-lg)', overflow: 'hidden' },
   sustainImg: { width: '100%', height: '100%', objectFit: 'cover', display: 'block' },
@@ -78,9 +78,11 @@ const styles = {
   sustainListItem: { display: 'flex', gap: 10, alignItems: 'flex-start', fontSize: '0.95rem', lineHeight: 1.6, color: 'var(--text-muted)' },
   sustainBullet: { width: 5, height: 5, borderRadius: '50%', background: 'var(--primary)', marginTop: 8, flexShrink: 0 },
 
-  carouselOuter: { position: 'relative', marginTop: 48, maxWidth: 1400, margin: '48px auto 0' },
+  carouselOuter: { position: 'relative', marginTop: 48, maxWidth: 1400, margin: '48px auto 0', display: 'flex', alignItems: 'center', gap: 16 },
   carouselMask: {
     overflow: 'hidden',
+    flex: 1,
+    minWidth: 0,
   },
   carouselTrack: { display: 'flex', gap: 32, width: 'max-content' },
   valCard: {
@@ -97,6 +99,23 @@ const styles = {
   foundCard: { background: 'var(--surface)', borderRadius: 'var(--radius-xl)', padding: 'clamp(32px, 6vw, 48px) clamp(22px, 5vw, 36px)', textAlign: 'center', boxShadow: 'var(--shadow-sm)' },
   avatar: { width: 90, height: 90, borderRadius: '50%', background: 'linear-gradient(135deg, var(--primary-light), var(--primary))', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px', color: '#fff', fontSize: '1.6rem', fontWeight: 800 },
   line: { height: 3, width: 40, background: 'var(--primary)', borderRadius: 4, margin: '12px auto 16px' },
+
+  // NEW: manual nav arrow buttons
+  navBtn: {
+    width: 48,
+    height: 48,
+    borderRadius: '50%',
+    background: '#ffffff',
+    color: '#222',
+    border: 'none',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    cursor: 'pointer',
+    flexShrink: 0,
+    boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+    transition: 'all 0.25s ease',
+  },
 };
 
 function ValuesCarousel({ items }) {
@@ -105,7 +124,8 @@ function ValuesCarousel({ items }) {
   const isPausedRef = useRef(false);
   const setWidthRef = useRef(0);
 
-  const SPEED = 40; // pixels per second
+  const SPEED = 40; // pixels per second (auto-scroll)
+  const NUDGE = 480; // pixels moved per manual arrow click
 
   useAnimationFrame((time, delta) => {
     const track = trackRef.current;
@@ -124,12 +144,29 @@ function ValuesCarousel({ items }) {
     }
   });
 
+  const nudge = (dir) => {
+    const track = trackRef.current;
+    if (!track || setWidthRef.current === 0) return;
+    offsetRef.current += dir * NUDGE;
+    if (offsetRef.current >= setWidthRef.current) {
+      offsetRef.current -= setWidthRef.current;
+    }
+    if (offsetRef.current < 0) {
+      offsetRef.current += setWidthRef.current;
+    }
+    track.style.transform = `translateX(${-offsetRef.current}px)`;
+  };
+
   return (
     <div
       style={styles.carouselOuter}
       onMouseEnter={() => { isPausedRef.current = true; }}
       onMouseLeave={() => { isPausedRef.current = false; }}
     >
+      <button style={styles.navBtn} onClick={() => nudge(-1)} aria-label="Previous">
+        <ChevronLeft size={22} />
+      </button>
+
       <div style={styles.carouselMask}>
         <div ref={trackRef} style={styles.carouselTrack}>
           {[...items, ...items].map((v, i) => (
@@ -141,6 +178,10 @@ function ValuesCarousel({ items }) {
           ))}
         </div>
       </div>
+
+      <button style={styles.navBtn} onClick={() => nudge(1)} aria-label="Next">
+        <ChevronRight size={22} />
+      </button>
     </div>
   );
 }

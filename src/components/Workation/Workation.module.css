@@ -170,6 +170,12 @@
   pointer-events: none;
   color: #b89c80;
 }
+.dateWrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+}
 
 .dateInput {
   width: 100%;

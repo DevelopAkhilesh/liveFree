@@ -9,7 +9,12 @@
   overflow: hidden;
   isolation: isolate;
 }
-
+.dateWrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;   /* indicates clickable */
+}
 .bg {
   position: absolute;
   inset: 0;
@@ -139,6 +144,10 @@
   cursor: pointer;
   padding: 0 20px 0 0;
   /* Do NOT hide the native icon – let it show */
+}
+.bookingInput::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  pointer-events: auto; /* ensure it's clickable */
 }
 
 .bookingDivider {
