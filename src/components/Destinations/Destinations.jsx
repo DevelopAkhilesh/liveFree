@@ -25,30 +25,44 @@ export default function Destinations() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: i * 0.12, ease: [0.2, 0.9, 0.4, 1] }}
               viewport={{ once: true, amount: 0.2 }}
+              onClick={() => navigate(dest.path)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') navigate(dest.path)
+              }}
             >
               <div
                 className={styles.img}
                 style={{ backgroundImage: `url('${dest.img}')` }}
               />
               <div className={styles.overlay} />
+
+              <div className={styles.btnRow}>
+                <button
+                  className={styles.exploreBtn}
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    navigate(dest.path)
+                  }}
+                >
+                  Explore <ArrowRight size={14} />
+                </button>
+                <button
+                  className={styles.bookBtn}
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    navigate(dest.path)
+                  }}
+                >
+                  Book Now
+                </button>
+              </div>
+
               <div className={styles.body}>
                 <span className={styles.tagline}>{dest.tagline}</span>
                 <h3 className={styles.name}>{dest.name}</h3>
                 <p className={styles.desc}>{dest.desc}</p>
-                <div className={styles.btnRow}>
-                  <button
-                    className={styles.exploreBtn}
-                    onClick={() => navigate(dest.path)}
-                  >
-                    Explore <ArrowRight size={14} />
-                  </button>
-                  <button
-                    className={styles.bookBtn}
-                    onClick={() => navigate(dest.path)}
-                  >
-                    Book Now
-                  </button>
-                </div>
               </div>
             </motion.article>
           ))}

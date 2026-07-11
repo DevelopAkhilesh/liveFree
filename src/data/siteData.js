@@ -4,49 +4,50 @@
 
 export const FEATURES = [
   {
-    id: 'Prime Location',
+    id: 'Prime Locations',
     icon: 'MapPin',
     title: 'Prime Location',
-    desc: 'Prime Location/Zero Commute Stress - Skip the long rides and dive straight into the fun. With attractions, great food, transport, and local experiences just minutes away, every moment of your trip goes further. ✨🌍✨',
+    desc: 'Every Live Free property is strategically situated to offer breathtaking aesthetics and unmatched convenience for backpackers. Positioned steps away from major transport hubs, vibrant old-town markets, local cafés, and iconic spiritual centres, we are your perfect exploration launchpad. Step out to discover hidden gems, or return to recharge in style.',
   },
   {
     id: 'cafe',
     icon: 'Coffee',
-    title: 'In-House Café',
-    desc: 'In-house Café - Start your day with fresh coffee, enjoy delicious meals, or unwind with evening snacks in a warm, welcoming space. Our in-house café offers comfort, convenience, and great flavors just steps from your room.',
+    title: 'The Live Free Café',
+    desc: 'Our Café is the cozy, high-energy heart of our hostel. Designed with shared tables and plush cushions, it’s where casual afternoon coffees turn into late-night travel plans with global friends. We serve 100% fresh, made-to-order dishes—from nutritious, home-style Indian comfort food to global backpacker staples—perfectly fueling your daily adventures on a budget.',
   },
   {
     id: 'events',
     icon: 'Sofa',
-    title: 'Spacious Common Areas',
-    desc:`Spacious Common Areas - Relax, connect, or work in thoughtfully designed shared areas that offer ample space to unwind. Whether you're socializing with fellow travelers, catching up on work, or simply enjoying a quiet moment, our spacious common spaces create the perfect balance of comfort, community, and freedom.`,
+    title: 'Your Space, Your Vibe',
+    desc:`Our expansive common areas adapt to your mood. Seek out a sunlit corner for focused deep-work, strum a guitar with creators, or gather for high-stakes card games. Packed with foosball, table tennis, and diverse board games, our lounges effortlessly provide the perfect social backdrop for every type of traveler.`,
   },
   {
     id: 'wifi',
     icon:'PartyPopper',
-    title:'Hostel Events',
-    desc:`Hostel Events - More than just a stay, Live Free brings travelers together through fun events, games, music sessions, local walks, and community gatherings. It's the perfect way to meet new people, share stories, and create unforgettable travel memories.`,
+    title:'Unforgettable Hostel Events ',
+    desc:`The fun never stops with our rotating calendar of community activities. Bond over vibrant in-house dinners, showcase your talent at open-mic acoustic nights, or dive into competitive trivia and board games. From morning yoga to sunset hikes, our curated gatherings ensure you leave with new friends and lifelong memories.`,
   },
   {
     id: 'travel',
     icon: 'Sunset',
-    title: 'Rooftops with a View',
-    desc: 'Rooftops with a View - Relax above it all with open-air rooftop spaces offering scenic views, fresh air, and a laid-back vibe—perfect for sunsets, conversations, and memorable evenings.',
+    title: 'Built for Digital Nomads ',
+    desc: 'We ensure your work never suffers while you travel. Our properties feature reliable, fast Wi-Fi across all communal spaces, alongside robust power backup systems. Access dedicated workspaces equipped with desks and multiple socket points across our seating areas—the perfect environment to network and collaborate with a thriving global creative community.',
   },
   {
     id:'comfort',
     icon:'PawPrint',
-    title:'Pet-Friendly / Inclusive',
-    desc:'A True Pet-Friendly Haven or Connect with fellow travelers or Inclusivity or Sustainability or community first',
+    title:'Inclusivity',
+    desc:'At Live Free, everyone is welcome. Whether you are traveling with family, kids, as a young backpacker, or a solo explorer, our property suits every journey. Our multiple, diverse common areas naturally bring people together, making it incredibly easy to connect, share stories, and mingle with similar, like-minded groups throughout your stay.',
   },
 ]
 
 export const STATS = [
-  { value: 120000, suffix: '+', label: 'Guests Hosted', prefix: '' },
-  { value: 8, suffix: '+', label: 'Years of Experience', prefix: '' },
-  { value: 150, suffix: '+', label: 'Nationalities', prefix: '' },
-  { value: 9.4, suffix: '', label: 'Guest Rating', prefix: '' },
+  { value: 200000 , suffix: '+', label: 'Guests Hosted', prefix: '' },
+  { value: 10, suffix: '+', label: 'Years of Experience', prefix: '' },
+  { value: 100, suffix: '+', label: 'Nationalities', prefix: '' },
+  { value: 8.5, suffix: '+', label: 'Average Rating', prefix: '' },
 ]
+import rishikeshImg from '../assets/Live_Free-23(1).png'
 
 export const DESTINATIONS = [
   {
@@ -55,7 +56,7 @@ export const DESTINATIONS = [
     tagline: 'Uttarakhand - Yoga, Adventure & Serenity ',
     desc: 'Yoga, white‑water rafting, and sacred ghats at the foot of the Himalayas.',
     path: '/rishikesh',
-    img: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=800&q=85',
+    img: rishikeshImg,
     color: '#e2f0dd',
   },
   {

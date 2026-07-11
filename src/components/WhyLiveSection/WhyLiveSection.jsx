@@ -21,7 +21,7 @@ function getVisibleCount(width) {
   if (width <= 640) return 1
   if (width <= 900) return 2
   if (width <= 1180) return 3
-  return 4
+  return 3
 }
 
 // How far down (in px) to shift the desktop arrows below the image's exact
@@ -30,7 +30,7 @@ const BUTTON_Y_OFFSET = 170
 
 function useVisibleCount() {
   const [visible, setVisible] = useState(() =>
-    typeof window !== 'undefined' ? getVisibleCount(window.innerWidth) : 4
+    typeof window !== 'undefined' ? getVisibleCount(window.innerWidth) : 3
   )
 
   useEffect(() => {
@@ -149,9 +149,9 @@ export default function WhyLiveSection() {
                       style={{ backgroundImage: `url('${FEATURE_IMAGES[imgIdx]}')` }}
                     />
                     <div className={styles.cardBody}>
-                      <div className={styles.iconWrap}>
+                      {/* <div className={styles.iconWrap}>
                         {Icon && <Icon size={22} strokeWidth={1.8} />}
-                      </div>
+                      </div> */}
                       <h3 className={styles.title}>{f.title}</h3>
                       <p className={styles.desc}>{f.desc}</p>
                     </div>

@@ -1,7 +1,8 @@
 import { useState, useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { ChevronDown, Coffee, Laptop2, MessageCircle, PartyPopper, Sun, Wifi } from 'lucide-react'
+import { ChevronDown, Coffee, Heart, Laptop2, MessageCircle, Moon, PartyPopper, Sun, Wifi } from 'lucide-react'
 import styles from './Workation.module.css'
+import { CgStories } from 'react-icons/cg'
 
 const stays = [
   'Live Free Rishikesh',
@@ -12,8 +13,8 @@ const stays = [
 const badges = [
   { label: 'Free Wifi', icon: Wifi, className: 'badgeWifi' },
   { label: 'Inhouse Cafe', icon: Coffee, className: 'badgeCafe' },
-  { label: '', icon: Sun, className: 'badgeSun' },
-  { label: '', icon: Laptop2, className: 'badgeLaptop' },
+  { label: 'Sleep Well', icon: Moon, className: 'badgeSun' },
+  { label: 'Swap Stories', icon: Heart, className: 'badgeLaptop' },
   { label: 'Lots of fun', icon: PartyPopper, className: 'badgeFun' },
 ]
 

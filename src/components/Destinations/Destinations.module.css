@@ -25,7 +25,12 @@
   height: 100%;
   background-size: cover;
   background-position: center;
-  transition: transform 0.55s ease;
+  transition: transform 0.55s ease, filter 0.35s ease;
+  filter: brightness(0.98) contrast(0.96) saturate(0.94) blur(0.4px);
+}
+
+.grid > :first-child .img {
+  filter: brightness(0.94) contrast(0.9) saturate(0.85) blur(0.6px);
 }
 
 /* Replace with real images → see siteData.js comments */
@@ -45,6 +50,20 @@
     rgba(0,0,0,0.08) 100%
   );
   transition: background 0.35s ease;
+}
+
+/* Buttons row — ab .card ka direct child hai (JSX me), top pe fixed */
+.btnRow {
+  position: absolute;
+  top: clamp(18px, 3.5vw, 28px);
+  left: clamp(18px, 3.5vw, 28px);
+  right: clamp(18px, 3.5vw, 28px);
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
 }
 
 .body {
@@ -79,15 +98,7 @@
   font-size: 0.88rem;
   color: rgba(255,255,255,0.78);
   line-height: 1.55;
-  margin-bottom: 20px;
-}
-
-.btnRow {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
+  margin-bottom: 0;
 }
 
 .exploreBtn {

@@ -10,6 +10,7 @@ import DestinationPage from './pages/DestinationPage'
 import GroupsPage from './pages/GroupsPage'
 import ExperiencePage from './pages/ExperiencePage'
 import WhatsAppButton from './components/WhatsAppButton/WhatsAppButton'
+import ContactPage from './pages/ContactPage'
 
 export default function App() {
   return (
@@ -27,6 +28,7 @@ export default function App() {
           <Route path="/varanasi" element={<DestinationPage city="varanasi" />} />
           <Route path="/groups" element={<GroupsPage />} />
           <Route path="/experience" element={<ExperiencePage />} />
+          <Route path="/contact" element={<ContactPage/>}/>
         </Routes>
       </main>
       <WhatsAppButton/>

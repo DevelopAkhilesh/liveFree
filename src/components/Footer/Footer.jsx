@@ -42,16 +42,17 @@ export default function Footer() {
           </div>
 
           {/* LEFT: Quick Links */}
-          <div className={styles.block}>
-            <h4>Quick Links</h4>
-            <ul>
-              <li><a href="#" onClick={e => { e.preventDefault(); navigate('/about') }}>About Us</a></li>
-              <li><a href="#" onClick={e => { e.preventDefault(); navigate('/groups') }}>Experience</a></li>
-              <li><a href="#" onClick={e => { e.preventDefault(); navigate('/awards') }}>Awards</a></li>
-              <li><a href="#workation">Workations</a></li>
-              <li><a href="#testimonials">Guest Stories</a></li>
-            </ul>
-          </div>
+       {/* LEFT: Quick Links */}
+<div className={styles.block}>
+  <h4>Quick Links</h4>
+  <ul>
+    <li><a href="#" onClick={e => { e.preventDefault(); navigate('/about') }}>About Us</a></li>
+    <li><a href="#" onClick={e => { e.preventDefault(); navigate('/groups') }}>Experience</a></li>
+    <li><a href="#" onClick={e => { e.preventDefault(); navigate('/awards') }}>Awards</a></li>
+    <li><a href="#workation">Workations</a></li>
+    <li><a href="#" onClick={e => { e.preventDefault(); navigate('/contact') }}>Contact Us</a></li>
+  </ul>
+</div>
 
           {/* RIGHT: Brand — logo + social */}
           <div className={styles.brand}>

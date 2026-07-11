@@ -46,7 +46,7 @@ export default function Testimonials() {
     <section className={`section ${styles.section}`} id="testimonials">
       <div className="container">
         <div className="section-head">
-          <span className="section-label">Guest Stories</span>
+          <span className="section-label">Guest Reviews</span>
           <h2>Our community says it best. Read the love.</h2>
         </div>
       </div>

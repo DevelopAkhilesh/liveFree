@@ -98,7 +98,7 @@
 /* ---------- CAROUSEL GRID (auto column count by screen size) ---------- */
 .carousel {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: clamp(14px, 2vw, 24px);
   margin-top: 8px;
 }
