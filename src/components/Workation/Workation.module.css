@@ -25,12 +25,6 @@
   margin-bottom: 20px;
   width: fit-content;
   padding: 7px 18px;
-  /* border-radius: var(--radius-full, 999px);
-  background: #fbe1d6;
-  color: #d9531c; */
-  /* font-size: 0.78rem;
-  font-weight: 800; */
-
 }
 
 .copy h2 {
@@ -170,6 +164,7 @@
   pointer-events: none;
   color: #b89c80;
 }
+
 .dateWrapper {
   display: flex;
   align-items: center;
@@ -248,7 +243,7 @@
 .photoWrap {
   position: relative;
   width: 100%;
-  min-height: clamp(320px, 30vw, 440px);
+  min-height: clamp(400px, 38vw, 560px); /* increased from clamp(320px, 30vw, 440px) */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -265,7 +260,7 @@
 .photoCircle {
   position: relative;
   z-index: 1;
-  width: min(100%, 505px);
+  width: min(100%, 620px); /* increased from 505px */
   aspect-ratio: 1 / 1;    /* Forces a perfect square */
   border-radius: 50%;
   overflow: hidden;
@@ -333,10 +328,10 @@
   color: #1f1a14;
 }
 
-.badgeWifi { top: 6%; right: 8%; }
+.badgeWifi { top: 6%; right: 70%; }
 .badgeCafe { top: 28%; left: 6%; }
 .badgeSun { top: 8%; left: 38%; }
-.badgeLaptop { top: 46%; right: 8%; }
+.badgeLaptop { top: 50%; right: -10%; }
 .badgeFun { bottom: 12%; right: 35%; }
 
 @media (max-width: 1050px) {
@@ -359,7 +354,7 @@
   }
 
   .photoWrap {
-    min-height: 380px;
+    min-height: 440px; /* increased from 380px */
   }
 
   .badge {
@@ -370,7 +365,7 @@
 }
 
 @media (max-width: 420px) {
-  .photoWrap { min-height: clamp(260px, 78vw, 340px); }
+  .photoWrap { min-height: clamp(300px, 82vw, 380px); } /* increased from clamp(260px, 78vw, 340px) */
   .badge { transform: scale(0.72); padding: 7px 12px; }
   .quoteMark { font-size: 1.6rem; }
   .bookingCard { padding: 14px 16px; }

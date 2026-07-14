@@ -1,6 +1,13 @@
-import { Rocket } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
+import { FaInstagram, FaLinkedin, FaWhatsapp } from 'react-icons/fa'
 import styles from './CTABanner.module.css'
+
+const CTA_BUTTONS = [
+  { label: 'Work', Icon: FaLinkedin, network: 'linkedin' },
+  { label: 'Collaborate', Icon: FaInstagram, network: 'instagram' },
+  { label: 'Volunteer', Icon: FaWhatsapp, network: 'whatsapp' },
+]
 
 export default function CTABanner() {
   return (
@@ -14,13 +21,23 @@ export default function CTABanner() {
           viewport={{ once: true }}
         >
           <div className={styles.inner}>
-            <h2 className={styles.title}>Join Creatorship</h2>
+            <h2 className={styles.title}>Join Our Community!!</h2>
             <p className={styles.sub}>
-              Get ready to embark on an adventure of collaboration, inspiration, and FREE stays across India's most iconic destinations.
+              Ready to live free? Join our crew as a teammate, volunteer, or creative collaborator. Trade your unique skills for epic perks: FREE stays, daily meals, and a buzzing global family. Network with fellow nomads, explore prime destinations, and host unforgettable community events.
             </p>
-            <button className={styles.btn}>
-              Become a Creator <Rocket size={18} />
-            </button>
+            <div className={styles.actions}>
+              {CTA_BUTTONS.map(({ label, Icon, network }) => (
+                <button key={label} className={styles.btn} type="button">
+                  <span>{label}</span>
+                  <span className={styles.arrowIcon} aria-hidden="true">
+                    <ArrowRight size={18} strokeWidth={2.25} />
+                  </span>
+                  <span className={`${styles.socialIcon} ${styles[network]}`} aria-hidden="true">
+                    <Icon />
+                  </span>
+                </button>
+              ))}
+            </div>
           </div>
         </motion.div>
       </div>

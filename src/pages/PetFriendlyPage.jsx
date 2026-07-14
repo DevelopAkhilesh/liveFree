@@ -11,7 +11,7 @@ const fadeUp = (delay = 0) => ({
 const TERMS = [
   'Pets accepted: domestic dogs and cats only.',
   'Permitted in private rooms and shared rooms reserved for the same group.',
-  'Maximum limit: 2 pets per room.',
+  'Maximum limit: One pet per room. Total of 3 pet families in whole property.',
   'The animal must always be accompanied by the guest or kept in a suitable carrier.',
   'Leashes are mandatory in all common areas.',
   'Pets are not allowed in dining areas, cafes, or any food service zones.',
@@ -24,8 +24,7 @@ const TERMS = [
 
 const COMPLIMENTARY = [
   { icon: '🛏️', label: 'Bed or mat for your pet' },
-  { icon: '🛍️', label: 'Waste bags at reception' },
-  { icon: '💧', label: 'Portable water dispenser' },
+  { icon: '🛍️', label: 'Waste bags at reception Pet bowls & Food' },
 ]
 
 export default function PetFriendlyPage() {

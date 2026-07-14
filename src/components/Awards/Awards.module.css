@@ -1,12 +1,29 @@
-.section { background: var(--bg); }
+.section {
+  background: var(--bg);
+  overflow: hidden; /* animation ke bahar ka content chhupane ke liye */
+}
+
+.marqueeWrap {
+  width: 100%;
+  overflow: hidden;
+  /* -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent); */
+}
 
 .grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  width: max-content;
   gap: 20px;
+  animation: scrollTrail 25s linear infinite;
+}
+
+.grid:hover {
+  animation-play-state: paused; /* hover pe rukega, optional */
 }
 
 .card {
+  flex: 0 0 auto;
+  width: 220px; /* fixed width zaroori hai flex row mein */
   border-radius: var(--radius-lg);
   padding: 36px 24px;
   text-align: center;
@@ -30,5 +47,14 @@
 .light .property { color: var(--primary); }
 .blue .property, .dark .property { color: rgba(255,255,255,0.6); }
 
-@media (max-width: 900px) { .grid { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 500px) { .grid { grid-template-columns: 1fr 1fr; gap: 12px; } .card { padding: 24px 16px; } }
+@keyframes scrollTrail {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); } /* 50% isliye kyunki cards duplicate honge */
+}
+
+@media (max-width: 900px) {
+  .card { width: 180px; padding: 28px 18px; }
+}
+@media (max-width: 500px) {
+  .card { width: 160px; padding: 24px 16px; gap: 12px; }
+}

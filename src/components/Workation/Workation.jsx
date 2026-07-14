@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { ChevronDown, Coffee, Heart, Laptop2, MessageCircle, Moon, PartyPopper, Sun, Wifi } from 'lucide-react'
 import styles from './Workation.module.css'
 import { CgStories } from 'react-icons/cg'
+import workationImg from '../../assets/workstation.jpeg'
 
 const stays = [
   'Live Free Rishikesh',
@@ -11,8 +12,8 @@ const stays = [
 ]
 
 const badges = [
-  { label: 'Free Wifi', icon: Wifi, className: 'badgeWifi' },
-  { label: 'Inhouse Cafe', icon: Coffee, className: 'badgeCafe' },
+  { label: 'Inhouse Cafe', icon: Coffee, className: 'badgeWifi' },
+  { label: 'Free Wifi', icon: Wifi, className: 'badgeCafe' },
   { label: 'Sleep Well', icon: Moon, className: 'badgeSun' },
   { label: 'Swap Stories', icon: Heart, className: 'badgeLaptop' },
   { label: 'Lots of fun', icon: PartyPopper, className: 'badgeFun' },
@@ -175,10 +176,12 @@ export default function Workation() {
               <span className={styles.glow} aria-hidden="true" />
 
               <div className={styles.photoCircle}>
-                <img
-                  src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt="Two remote workers collaborating on a laptop"
-                />
+                <div className={styles.photoCircle}>
+                  <img
+                    src={workationImg}
+                    alt="Two remote workers collaborating on a laptop"
+                  />
+                </div>
               </div>
 
               {badges.map(({ label, icon: Icon, className }, i) => (

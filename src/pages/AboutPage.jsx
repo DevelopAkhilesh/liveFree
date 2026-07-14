@@ -15,15 +15,17 @@ const FOUNDERS = [
 ];
 
 const SUSTAINABILITY_POLICIES = [
-  'Reduction in paper use through the adoption of new working methods for this purpose;',
-  'Filtered water dispensers available to refill water bottles;',
+  'Reduction in paper use through the adoption of new working methods for this purpose.',
+  'Filtered water dispensers with reusable bottles available to avoid excessive plastic consumption.',
   'Reusable cups for all beverages consumed at our establishments;',
   'Recent electronic equipment with low consumption and greater energy efficiency;',
   'LED bulbs;',
-  'Directions and information on public transport routes to reach our facilities;',
-  'Work carried out with local communities;',
-  'Use of local products and local suppliers (fruit and breakfast items);',
-  'Installation of heat pumps for heating water in progress at all the properties;',
+  '  Reusing old recycled materials in renovations or new projects wherever possible.',
+  ' Directions and information on public transport routes to reach our facilities.',
+  'Encouraging virtual meetings whenever possible and offering sustainable travel options.',
+  ' Work carried out with local communities.',
+  'Use of local products and local suppliers (fruit and breakfast items).',
+  'Installation of heat pumps for heating water in progress at all the properties.',
   '… More on the way!',
 ];
 
