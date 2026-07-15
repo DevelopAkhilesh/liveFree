@@ -19,8 +19,8 @@ const GALLERY_FALLBACKS = [
 
 // ── Room details shown inside the expandable "Room Details" panel ──
 const ROOM_CAPACITY = {
-  Dormitory: '1 Adult(s), 0 Child(ren) / Room',
-  Private: '2 Adult(s), 0 Child(ren) / Room',
+  Dormitory: '1 Guest/Bed',
+  Private: '2 Guest',
 }
 
 const ROOM_AMENITIES_BY_TYPE = {
@@ -37,15 +37,21 @@ const ROOM_AMENITIES_BY_TYPE = {
   ],
 }
 
-const HOTEL_AMENITIES = [
-  'Air Conditioner', 'Laundry', 'Iron',
-  'Free Wifi', 'Free Parking', 'Contactless check-in',
-  'Daily Housekeeping', 'Coffee Machine', 'Cable TV',
-  'Breakfast', 'LCD TV', 'Restaurant',
-  'Transportation', 'TV', 'Wifi',
-  'Cleaning service', 'Air conditioning', 'Coffee Maker',
-  'Free Wi-Fi', 'Lockers',
-]
+const HOTEL_AMENITIES = {
+  Standard: [
+    "Dustbin", "Daily Housekeeping", "Non Smoking Room", "Lockers", "Wi-fi",
+    "Bed Curtains", "Ceiling Fan", "Bed Fan", "Air Conditioner", "Ensuite Bathroom",
+    "Hot Water", "Hair Dryer", "Towel Rental", "Toilet", "Shower", "Toilet Paper",
+    "Non-feather Pillows", "Linen", "Socket Near the Bed", "Bedside Lamp", "Work Desk"
+  ],
+  Deluxe: [
+    "Dustbin", "Daily Housekeeping", "Non Smoking Room", "Clothes Rack", "Linen",
+    "Electric Kettle", "Tea/ Coffee Sachets", "Wi-fi", "Flat Screen TV", "Ceiling Fan",
+    "Air Conditioner", "Ensuite Bathroom", "Toiletries", "Hair Dryer", "Hot Water",
+    "Towels", "Toilet", "Shower", "Toilet Paper", "Non-feather Pillows", "Linen",
+    "Socket Near the Bed", "Bedside Lamp", "Coffee Table Set"
+  ]
+}
 
 const CLD = 'https://res.cloudinary.com/dtksfqdju/image/upload'
 const cld = (id) => `${CLD}/${id}`
@@ -53,9 +59,11 @@ const cld = (id) => `${CLD}/${id}`
 const CITY_META = {
   rishikesh: {
     tagline: 'Uttarakhand - Land of Spirituality and Adventure',
-    address: 'Laxman Jhula Road, Rishikesh, Uttarakhand 249302',
-    about: `Ever since the Beatles rocked up at the ashram of the late Maharishi Mahesh Yogi in the late '60s, Rishikesh has been a magnet for spiritual seekers from all over the world. Today this city is known famously as the "yoga capital of the world", with masses of ashrams and all kinds of yoga and meditation centers. Whether you are an adventurer seeking thrilling experiences, a spiritual seeker looking for inner peace, or a wanderer in search of inspiration, Rishikesh has something to offer to everyone. It is not just a place on the map; it is an experience that touches the soul. Since its inception in 2011, Live Free Rishikesh Hostel has been a vibrant hub welcoming individuals from across the globe. Offering a myriad of activities, including weekend musical gigs, Tuesday communal dinners, festive celebrations, and fun gatherings, the hostel ensures that its guests are entertained and immersed in the cultural richness of Rishikesh.`,
-    checkIn: 'from 13:00 until 23:59',
+    address: 'Laxman Jhula Road, Rishikesh.',
+    about: `Located in Tapovan, just 400 meters away from Lakshman Jhula, Live Free Hostel perfectly blends high-energy adventure with mindful relaxation. Our expansive rooftop terrace offers panoramic views of the rolling green Himalayan foothills and the sacred Ganga River, serving as an idyllic backdrop for morning sunbathing or peaceful rooftop yoga classes.
+Throughout our vibrant and colorful multi-story property, active common areas invite travelers to bond over guitar sessions, shared board games, or competitive foosball and table tennis tournaments. Choose from spacious, bright dorms designed with individual privacy curtains and power outlets, or retreat to comfortable private rooms with ensuite bathrooms after a long day out.
+As a preferred launchpad and trusted base camp for massive “India Hikes” trekking expeditions, our expertly trained team makes transitioning between work and play effortless. Whether you are sipping espresso at our ground-floor, in-house cafe or coordinating a white-water rafting trip from our travel desk, this hostel transforms your mountain escape into an immersive community experience.`,
+    checkIn: '13:00 until 23:59',
     checkOut: 'until 10:00',
     highlights: ['Riverside yoga & meditation', 'White-water river rafting', 'Bungee jumping & zip-lining', 'Laxman Jhula & Ram Jhula', 'Sunset Ganga aarti', 'Beatles Ashram trek'],
     video: 'sPQQLwdT1rQ',
@@ -352,6 +360,16 @@ function GoodToKnowSection({ meta }) {
                     <span style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#bbb', display: 'block', marginBottom: 8 }}>Check-out</span>
                     <span style={{ fontSize: '1.15rem', fontWeight: 800, color: 'var(--text)', display: 'block' }}>{meta.checkOut}</span>
                   </div>
+                    <ul style={{ marginTop: 10, paddingTop: 10, display: 'flex', flexDirection: 'column', gap: 10, listStyle: 'none' }}>
+                    <li style={{ display: 'flex', gap: 10, alignItems: 'flex-start', fontSize: '0.92rem', color: 'var(--text)', lineHeight: 1.6 }}>
+                      
+                      Extra bed – ₹700 (only 1 bed allowed in a room)
+                    </li>
+                    <li style={{ display: 'flex', gap: 10, alignItems: 'flex-start', fontSize: '0.92rem', color: 'var(--text)', lineHeight: 1.6 }}>
+                      
+                      This is not a party hostel — silent hours after 11 PM are strictly observed.
+                    </li>
+                  </ul>
                 </div>
               </motion.div>
             )}
@@ -471,23 +489,23 @@ function SelectRoomSection({ rooms, photosByCategory, onOpenLightbox }) {
                     >
                       <div style={{ padding: '24px 28px 28px' }}>
                         <h4 style={{ fontWeight: 800, fontSize: '0.95rem', color: 'var(--text)', marginBottom: 4 }}>Room Description</h4>
-                        <p style={{ fontSize: '0.88rem', color: '#777', marginBottom: 20 }}>{room.name}</p>
+                        <p style={{ fontSize: '0.88rem', color: '#777', marginBottom: 20 }}>{room.roomdesc}</p>
 
                         <h4 style={{ fontWeight: 800, fontSize: '0.95rem', color: 'var(--text)', marginBottom: 4 }}>Room Capacity</h4>
                         <p style={{ fontSize: '0.88rem', color: '#777', marginBottom: 20 }}>{ROOM_CAPACITY[room.type] || ROOM_CAPACITY.Dormitory}</p>
 
-                        <h4 style={{ fontWeight: 800, fontSize: '0.95rem', color: 'var(--text)', marginBottom: 12 }}>Room Amenities</h4>
+                        {/* <h4 style={{ fontWeight: 800, fontSize: '0.95rem', color: 'var(--text)', marginBottom: 12 }}>Room Amenities</h4>
                         <div className={styles.roomDetailsGrid} style={{ marginBottom: 24 }}>
                           {(ROOM_AMENITIES_BY_TYPE[room.type] || ROOM_AMENITIES_BY_TYPE.Dormitory).map(item => (
                             <span key={item} style={{ display: 'flex', alignItems: 'center', gap: 7, fontSize: '0.86rem', color: '#444' }}>
                               <Check size={14} style={{ color: '#2d9b5a', flexShrink: 0 }} /> {item}
                             </span>
                           ))}
-                        </div>
+                        </div> */}
 
                         <h4 style={{ fontWeight: 800, fontSize: '0.95rem', color: 'var(--text)', marginBottom: 12 }}>Hotel Amenities</h4>
                         <div className={styles.roomDetailsGrid}>
-                          {HOTEL_AMENITIES.map(item => (
+                          {(room.type.includes('Private') ? HOTEL_AMENITIES.Deluxe : HOTEL_AMENITIES.Standard).map(item => (
                             <span key={item} style={{ display: 'flex', alignItems: 'center', gap: 7, fontSize: '0.86rem', color: '#444' }}>
                               <Check size={14} style={{ color: '#2d9b5a', flexShrink: 0 }} /> {item}
                             </span>

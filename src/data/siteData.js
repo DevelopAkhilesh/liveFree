@@ -25,7 +25,7 @@ export const FEATURES = [
     id: 'wifi',
     icon:'PartyPopper',
     title:'Unforgettable Hostel Events ',
-    desc:`The fun never stops with our rotating calendar of community activities. Bond over vibrant in-house dinners, showcase your talent at open-mic acoustic nights, or dive into competitive trivia and board games. From morning yoga to sunset hikes, our curated gatherings ensure you leave with new friends and lifelong memories.`,
+    desc:`The fun never stops with our rotating calendar of community activities. Bond over vibrant in-house dinners, showcase your talent at open-mic acoustic nights, or dive into competitive trivia and board games. From morning yoga to sunset hikes, our curated gatherings ensure you leave with new friends and lifelong memories.`
   },
   {
     id: 'travel',
@@ -37,7 +37,7 @@ export const FEATURES = [
     id:'comfort',
     icon:'PawPrint',
     title:'Inclusivity',
-    desc:'At Live Free, everyone is welcome. Whether you are traveling with family, kids, as a young backpacker, or a solo explorer, our property suits every journey. Our multiple, diverse common areas naturally bring people together, making it incredibly easy to connect, share stories, and mingle with similar, like-minded groups throughout your stay.',
+    desc:`At Live Free, everyone is welcome. Whether you are traveling with family, kids, as a young backpacker, or a solo explorer, our property suits every journey. Our multiple, diverse common areas naturally bring people together, making it incredibly easy to connect, share stories, and mingle with similar, like-minded groups throughout your stay.`
   },
 ]
 
@@ -54,7 +54,7 @@ export const DESTINATIONS = [
     id: 'rishikesh',
     // name: 'Rishikesh',
     tagline: 'Rishikesh - Your Spiritual & Adventure Hub',
-    desc: 'Located in vibrant Tapovan near Lakshman Jhula, our highest-rated hostel merges mountain beauty with yoga culture.',
+    desc: 'Located in Tapovan near Lakshman Jhula, our top-rated hostel offers a rooftop yoga space, live music, and hammocks—the perfect base camp for rafting and meeting backpackers.',
     path: '/rishikesh',
     img: rishikeshImg,
     color: '#e2f0dd',
@@ -63,7 +63,7 @@ export const DESTINATIONS = [
     id: 'varanasi',
     // name: 'Varanasi',
     tagline: 'Varanasi - Soulful Vibe by the Ganges',
-    desc: 'Just a five-minute walk from the iconic Assi Ghat, our Varanasi hub immerses you in India’s spiritual heartland',
+    desc: 'A five-minute walk from Assi Ghat, our Varanasi hub immerses you in spiritual culture. Enjoy Ganga Aarti, explore alleyways, and connect with global travelers.',
     path: '/varanasi',
     img: 'https://images.unsplash.com/photo-1561361058-c24cecae35ca?w=800&q=85',
     color: '#fdf3ec',
@@ -72,7 +72,7 @@ export const DESTINATIONS = [
     id: 'dehradun',
     // name: 'Dehradun',
     tagline: 'Dehradun - The Perfect Getaway Town',
-    desc: 'Nestled comfortably in the valley, our Dehradun property is the ultimate stopover before heading up to Mussoorie.',
+    desc: 'Nestled in the valley, our Dehradun property is the perfect place to explore the city and a Mussoorie stopover. Featuring AC rooms, Wi-Fi, social zones, and quiet nooks, it unites all travelers.',
     path: '/dehradun',
     img: 'https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=800&q=85',
     color: '#fce4db',
@@ -206,31 +206,54 @@ export const SOCIAL_IMGS = [
 export const CITY_ROOMS = {
   rishikesh: [
     {
-      id: 'dorm-4',
-      name: '4 Bed Dormitory',
+      id: 'female-dorm-4',
+      name: '4 Bed Female Dorm',
       type: 'Dormitory',
-      desc: 'Comfortable bunk beds with privacy curtains, personal lockers, and charging points.',
+      desc: 'A cozy, secure, and spacious shared sanctuary designed exclusively for female solo travellers seeking privacy and community.',
       price: 599,        // TODO: Update price
       bookingUrl: 'https://www.booking.com',  // TODO: Update booking link
       amenities: ['Privacy Curtain', 'Personal Locker', 'AC', 'WiFi'],
+      roomdesc: "2  Bunk Beds  "
     },
     {
-      id: 'dorm-6',
-      name: '6 Bed Dormitory',
+      id: 'dorm-4',
+      name: '4 Bed Mixed Dorm',
       type: 'Dormitory',
-      desc: 'Budget-friendly dorm with all essentials — perfect for solo travelers.',
-      price: 499,        // TODO: Update price
+      desc: 'A small, intimate mixed dorm that perfectly balances a social backpacker vibe with ample personal space.',
+      price: 599,        // TODO: Update price
       bookingUrl: 'https://www.booking.com',  // TODO: Update booking link
       amenities: ['Personal Locker', 'AC', 'WiFi', 'Common Bathroom'],
+      roomdesc: "2 Bunk Beds"
+    },
+     {
+      id: 'dorm-6',
+      name: '6 Bed Mixed Dorm',
+      type: 'Dormitory',
+      desc: 'A lively and budget-friendly shared room ideal for making friends and sharing stories with fellow globetrotters.',
+      price: 599,        // TODO: Update price
+      bookingUrl: 'https://www.booking.com',  // TODO: Update booking link
+      amenities: ['Personal Locker', 'AC', 'WiFi', 'Common Bathroom'],
+      roomdesc: "3 Bunk Beds"
     },
     {
       id: 'private',
       name: 'Private Room',
       type: 'Private',
-      desc: 'Your own sanctuary — en‑suite, climate‑controlled, and designed to feel like home.',
-      price: 1499,       // TODO: Update price
+      desc: 'A clean, peaceful, and comfortable private space offering the perfect quiet escape after a day of adventure.',
+      price: 599,       // TODO: Update price
       bookingUrl: 'https://www.booking.com',  // TODO: Update booking link
       amenities: ['En‑suite Bathroom', 'AC', 'WiFi', 'Double Bed'],
+      roomdesc:"1 Queen Size Bed"
+    },
+    {
+      id: 'DeluxePrivate',
+      name: 'Deluxe Private Room',
+      type: 'Private',
+      desc: 'A premium, spacious well ventilated retreat featuring seating furniture &  extra comfort for ultimate relaxation.',
+      price: 599,       // TODO: Update price
+      bookingUrl: 'https://www.booking.com',  // TODO: Update booking link
+      amenities: ['En‑suite Bathroom', 'AC', 'WiFi', 'Double Bed'],
+      roomdesc:"1 King Size Bed "
     },
   ],
 
