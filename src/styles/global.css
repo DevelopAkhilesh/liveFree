@@ -49,13 +49,14 @@
 
 /* ── Reset ── */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
+html { scroll-behavior: smooth; font-size: 16px;  }
 body {
   font-family: var(--font-body);
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
+  
   -webkit-font-smoothing: antialiased;
 }
 img { max-width: 100%; display: block; }
@@ -75,7 +76,8 @@ input, textarea, select { font-family: inherit; }
   flex-direction: column;
   box-sizing: border-box;
   position: relative;
-  overflow-x: hidden;
+  
+  /* overflow-x: hidden; */
 }
 
 /* Side borders removed */

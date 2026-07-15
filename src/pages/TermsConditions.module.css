@@ -1,0 +1,195 @@
+/* TermsConditions.module.css */
+
+.page {
+  background: #fff;
+  color: #1e1b16;
+  padding-bottom: 60px;
+}
+
+/* ---------- Hero ---------- */
+
+.heroBand {
+  padding: 90px 0 28px;
+}
+
+.eyebrow {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #a8562e;
+  margin-bottom: 8px;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #111;
+  margin: 0 0 6px;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  color: #444;
+  max-width: 42ch;
+  margin: 0;
+}
+
+/* ---------- Layout ---------- */
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: start;
+  padding-top: 32px;
+}
+
+@media (max-width: 860px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Desktop sidebar nav ---------- */
+
+/* .nav {
+  position: sticky;
+  top: 90px;
+} */
+
+.nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navLink {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.navLink:hover {
+  color: #a8562e;
+}
+
+.navLinkActive {
+  color: #a8562e;
+  font-weight: 700;
+}
+
+@media (max-width: 860px) {
+  .nav {
+    display: none;
+  }
+}
+
+/* ---------- Mobile pill nav ---------- */
+
+.navMobile {
+  display: none;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+  scrollbar-width: none;
+}
+
+.navMobile::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .navMobile {
+    display: flex;
+  }
+}
+
+.navPill {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  background: #fff;
+  color: #555;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.navPillActive {
+  background: #a8562e;
+  border-color: #a8562e;
+  color: #fff;
+}
+
+/* ---------- Content ---------- */
+
+.content {
+  min-width: 0;
+}
+
+.section {
+  padding: 20px 0;
+  scroll-margin-top: 100px;
+}
+
+.section:first-child {
+  padding-top: 0;
+}
+
+.sectionHead {
+  margin-bottom: 10px;
+}
+
+.sectionNumber {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #111;
+  margin-right: 4px;
+}
+
+.sectionHead h2 {
+  display: inline;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+}
+
+.sectionBody p {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: #333;
+  margin: 0 0 10px;
+}
+
+.sectionBody p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Footer note ---------- */
+
+.footerNote {
+  margin-top: 24px;
+  padding: 20px;
+}
+
+.footerNote p {
+  margin: 0 0 10px;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.footerBtn {
+  display: inline-block;
+  color: #a8562e;
+  font-weight: 700;
+  text-decoration: underline;
+}

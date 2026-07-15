@@ -11,6 +11,12 @@ import GroupsPage from './pages/GroupsPage'
 import ExperiencePage from './pages/ExperiencePage'
 import WhatsAppButton from './components/WhatsAppButton/WhatsAppButton'
 import ContactPage from './pages/ContactPage'
+import HostelPolicy from './pages/HostelPolicy'
+
+import LegalPage from './pages/LegalPage'
+import TermsConditions from './pages/TermsConditions'
+import DataProtectionGuidelines from './pages/DataProtectionGuidelines'
+
 
 export default function App() {
   return (
@@ -28,10 +34,14 @@ export default function App() {
           <Route path="/varanasi" element={<DestinationPage city="varanasi" />} />
           <Route path="/groups" element={<GroupsPage />} />
           <Route path="/experience" element={<ExperiencePage />} />
-          <Route path="/contact" element={<ContactPage/>}/>
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/hostel-policy" element={<HostelPolicy />} />
+          <Route path="/privacy-policy" element={<LegalPage />} />
+          <Route path="/terms-conditions" element={<TermsConditions />} />
+          <Route path="/data-protection-guidelines" element={<DataProtectionGuidelines />} />
         </Routes>
       </main>
-      <WhatsAppButton/>
+      <WhatsAppButton />
       <Footer />
     </>
   )

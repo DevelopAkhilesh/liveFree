@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Mail, Phone, MapPin, Instagram, Facebook, Linkedin, Youtube } from 'lucide-react'
 import styles from './Footer.module.css'
 import logoImg from '../../assets/l1.png'
@@ -34,25 +34,25 @@ export default function Footer() {
           <div className={styles.block}>
             <h4>Policies</h4>
             <ul>
-              <li><a href="#">Guest Policy</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Terms & Conditions</a></li>
+              <li><Link to="/hostel-policy">Hostel Policy</Link></li>
+              <li><Link to="/privacy-policy">Privacy Policy</Link></li>
+              <li><Link to="/terms-conditions">Terms &amp; Conditions</Link></li>
+              <li><Link to="/data-protection-guidelines">Data Protection Guidelines</Link></li>
               <li><a href="#" onClick={e => { e.preventDefault(); navigate('/pet-friendly') }}>Pet Policy</a></li>
             </ul>
           </div>
 
           {/* LEFT: Quick Links */}
-       {/* LEFT: Quick Links */}
-<div className={styles.block}>
-  <h4>Quick Links</h4>
-  <ul>
-    <li><a href="#" onClick={e => { e.preventDefault(); navigate('/about') }}>About Us</a></li>
-    <li><a href="#" onClick={e => { e.preventDefault(); navigate('/groups') }}>Experience</a></li>
-    <li><a href="#" onClick={e => { e.preventDefault(); navigate('/awards') }}>Awards</a></li>
-    <li><a href="#workation">Workations</a></li>
-    <li><a href="#" onClick={e => { e.preventDefault(); navigate('/contact') }}>Contact Us</a></li>
-  </ul>
-</div>
+          <div className={styles.block}>
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#" onClick={e => { e.preventDefault(); navigate('/about') }}>About Us</a></li>
+              <li><a href="#" onClick={e => { e.preventDefault(); navigate('/groups') }}>Experience</a></li>
+              <li><a href="#" onClick={e => { e.preventDefault(); navigate('/awards') }}>Awards</a></li>
+              <li><a href="#workation">Workations</a></li>
+              <li><a href="#" onClick={e => { e.preventDefault(); navigate('/contact') }}>Contact Us</a></li>
+            </ul>
+          </div>
 
           {/* RIGHT: Brand — logo + social */}
           <div className={styles.brand}>
