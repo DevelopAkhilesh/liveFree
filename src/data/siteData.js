@@ -1,7 +1,7 @@
 // ============================================================
 //  LIVE FREE — SITE DATA
 // ============================================================
-import RishikeshFemaleDorm from '../assets/female_dorm.jpeg'
+import RishikeshFemaleDorm from '../assets/Rishikesh_Female_Dorm.jpeg'
 import RishikeshMixDorm4 from"../assets/Rishikesh_4_Bed_Mix.jpeg";
 import RishikeshMixDorm6 from"../assets/Rishikesh_6_Bed_Mix.jpeg";
 import RishikeshDeluxe from "../assets/Rishikesh_Deluxe_Bed.jpeg";
