@@ -56,7 +56,9 @@ const HOTEL_AMENITIES = {
 }
 
 const CLD = 'https://res.cloudinary.com/dtksfqdju/image/upload'
-const cld = (id) => `${CLD}/${id}`
+const CLD_RISHIKESH = 'https://res.cloudinary.com/vdxhnvbh/image/upload'
+// city-aware cloudinary helper — Rishikesh photos live on a different Cloudinary account
+const cld = (id, city) => `${city === 'rishikesh' ? CLD_RISHIKESH : CLD}/${id}`
 
 const CITY_META = {
   rishikesh: {
@@ -173,11 +175,23 @@ const CITY_PHOTOS = {
     'Family Private': ['IMG_4355_lntw4e', 'IMG_4365_vyfli1', 'IMG_4364_pcjwqc', 'IMG_4357_injjsn'],
     'Female Dorm': ['LFD6_cut51z', 'IMG_20251128_141714_00_027_fbblwk', 'LFD9_20_payhsn'],
   },
-  rishikesh: {},
+rishikesh: {
+  'Rishikesh Main': ['LFR6_mhrf26', 'LFR7_q13doj', '7_cufhnw', 'LFR3_qg5knn', 'LFR19_ejwpqo'],
+  'Property': [
+    'LFR5_uxbuln', 'LFR11_trtsu9', 'IMG_6741_lkdlfy', 'LFR16_dlnq96',
+    'IMG_6796_qbbaka', 'IMG_6793_bvecci', 'LFR15_h63tcu', 'IMG_20200323_171514_snb7um',
+    '4_g9zrac', 'image_1db1cce8_xb4009', '6_avgoyb', '20_ns0r7i',
+    '14_fdxldu', '5_adx5yi', '17_mr56qo', '18_gk2vqa',
+    'IMG_6649_spps9r', '4_depva1', '1_cr4ylv', '1_ngdgdr',
+    '3_e86iss', '2_e0tckf', '2_dmkyax', '1_egabwh',
+    'main_agfaap', '3_dolmuc', '3_u1vxfv', 'Bathroom_nuna6j',
+    '1_oubvvn', '2_koxkk3', 'bathroom_rhjaux',
+  ],
+},
 }
 
 // ── SINGLE LightBox — with category tabs ──
-function LightBox({ images, index, onClose, photosByCategory, allPhotos }) {
+function LightBox({ images, index, onClose, photosByCategory, allPhotos, city }) {
   const thumbContainerRef = useRef(null)
   const [activeCategory, setActiveCategory] = useState('All')
   const [localIndex, setLocalIndex] = useState(index)
@@ -241,7 +255,7 @@ function LightBox({ images, index, onClose, photosByCategory, allPhotos }) {
           <button className={styles.lightboxNavBtn} onClick={e => { e.stopPropagation(); goPrev() }} style={{ position: 'absolute', left: 8, background: 'rgba(0,0,0,0.5)', border: 'none', borderRadius: '50%', width: 40, height: 40, cursor: 'pointer', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 10 }}>
             <ChevronLeft size={22} />
           </button>
-          <img src={cld(currentPhotos[localIndex])} alt="" style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', borderRadius: 8 }} />
+          <img src={cld(currentPhotos[localIndex], city)} alt="" style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', borderRadius: 8 }} />
           <button className={styles.lightboxNavBtn} onClick={e => { e.stopPropagation(); goNext() }} style={{ position: 'absolute', right: 8, background: 'rgba(0,0,0,0.5)', border: 'none', borderRadius: '50%', width: 40, height: 40, cursor: 'pointer', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 10 }}>
             <ChevronRight size={22} />
           </button>
@@ -254,7 +268,7 @@ function LightBox({ images, index, onClose, photosByCategory, allPhotos }) {
         <div ref={thumbContainerRef} style={{ width: '100%', overflowX: 'auto', overflowY: 'hidden', padding: '10px 16px', display: 'flex', gap: 8, scrollbarWidth: 'thin', scrollbarColor: 'rgba(255,255,255,0.3) transparent', flexShrink: 0, height: 100, background: 'rgba(0,0,0,0.3)' }} onClick={e => e.stopPropagation()}>
           {currentPhotos.map((id, i) => (
             <div key={id} className={styles.lightboxThumb} onClick={() => setLocalIndex(i)} style={{ flex: '0 0 auto', width: 80, height: 80, borderRadius: 6, overflow: 'hidden', border: i === localIndex ? '3px solid var(--primary)' : '3px solid transparent', transition: 'all 0.2s', cursor: 'pointer', transform: i === localIndex ? 'scale(1.05)' : 'scale(1)' }}>
-              <img src={cld(id)} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+              <img src={cld(id, city)} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
             </div>
           ))}
         </div>
@@ -264,22 +278,25 @@ function LightBox({ images, index, onClose, photosByCategory, allPhotos }) {
 }
 
 // ── Gallery ──
-function GallerySection({ photosByCategory, allPhotos, onOpenLightbox }) {
+function GallerySection({ photosByCategory, allPhotos, onOpenLightbox, city }) {
+  // Only the city’s primary / main gallery category populates the grid — rest is available via "See all photos"
+  const mainCategoryKey = Object.keys(photosByCategory).find((key) => key.toLowerCase().includes('main'))
+  const mainPhotos = (mainCategoryKey && photosByCategory[mainCategoryKey]) || allPhotos.slice(0, 5)
   const hasPhotos = allPhotos.length > 0
   return (
     <div className={styles.galleryWrap}>
       {hasPhotos ? (
         <div style={{ position: 'relative' }}>
           <div className={styles.galleryGrid}>
-            <div className={styles.galleryMainBox} onClick={() => onOpenLightbox(allPhotos, 0)}>
-              <img src={cld(allPhotos[0])} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+            <div className={styles.galleryMainBox} onClick={() => onOpenLightbox(allPhotos, allPhotos.indexOf(mainPhotos[0]))}>
+              <img src={cld(mainPhotos[0], city)} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
             </div>
             <div className={styles.gallerySub}>
               {[1, 2, 3, 4].map(i => {
-                const photo = allPhotos[i]
-                const imgSrc = photo ? cld(photo) : GALLERY_FALLBACKS[i - 1]
+                const photo = mainPhotos[i]
+                const imgSrc = photo ? cld(photo, city) : GALLERY_FALLBACKS[i - 1]
                 return (
-                  <div key={i} className={styles.galleryImgBox} onClick={() => onOpenLightbox(allPhotos, i < allPhotos.length ? i : 0)}>
+                  <div key={i} className={styles.galleryImgBox} onClick={() => onOpenLightbox(allPhotos, photo ? allPhotos.indexOf(photo) : 0)}>
                     <img src={imgSrc} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                       onError={e => { e.currentTarget.src = GALLERY_FALLBACKS[i - 1] }}
                     />
@@ -772,7 +789,7 @@ export default function DestinationPage({ city }) {
 
   return (
     <>
-      <GallerySection photosByCategory={photosByCategory} allPhotos={allPhotos} onOpenLightbox={openLightbox} />
+      <GallerySection photosByCategory={photosByCategory} allPhotos={allPhotos} onOpenLightbox={openLightbox} city={city} />
       <HeroInfoSection dest={dest} meta={meta} />
       <GoodToKnowSection meta={meta} />
       <SelectRoomSection rooms={rooms}  onOpenLightbox={openLightbox} />
@@ -791,6 +808,7 @@ export default function DestinationPage({ city }) {
             onClose={closeLightbox}
             photosByCategory={photosByCategory}
             allPhotos={allPhotos}
+            city={city}
           />
         )}
       </AnimatePresence>
