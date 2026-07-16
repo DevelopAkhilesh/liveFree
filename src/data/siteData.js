@@ -1,6 +1,11 @@
 // ============================================================
 //  LIVE FREE — SITE DATA
 // ============================================================
+import RishikeshFemaleDorm from '../assets/female_dorm.jpeg'
+import RishikeshMixDorm4 from"../assets/Rishikesh_4_Bed_Mix.jpeg";
+import RishikeshMixDorm6 from"../assets/Rishikesh_6_Bed_Mix.jpeg";
+import RishikeshDeluxe from "../assets/Rishikesh_Deluxe_Bed.jpeg";
+import RishikeshPrivate from "../assets/Rishikesh_Private_Bed.jpeg";
 
 export const FEATURES = [
   {
@@ -213,7 +218,8 @@ export const CITY_ROOMS = {
       price: 599,        // TODO: Update price
       bookingUrl: 'https://www.booking.com',  // TODO: Update booking link
       amenities: ['Privacy Curtain', 'Personal Locker', 'AC', 'WiFi'],
-      roomdesc: "2  Bunk Beds  "
+      roomdesc: "2  Bunk Beds",
+      images:RishikeshFemaleDorm,
     },
     {
       id: 'dorm-4',
@@ -223,7 +229,8 @@ export const CITY_ROOMS = {
       price: 599,        // TODO: Update price
       bookingUrl: 'https://www.booking.com',  // TODO: Update booking link
       amenities: ['Personal Locker', 'AC', 'WiFi', 'Common Bathroom'],
-      roomdesc: "2 Bunk Beds"
+      roomdesc: "2 Bunk Beds",
+      images:RishikeshMixDorm4,
     },
      {
       id: 'dorm-6',
@@ -233,7 +240,8 @@ export const CITY_ROOMS = {
       price: 599,        // TODO: Update price
       bookingUrl: 'https://www.booking.com',  // TODO: Update booking link
       amenities: ['Personal Locker', 'AC', 'WiFi', 'Common Bathroom'],
-      roomdesc: "3 Bunk Beds"
+      roomdesc: "3 Bunk Beds",
+      images:RishikeshMixDorm6,
     },
     {
       id: 'private',
@@ -243,7 +251,8 @@ export const CITY_ROOMS = {
       price: 599,       // TODO: Update price
       bookingUrl: 'https://www.booking.com',  // TODO: Update booking link
       amenities: ['En‑suite Bathroom', 'AC', 'WiFi', 'Double Bed'],
-      roomdesc:"1 Queen Size Bed"
+      roomdesc:"1 Queen Size Bed",
+      images:RishikeshPrivate
     },
     {
       id: 'DeluxePrivate',
@@ -253,7 +262,8 @@ export const CITY_ROOMS = {
       price: 599,       // TODO: Update price
       bookingUrl: 'https://www.booking.com',  // TODO: Update booking link
       amenities: ['En‑suite Bathroom', 'AC', 'WiFi', 'Double Bed'],
-      roomdesc:"1 King Size Bed "
+      roomdesc:"1 King Size Bed ",
+      images:RishikeshDeluxe,
     },
   ],
 
@@ -373,24 +383,24 @@ export const CITY_ITINERARY = {
       day: 'Day 1 · Arrive & Explore',
       activities: [
         'Check-in at Live Free Hostel',  // TODO: Update activities
-        'Evening walk to Laxman Jhula',
-        'Sunset Ganga aarti at Triveni Ghat',
+        'Local market Exploration - Ram Jhula & Laxman Jhula.',
+        'Sunset Ganga aarti at Triveni Ghat/ Parmarth Niketan.',
       ],
     },
     {
       day: 'Day 2 · Adventure Day',
       activities: [
-        'Morning yoga session',          // TODO: Update activities
-        'White-water river rafting',
-        'Cafe hopping in Tapovan',
+        'Sunrise at Kunjapuri Temple.',          // TODO: Update activities
+        'Cafe hopping in Tapovan.',
+        'Spend evening at Ganga Ghat.',
       ],
     },
     {
       day: 'Day 3 · Culture & Chill',
       activities: [
-        'Beatles Ashram visit',          // TODO: Update activities
-        'Local market shopping',
-        'Bonfire night at the hostel',
+        'Beatles Ashram visit.',          // TODO: Update activities
+        'Trip to Vashisth Gufa.',
+        'Live Music night at the hostel',
       ],
     },
   ],

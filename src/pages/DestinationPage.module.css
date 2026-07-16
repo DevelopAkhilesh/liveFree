@@ -168,7 +168,7 @@
   top: 24px;
   right: 24px;
   max-width: 360px;
-  width: 100%;
+  /* width: 100%; */
   max-height: calc(100% - 48px);
   overflow: auto;
 }

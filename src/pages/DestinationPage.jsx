@@ -5,6 +5,8 @@ import {
   Globe, ParkingCircle, ConciergeBell, UtensilsCrossed, BedDouble,
   Wifi, Wind, PawPrint, KeyRound, ImageOff, ExternalLink,
   Train, Car, Plane,
+  Gamepad,
+  ShieldPlus,
 } from 'lucide-react'
 import { DESTINATIONS, CITY_ROOMS, CITY_ITINERARY, CITY_PROPERTY_POLICY, CITY_MUST_READS } from '../data/siteData'
 import styles from './DestinationPage.module.css'
@@ -60,19 +62,17 @@ const CITY_META = {
   rishikesh: {
     tagline: 'Uttarakhand - Land of Spirituality and Adventure',
     address: 'Laxman Jhula Road, Rishikesh.',
-    about: `Located in Tapovan, just 400 meters away from Lakshman Jhula, Live Free Hostel perfectly blends high-energy adventure with mindful relaxation. Our expansive rooftop terrace offers panoramic views of the rolling green Himalayan foothills and the sacred Ganga River, serving as an idyllic backdrop for morning sunbathing or peaceful rooftop yoga classes.
-Throughout our vibrant and colorful multi-story property, active common areas invite travelers to bond over guitar sessions, shared board games, or competitive foosball and table tennis tournaments. Choose from spacious, bright dorms designed with individual privacy curtains and power outlets, or retreat to comfortable private rooms with ensuite bathrooms after a long day out.
-As a preferred launchpad and trusted base camp for massive “India Hikes” trekking expeditions, our expertly trained team makes transitioning between work and play effortless. Whether you are sipping espresso at our ground-floor, in-house cafe or coordinating a white-water rafting trip from our travel desk, this hostel transforms your mountain escape into an immersive community experience.`,
+    about: `Rishikesh offers backpackers a perfect mix of soul-stirring adventure, vibrant cafe culture, and spiritual depth along the sacred Ganga River. Travelers can experience white-water rafting, hike to hidden waterfalls, go on a Rajaji safari, practice yoga & meditation at peaceful ashrams, and connect in lively local cafes.`,
     checkIn: '13:00 until 23:59',
     checkOut: 'until 10:00',
-    highlights: ['Riverside yoga & meditation', 'White-water river rafting', 'Bungee jumping & zip-lining', 'Laxman Jhula & Ram Jhula', 'Sunset Ganga aarti', 'Beatles Ashram trek'],
+    highlights: ['Laxman Jhula – 400 mtrs', 'Sai Ghat – 600 mtrs', 'Ram Jhula – 2 Kms', 'Parmarth Niketan – 3 Kms', 'Beatles Aashram – 3.5 Kms', 'Triveni Ghat – 4.5 Kms','Kunjapuri Temple – 25 Kms','Neem Beach – 1.8 Kms','Neer Garh Waterfall – 4.5 Kms','Neelkanth Mahadev – 22 Kms','Shivpuri – 12 Kms','Vashisth Cave – 18 Kms'],
     video: 'sPQQLwdT1rQ',
     mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3450.82505972936!2d78.3251937!3d30.127819!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39091644ee11e80d%3A0x9f80ed977d1916c6!2sLive%20Free%20Hostel%20Rishikesh!5e0!3m2!1sen!2sin!4v1779344624890!5m2!1sen!2sin',
     cancellationPolicy: 'Free cancellation up to 48 hours before check-in. After that, the first night is non-refundable. No-show will be charged the full amount.',
     directions: {
-      air: { label: 'By Air', icon: Plane, content: 'Jolly Grant Airport (DED), then taxi to Live Free Rishikesh (~35 mins).' },
-      train: { label: 'By Train', icon: Train, content: 'Haridwar Railway Station, then bus or taxi to Rishikesh (~30 mins).' },
-      road: { label: 'By Road', icon: Car, content: 'From Delhi: NH334 via Haridwar. GPS: Live Free Hostel Rishikesh.' },
+      air: { label: 'By Air', icon: Plane, content: 'Jolly Grant Airport (DED), then taxi to Live Free Rishikesh (~45 mins).' },
+      train: { label: 'By Train', icon: Train, content: 'Yog Nagri Railway Station, then a taxi or Auto to Tapovan (~20 mins).' },
+      road: { label: 'By Road', icon: Car, content: 'From Delhi: NH334 via Haridwar or Take Delhi- Dehradunn expressway. GPS: Live Free Hostel, Rishikesh (~ 4-6 Hrs)' },
     },
     features: [
       { label: 'Wi-Fi', icon: Wifi },
@@ -82,11 +82,11 @@ As a preferred launchpad and trusted base camp for massive “India Hikes” tre
       { label: 'Pets allowed', icon: PawPrint },
     ],
     characteristics: [
-      { label: 'INTERNET CONNECTION', icon: Globe, items: ['Wi-Fi'] },
       { label: 'PARKING', icon: ParkingCircle, items: ['Limited Parking Slots Available'] },
-      { label: 'SERVICES', icon: ConciergeBell, items: ['24-hour reception', 'Online check-in/-out', 'Night security', 'Luggage storage', 'Laundry', 'City Activity assistance'] },
+      {label:"MEDIA & GAMES",icon:Gamepad,items:["Sports Matches & Movie Screening","Board Games","Foosball Table","Table Tennis"]},
+      { label: 'SERVICES', icon: ConciergeBell, items: ['Limited hour reception', 'Daily Housekeeping', 'CCTV', 'Online/ Mobile check-in', 'Luggage storage', 'Laundry Service (Extra)','Tours/Ticket assistance','Power Backup'] },
       { label: 'FOOD', icon: UtensilsCrossed, items: ['In-house Cafe', 'Freshly brewed coffee'] },
-      { label: 'PRIVATE ROOM HAS', icon: BedDouble, items: ['AC', 'En-suite Bathroom', 'Double Bed', 'WiFi'] },
+      { label: 'OTHERS', icon:ShieldPlus, items: ['Common Hangout Areas', 'Non-Smoking Rooms', 'Outdoor Smoking Areas', 'Card/UPI Payments Accepted','Hot & Cold Drinking Water Dispensers'] },
     ],
   },
   dehradun: {
@@ -381,7 +381,7 @@ function GoodToKnowSection({ meta }) {
 }
 
 // ── Select Room ──
-function SelectRoomSection({ rooms, photosByCategory, onOpenLightbox }) {
+function SelectRoomSection({ rooms,  onOpenLightbox }) {
   const [showAllRooms, setShowAllRooms] = useState(false)
   const [imgIndex, setImgIndex] = useState({})
   const [detailsOpen, setDetailsOpen] = useState({})
@@ -405,38 +405,24 @@ function SelectRoomSection({ rooms, photosByCategory, onOpenLightbox }) {
   const origPrice = (price) => Math.round(price / 0.80)
 
   return (
-    <section id="select-room" style={{ padding: '40px 0 56px', background: '#fff', borderTop: '1px solid #efefef' }}>
+     <section id="select-room" style={{ padding: '40px 0 56px', background: '#fff', borderTop: '1px solid #efefef' }}>
       <div className="container">
         <h2 style={{ fontWeight: 800, fontSize: '0.75rem', letterSpacing: '4px', textTransform: 'uppercase', marginBottom: 28, color: '#c0c0c0', textAlign: 'center' }}>SELECT ROOM</h2>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 50 }}>
           {displayedRooms.map((room, roomIdx) => {
-            const categoryPhotos = Object.entries(photosByCategory).find(([k]) =>
-              k.toLowerCase().includes(room.id.replace(/-/g, ' ').toLowerCase()) ||
-              room.name.toLowerCase().includes(k.toLowerCase())
-            )
-            const roomPhotos = categoryPhotos ? categoryPhotos[1] : []
-            const currentImgIdx = imgIndex[room.id] || 0
-            const displayImg = roomPhotos.length > 0 ? cld(roomPhotos[currentImgIdx % roomPhotos.length]) : FALLBACK_IMGS[roomIdx % FALLBACK_IMGS.length]
+            const displayImg = room.images || FALLBACK_IMGS[roomIdx % FALLBACK_IMGS.length]  // NEW — direct read, fallback if missing
             const isSoldOut = room.soldOut || false
             const availText = room.availability || '2 BEDS AVAILABLE'
             const orig = origPrice(room.price)
 
             return (
              <div key={room.id} className={styles.roomCard}>
-                <div className={styles.roomImageWrap} onClick={() => roomPhotos.length > 0 && onOpenLightbox(roomPhotos, currentImgIdx)}>
+                <div className={styles.roomImageWrap} onClick={() => room.image && onOpenLightbox([room.image], 0)}>
                   <img src={displayImg} alt={room.name} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform 0.4s' }}
                     onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.04)'}
                     onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
                   />
-                  {roomPhotos.length > 1 && (
-                    <div style={{ position: 'absolute', bottom: 10, left: '50%', transform: 'translateX(-50%)', display: 'flex', gap: 5 }}>
-                      {roomPhotos.slice(0, 5).map((_, i) => (
-                        <button key={i} onClick={e => { e.stopPropagation(); setImgIndex(prev => ({ ...prev, [room.id]: i })) }}
-                          style={{ width: 6, height: 6, borderRadius: '50%', border: 'none', padding: 0, cursor: 'pointer', background: i === currentImgIdx ? '#fff' : 'rgba(255,255,255,0.45)', transition: 'background 0.2s' }}
-                        />
-                      ))}
-                    </div>
-                  )}
+                  {/* dot indicators removed — only one image per room, nothing to cycle */}
                 </div>
                 <div className={styles.roomBody}>
                   <div className={styles.roomHeadRow}>
@@ -533,16 +519,16 @@ function SelectRoomSection({ rooms, photosByCategory, onOpenLightbox }) {
 
 // ── Features ──
 function FeaturesSection({ meta }) {
-  const [open, setOpen] = useState(false)
+  
   return (
     <section style={{ background: '#fff', borderBottom: '1px solid #f0f0f0' }}>
       <div className="container" style={{ padding: '0 28px' }}>
-        <button onClick={() => setOpen(!open)} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', padding: '22px 0', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left' }}>
+        <button style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', padding: '22px 0', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left' }}>
           <span style={{ fontWeight: 800, fontSize: '0.78rem', letterSpacing: '3.5px', textTransform: 'uppercase', color: '#aaa' }}>FEATURES / CONVENIENCES</span>
-          <span style={{ width: 32, height: 32, borderRadius: '50%', border: '1.5px solid #ddd', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#666', fontSize: '1.2rem', fontWeight: 300, flexShrink: 0, transition: 'all 0.25s', transform: open ? 'rotate(45deg)' : 'none' }}>+</span>
+          {/* <span style={{ width: 32, height: 32, borderRadius: '50%', border: '1.5px solid #ddd', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#666', fontSize: '1.2rem', fontWeight: 300, flexShrink: 0, transition: 'all 0.25s', transform: open ? 'rotate(45deg)' : 'none' }}>+</span> */}
         </button>
         <AnimatePresence>
-          {open && (
+          
             <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.28 }} style={{ overflow: 'hidden' }}>
               <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', paddingBottom: 24 }}>
                 {meta.features.map(f => {
@@ -555,7 +541,7 @@ function FeaturesSection({ meta }) {
                 })}
               </div>
             </motion.div>
-          )}
+          
         </AnimatePresence>
       </div>
     </section>
@@ -604,14 +590,14 @@ function ReachUsSection({ meta, dest }) {
             <iframe src={meta.mapSrc} width="100%" height="100%" style={{ border: 0, display: 'block' }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title={`Live Free ${dest.name}`} />
           </div>
           <div className={styles.mapInfoCard} style={{ background: 'rgba(26,26,26,0.92)', backdropFilter: 'blur(4px)', borderRadius: 14, padding: '24px 26px', color: '#fff', boxShadow: '0 8px 32px rgba(0,0,0,0.5)', border: '1px solid rgba(255,255,255,0.08)' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 16 }}>
+            {/* <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 16 }}>
               <MapPin size={18} style={{ color: 'var(--primary-light)', flexShrink: 0 }} />
               <span style={{ fontWeight: 700, fontSize: '1rem' }}>Live Free Hostel</span>
-            </div>
-            <p style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, marginBottom: 20 }}>{meta.address}</p>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-              {meta.highlights.slice(0, 5).map(h => (
-                <div key={h} style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: '0.82rem', color: 'rgba(255,255,255,0.75)' }}>
+            </div> */}
+            {/* <p style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, marginBottom: 20 }}>{meta.address}</p> */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 8,height:150, }}>
+              {meta.highlights.map(h => (
+                <div key={h} style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: '0.82rem', color: 'rgba(255,255,255,0.75)',}}>
                   <span style={{ color: 'var(--primary-light)', flexShrink: 0 }}>📍</span> {h}
                 </div>
               ))}
@@ -639,8 +625,7 @@ function ReachUsSection({ meta, dest }) {
 
 // ── Travel Itinerary ──
 function ItinerarySection({ itinerary, dest, meta }) {
-  const [expanded, setExpanded] = useState(false)
-  const previewText = `${meta.about.substring(0, 200)}...`
+  
   return (
     <section id="travel-itinerary" style={{ padding: '64px 0', background: '#fdf6f0' }}>
       <div className={`container ${styles.itineraryGrid}`}>
@@ -649,12 +634,12 @@ function ItinerarySection({ itinerary, dest, meta }) {
             <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&q=80" alt="Travel" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           </div>
           <div style={{ marginTop: 20, padding: '24px 28px', background: '#fff', borderRadius: 14, boxShadow: '0 2px 12px rgba(0,0,0,0.06)' }}>
-            <p style={{ fontSize: '0.95rem', color: '#666', lineHeight: 1.8, margin: 0 }}>{expanded ? meta.about : previewText}</p>
-            <button type="button" onClick={() => setExpanded(v => !v)}
+            <p style={{ fontSize: '0.95rem', color: '#666', lineHeight: 1.8, margin: 0 }}>{ meta.about}</p>
+            {/* <button type="button" onClick={() => setExpanded(v => !v)}
               style={{ display: 'inline-flex', alignItems: 'center', gap: 8, marginTop: 18, padding: '10px 18px', borderRadius: 999, background: 'linear-gradient(135deg, var(--primary), var(--primary-dark))', color: '#fff', fontSize: '0.82rem', fontWeight: 800, letterSpacing: '0.04em', textTransform: 'uppercase', boxShadow: '0 10px 24px rgba(232,93,58,0.22)', transition: 'transform 0.22s ease, box-shadow 0.22s ease', border: 'none', cursor: 'pointer' }}
               onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 14px 30px rgba(232,93,58,0.3)' }}
               onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 10px 24px rgba(232,93,58,0.22)' }}
-            >{expanded ? 'Show Less' : 'Read More'}</button>
+            >{expanded ? 'Show Less' : 'Read More'}</button> */}
           </div>
         </div>
         <div>
@@ -790,7 +775,7 @@ export default function DestinationPage({ city }) {
       <GallerySection photosByCategory={photosByCategory} allPhotos={allPhotos} onOpenLightbox={openLightbox} />
       <HeroInfoSection dest={dest} meta={meta} />
       <GoodToKnowSection meta={meta} />
-      <SelectRoomSection rooms={rooms} photosByCategory={photosByCategory} onOpenLightbox={openLightbox} />
+      <SelectRoomSection rooms={rooms}  onOpenLightbox={openLightbox} />
       <FeaturesSection meta={meta} />
       <CharacteristicsSection meta={meta} />
       <ReachUsSection meta={meta} dest={dest} />

@@ -12,6 +12,14 @@
   padding: 90px 0 28px;
 }
 
+.introBox {
+  border: 2px solid #000000;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 0;
+  max-width: 100%;
+}
+
 .eyebrow {
   display: block;
   font-size: 0.9rem;
@@ -45,8 +53,7 @@
 
 /* SIDEBAR NAV */
 .nav {
-  position: sticky;
-  top: 90px;
+  display: none !important;
 }
 
 .nav ul {
@@ -214,5 +221,10 @@
 
   .title {
     font-size: 1.7rem;
+  }
+
+  .introBox {
+    padding: 16px;
+    border-radius: 8px;
   }
 }

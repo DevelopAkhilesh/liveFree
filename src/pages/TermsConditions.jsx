@@ -175,11 +175,13 @@ export default function TermsConditions() {
     <section className={styles.page}>
       <div className={styles.heroBand}>
         <div className="container">
-          <span className={styles.eyebrow}>Last Updated · Effective Immediately</span>
-          <h1 className={styles.title}>Terms and Conditions</h1>
-          <p className={styles.subtitle}>
-            Please read these terms and conditions of use carefully before using this site.
-          </p>
+          <div className={styles.introBox}>
+            <span className={styles.eyebrow}>Last Updated · Effective Immediately</span>
+            <h1 className={styles.title}>Terms and Conditions</h1>
+            <p className={styles.subtitle}>
+              Please read these terms and conditions of use carefully before using this site.
+            </p>
+          </div>
         </div>
       </div>
 

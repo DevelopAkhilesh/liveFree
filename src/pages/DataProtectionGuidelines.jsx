@@ -5,7 +5,7 @@ import styles from './DataProtectionGuidelines.module.css'
 const SECTIONS = [
   {
     id: 'overview',
-    // label: 'Overview',
+    label: 'Overview',
     blocks: [
       { type: 'p', text: "At Live Free (\"Live Free\", \"Company\", \"we\", \"our\"), the privacy, security, and protection of guest information remain a top priority." },
       { type: 'p', text: "We wish to inform all guests that there has been an increase in phishing attempts, fraudulent calls, fake payment requests, impersonation scams, spoofed emails, and unauthorized communications targeting hospitality customers across the industry." },
@@ -14,7 +14,7 @@ const SECTIONS = [
   },
   {
     id: 'official-communication',
-    // label: 'Official Communication Policy',
+    label: 'Official Communication Policy',
     blocks: [
       { type: 'p', text: "Live Free representatives will communicate with guests only through officially authorized channels, including:" },
       {
@@ -31,7 +31,7 @@ const SECTIONS = [
   },
   {
     id: 'sensitive-info',
-    // label: 'Info We Will Never Request',
+    label: 'Info We Will Never Request',
     blocks: [
       { type: 'p', text: "For security reasons, Live Free personnel will never request the following through calls, WhatsApp, SMS, email, or chat:" },
       {
@@ -51,7 +51,7 @@ const SECTIONS = [
   },
   {
     id: 'payment-safety',
-    // label: 'Payment Safety Advisory',
+    label: 'Payment Safety Advisory',
     blocks: [
       { type: 'p', text: "Before making any payment, guests must verify:" },
       {
@@ -68,7 +68,7 @@ const SECTIONS = [
   },
   {
     id: 'guest-responsibility',
-    // label: 'Guest Responsibility',
+    label: 'Guest Responsibility',
     blocks: [
       { type: 'p', text: "Guests are strongly advised to:" },
       {
@@ -86,7 +86,7 @@ const SECTIONS = [
   },
   {
     id: 'security-commitment',
-    // label: 'Our Data Security Commitment',
+    label: 'Our Data Security Commitment',
     blocks: [
       { type: 'p', text: "Live Free maintains reasonable administrative, technical, and operational safeguards to protect guest information, including but not limited to:" },
       {
@@ -105,7 +105,7 @@ const SECTIONS = [
   },
   {
     id: 'limitation-of-liability',
-    // label: 'Limitation of Liability',
+    label: 'Limitation of Liability',
     blocks: [
       { type: 'p', text: "To the fullest extent permissible under applicable law, Live Free, its partners, employees, affiliates, and representatives shall not be liable for:" },
       {
@@ -123,7 +123,7 @@ const SECTIONS = [
   },
   {
     id: 'incident-reporting',
-    // label: 'Incident Reporting',
+    label: 'Incident Reporting',
     blocks: [
       { type: 'p', text: "If you receive suspicious communication claiming to be from Live Free, please report it immediately to our Guest Support Desk:" },
       {
@@ -138,7 +138,7 @@ const SECTIONS = [
   },
   {
     id: 'disclaimer',
-    // label: 'Disclaimer',
+    label: 'Disclaimer',
     blocks: [
       { type: 'p', text: "This advisory is issued in the interest of guest safety and digital security. Continued use of Live Free services implies acknowledgment of cyber risks inherent in digital communications and acceptance of responsibility to exercise due caution." },
     ],
@@ -181,12 +181,14 @@ export default function DataProtectionGuidelines() {
     <section className={styles.page}>
       <div className={styles.heroBand}>
         <div className="container">
-          <span className={styles.eyebrow}>Cybersecurity Advisory · Effective Immediately</span>
-          <h1 className={styles.title}>Data Protection Guidelines</h1>
-          <p className={styles.subtitle}>
-            How to spot fraudulent communications claiming to be from Live Free, and what we do — and never
-            do — to keep your information safe.
-          </p>
+          <div className={styles.introBox}>
+            <span className={styles.eyebrow}>Cybersecurity Advisory · Effective Immediately</span>
+            <h1 className={styles.title}>Data Protection Guidelines</h1>
+            <p className={styles.subtitle}>
+              How to spot fraudulent communications claiming to be from Live Free, and what we do — and
+              never do — to keep your information safe.
+            </p>
+          </div>
         </div>
       </div>
 
