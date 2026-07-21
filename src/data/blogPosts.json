@@ -1,6 +1,7 @@
 [
   {
     "slug": "one-of-the-thrilling-experiences-in-rishikesh-white-water-ra",
+    "city":"rishikesh",
     "title": "One of the thrilling experiences in Rishikesh: White Water Rafting",
     "excerpt": "River rafting in Rishikesh is an experience that will get your pulse racing, making it one of the most unforgettable trips of your life. Rafting with the...",
     "cover": "/blog-images/one-of-the-thrilling-experiences-in-rishikesh-white-water-ra-1.webp",
@@ -8,6 +9,7 @@
   },
   {
     "slug": "kyarki-sunset-point-a-breathtaking-bird-s-eye-view-of-rishik",
+    "city":"rishikesh",
     "title": "Kyarki Sunset Point – A Breathtaking Bird’s Eye View of Rishikesh",
     "excerpt": "In the heart of the Himalayan foothills, Rishikesh unfolds its mystical charm, enchanting travelers with its spiritual ambiance and natural beauty. Among...",
     "cover": "/blog-images/kyarki-sunset-point-a-breathtaking-bird-s-eye-view-of-rishik-5.webp",
@@ -15,6 +17,7 @@
   },
   {
     "slug": "rishikesh-s-evening-ganga-aarti-a-soul-stirring-experience-a",
+    "city":"rishikesh",
     "title": "Rishikesh’s Evening Ganga Aarti: A Soul-Stirring Experience at Triveni Ghat and Paramarth Niketan",
     "excerpt": "Rishikesh, the land of spirituality and tranquility, holds a special place in the hearts of travelers seeking solace and a deeper connection with the...",
     "cover": "/blog-images/rishikesh-s-evening-ganga-aarti-a-soul-stirring-experience-a-9.webp",
@@ -22,6 +25,7 @@
   },
   {
     "slug": "a-religious-odyssey-exploring-the-sacred-temples-of-varanasi",
+    "city":"varanasi",
     "title": "A Religious Odyssey: Exploring the Sacred Temples of Varanasi",
     "excerpt": "Varanasi, also known as Kashi, holds a sacred place in the hearts of millions of Hindus and spiritual seekers worldwide. Revered as one of the oldest living...",
     "cover": "/blog-images/a-religious-odyssey-exploring-the-sacred-temples-of-varanasi-13.webp",
@@ -29,6 +33,7 @@
   },
   {
     "slug": "banaras-food-tour-best-food-at-the-right-place",
+    "city":"varanasi",
     "title": "Banaras Food Tour – Best Food at the Right Place",
     "excerpt": "Banaras, also known as Varanasi, is a city that tantalizes the taste buds with its rich culinary heritage and diverse flavors. As one of the oldest...",
     "cover": "/blog-images/banaras-food-tour-best-food-at-the-right-place-17.webp",
@@ -36,6 +41,7 @@
   },
   {
     "slug": "unraveling-the-soul-of-banaras-don-t-miss-to-visit-these-gha",
+    "city":"varanasi",
     "title": "Unraveling the Soul of Banaras: Don’t Miss to Visit These Ghats",
     "excerpt": "Banaras, also known as Varanasi, is a city that pulsates with spiritual energy and cultural vibrancy. One of the most enchanting aspects of this sacred city...",
     "cover": "/blog-images/unraveling-the-soul-of-banaras-don-t-miss-to-visit-these-gha-21.webp",
@@ -113,6 +119,7 @@
   },
   {
     "slug": "banaras-and-muslim-culture-a-tapestry-of-architectural-splen",
+    "city":"varanasi",
     "title": "Banaras and Muslim Culture: A Tapestry of Architectural Splendor",
     "excerpt": "Banaras, also known as Varanasi, is a city renowned for its deep-rooted spiritual heritage in Hinduism. However, it is also a melting pot of diverse...",
     "cover": "/blog-images/banaras-and-muslim-culture-a-tapestry-of-architectural-splen-67.webp",
@@ -120,6 +127,7 @@
   },
   {
     "slug": "a-day-trip-from-varanasi-to-sarnath-unraveling-the-spiritual",
+    "city":"varanasi",
     "title": "A day trip from Varanasi to Sarnath: Unraveling the Spiritual Essence of Buddhism",
     "excerpt": "Sarnath, located just a short distance away from the bustling city of Varanasi, is a tranquil and historically significant destination that holds immense...",
     "cover": "/blog-images/a-day-trip-from-varanasi-to-sarnath-unraveling-the-spiritual-71.webp",
@@ -127,6 +135,7 @@
   },
   {
     "slug": "two-ghats-in-varanasi-that-reflect-the-concept-of-the-cycle-",
+    "city":"varanasi",
     "title": "Two ghats in Varanasi that reflect the concept of the Cycle of Life –  Manikarnika & Harishchandra Ghat",
     "excerpt": "Varanasi, the ancient city on the banks of the sacred Ganges River, is steeped in spirituality and regarded as the spiritual capital of India. It is home to...",
     "cover": "/blog-images/two-ghats-in-varanasi-that-reflect-the-concept-of-the-cycle--75.webp",
@@ -134,6 +143,7 @@
   },
   {
     "slug": "subhe-ae-banaras-at-assi-ghat-embracing-the-essence-of-morni",
+    "city":"varanasi",
     "title": "Subhe – Ae – Banaras at Assi Ghat: Embracing the Essence of Morning in Varanasi",
     "excerpt": "As the sun peeks over the horizon and the city slowly awakens from its slumber, Assi Ghat in Varanasi comes alive with an enchanting charm known as “Subhe –...",
     "cover": "/blog-images/subhe-ae-banaras-at-assi-ghat-embracing-the-essence-of-morni-79.webp",
@@ -141,6 +151,7 @@
   },
   {
     "slug": "boat-rides-on-the-river-ganga-in-banaras-embarking-on-a-spir",
+    "city":"varanasi",
     "title": "Boat Rides on the River Ganga in Banaras: Embarking on a Spiritual Odyssey",
     "excerpt": "Banaras, also known as Varanasi, is a city that breathes spirituality and is steeped in a rich cultural heritage. One of the most enchanting and...",
     "cover": "/blog-images/boat-rides-on-the-river-ganga-in-banaras-embarking-on-a-spir-83.webp",
@@ -148,6 +159,7 @@
   },
   {
     "slug": "unraveling-the-mystique-10-unique-experiences-in-varanasi",
+    "city":"varanasi",
     "title": "Unraveling the Mystique: 10 Unique Experiences in Varanasi",
     "excerpt": "Varanasi, also known as Kashi or Banaras, is a city like no other. Nestled along the sacred Ganges River, this spiritual and cultural epicenter of India has...",
     "cover": "/blog-images/unraveling-the-mystique-10-unique-experiences-in-varanasi-87.webp",
@@ -155,6 +167,7 @@
   },
   {
     "slug": "journey-to-serenity-neelkanth-temple-jhilmil-cave-waterfall-",
+    "city":"rishikesh",
     "title": "Journey to Serenity: Neelkanth Temple, Jhilmil Cave & Waterfall Tour",
     "excerpt": "Are you an explorer at heart and crave to delve into the mystical beauty of ancient temples and the awe-inspiring grandeur of waterfalls? If so, then a...",
     "cover": "/blog-images/journey-to-serenity-neelkanth-temple-jhilmil-cave-waterfall--91.webp",
@@ -162,6 +175,7 @@
   },
   {
     "slug": "a-beautiful-day-out-to-vashishta-cave-and-shivpuri-beach",
+    "city":"rishikesh",
     "title": "A beautiful day out to Vashishta Cave and Shivpuri Beach",
     "excerpt": "Are you tired of your daily hustle and bustle and in desperate need of a tranquil escape? Look no further! Nestled in the enchanting coastal state of Goa,...",
     "cover": "/blog-images/a-beautiful-day-out-to-vashishta-cave-and-shivpuri-beach-95.webp",
@@ -169,6 +183,7 @@
   },
   {
     "slug": "unraveling-treasures-exploring-the-best-local-market-shoppin",
+    "city":"rishikesh",
     "title": "Unraveling Treasures: Exploring the Best Local Market Shopping in Rishikesh",
     "excerpt": "Nestled in the picturesque lap of the Himalayas and nestled along the sacred Ganges River, Rishikesh is not only a spiritual haven but also a vibrant...",
     "cover": "/blog-images/unraveling-treasures-exploring-the-best-local-market-shoppin-99.webp",
@@ -176,6 +191,7 @@
   },
   {
     "slug": "cascading-beauty-rishikesh-s-hidden-waterfall-gems-await-you",
+    "city":"rishikesh",
     "title": "Cascading Beauty: Rishikesh’s Hidden Waterfall Gems Await You!",
     "excerpt": "As a self-proclaimed “waterfall person,” my heart is always drawn to the majestic allure of cascading waters. Rishikesh, a land of spirituality and...",
     "cover": "/blog-images/cascading-beauty-rishikesh-s-hidden-waterfall-gems-await-you-103.webp",
@@ -183,6 +199,7 @@
   },
   {
     "slug": "embrace-the-dawn-my-exhilarating-experience-on-the-kunjapuri",
+    "city":"rishikesh",
     "title": "Embrace the Dawn: My Exhilarating Experience on the Kunjapuri Temple Sunrise Trek",
     "excerpt": "Nestled in the serene foothills of the Garhwal Himalayas, Rishikesh is a mecca for adventure enthusiasts seeking a soul-stirring connection with nature....",
     "cover": "/blog-images/embrace-the-dawn-my-exhilarating-experience-on-the-kunjapuri-107.webp",
@@ -190,6 +207,7 @@
   },
   {
     "slug": "have-you-indulged-in-these-adventures-of-rishikesh",
+    "city":"rishikesh",
     "title": "Have you indulged in these adventures of Rishikesh?",
     "excerpt": "Nestled in the foothills of the Himalayas and cradled by the sacred Ganges River, Rishikesh has earned its reputation as the “Adventure Capital of India.”...",
     "cover": "/blog-images/have-you-indulged-in-these-adventures-of-rishikesh-111.webp",
@@ -239,6 +257,7 @@
   },
   {
     "slug": "a-perfect-stay-by-the-assi-ghat-live-free-banaras",
+    "city":"varanasi",
     "title": "A perfect stay by the Assi Ghat – Live Free Banaras",
     "excerpt": "The sacred city of Banaras, known as Varanasi, is a place that beckons pilgrims and travelers from across the globe. It’s a city of spiritual awakening,...",
     "cover": "/blog-images/a-perfect-stay-by-the-assi-ghat-live-free-banaras-151.webp",
@@ -246,6 +265,7 @@
   },
   {
     "slug": "a-culinary-expedition-through-banaras-unveiling-the-street-f",
+    "city":"varanasi",
     "title": "A Culinary Expedition Through Banaras: Unveiling the Street Food Treasures",
     "excerpt": "As the sun dipped below the sacred waters of the Ganges, I found myself in the heart of Banaras, a city that pulsates with spirituality and a deep-rooted...",
     "cover": "/blog-images/a-culinary-expedition-through-banaras-unveiling-the-street-f-157.webp",
@@ -253,6 +273,7 @@
   },
   {
     "slug": "journal-of-spiritual-encounters-meeting-naga-sadhus-and-spir",
+    "city":"varanasi",
     "title": "Journal of Spiritual Encounters: Meeting Naga Sadhus and Spiritual Gurus in Varanasi",
     "excerpt": "As I stepped off the train and onto the platform at Varanasi Junction, I could feel a wave of anticipation and excitement washing over me. Varanasi, the...",
     "cover": "/blog-images/journal-of-spiritual-encounters-meeting-naga-sadhus-and-spir-161.webp",
@@ -260,6 +281,7 @@
   },
   {
     "slug": "wandering-through-the-enchanting-lanes-of-banaras",
+    "city":"varanasi",
     "title": "Wandering Through the Enchanting Lanes of Banaras",
     "excerpt": "Banaras, or Varanasi as it’s officially known, is a city that captivates the soul with its spirituality, but it also enchants the eyes with its unique...",
     "cover": "/blog-images/wandering-through-the-enchanting-lanes-of-banaras-168.webp",
@@ -267,6 +289,7 @@
   },
   {
     "slug": "embracing-divinity-a-day-tour-of-religious-temples-in-banara",
+    "city":"varanasi",
     "title": "Embracing Divinity: A Day Tour of Religious Temples in Banaras",
     "excerpt": "Banaras, the spiritual heart of India, is a tapestry of ancient temples and sacred sites that attract pilgrims and seekers from all corners of the world....",
     "cover": "/blog-images/embracing-divinity-a-day-tour-of-religious-temples-in-banara-175.webp",
@@ -274,6 +297,7 @@
   },
   {
     "slug": "a-beautiful-day-trip-from-varanasi-to-sarnath",
+    "city":"varanasi",
     "title": "A beautiful day trip from Varanasi to Sarnath",
     "excerpt": "Varanasi, with its divine charm and spiritual aura, has been a revelation for my soul. Yet, the desire to delve deeper into the roots of Buddhism led me to...",
     "cover": "/blog-images/a-beautiful-day-trip-from-varanasi-to-sarnath-185.webp",
@@ -282,12 +306,14 @@
   {
     "slug": "ghats-of-varanasi",
     "title": "Ghats of Varanasi",
+    "city":"varanasi",
     "excerpt": "I sat on the rusty steps with a little notebook and pen in my hands. My fingers moved to break free as the scented breeze filled me inside. Flowers grew in...",
     "cover": "/blog-images/ghats-of-varanasi-194.webp",
     "contentHtml": "<div class=\"post-body\">\n<p>I sat on the rusty steps with a little notebook and pen in my hands. My fingers moved to break free as the scented breeze filled me inside. Flowers grew in the saddest part of me, every word I scribbled spoke the best of me. The pigeons cooed the triumph of Buddha’s sermons. My eyes rolled upwards to the sight of people rowing in the boats. The cheer of Ganga was remarkable.</p>\n<p>Around 3000 years old, Varanasi located in the northern region of India gracefully drapes the holy Ganga to bestow salvation to many. Just like generation Z quotes “perfect as popcorn to a movie,” in the same way, Varanasi and Ganga are the perfect match made in heaven.</p>\n<p>The Aryans called it Kashi, Jatakas named it Banaras, many called it Rudravasa the residing place of Shiva, and Mahashamshana for being the biggest cremation grounds.</p>\n<p>Steps leading down to the Ganga are mystical. Varanasi houses around 100 ghats. Thousands hurdle down these stairs to join the aarti while many start their day taking a dip in the holy waters of Ganga. It is incredible to realize that these very stairs I sat upon have been adding ambiguous meaning to each of our lives.</p>\n<p>The ghats dated back to the 14th century and mostly built by Maratha rulers in the 18th century planted curiosity in me to explore the oldest living city in the world.</p>\n<h4><strong>Take a walk along with me to the significant ghats of Varanasi.</strong></h4>\n<h4><strong>Assi Ghat</strong></h4>\n<img alt=\"\" loading=\"lazy\" src=\"/blog-images/ghats-of-varanasi-194.webp\"/>\n<p>The vibrant Assi Ghat is the southernmost ghat of Banaras. It is built on the confluence of river Ganga and Assi. The ancient text of Kashi Khand says that the person who takes a dip here even once in his life will get Punya of all the Tirthas. The faith draws hundreds of pilgrims here. After taking a dip believers visit Shiva Lingham under the pipal tree at the ghat. One should not miss the morning aarti here. Subha Banaras a cultural event organized by local authorities that gives a good peek of yoga and music.</p>\n<h4><strong>Dashashwamedh Ghat</strong></h4>\n<img alt=\"\" loading=\"lazy\" src=\"/blog-images/ghats-of-varanasi-195.webp\"/>\n<p>The most significant ghat of Varanasi is Dashashwamedh Ghat. The Hindu legend goes, Lord Brahma constructed this ghat to welcome Lord Shiva. It is also believed that Ashwamedha Yagya was performed here by Brahma. Floating on a boat ride to witness the lamps swirled by the priests paying respect to Mother Ganga in the evening is an overwhelming experience.</p>\n<h4><strong>Chet Singh Ghat</strong></h4>\n<img alt=\"\" loading=\"lazy\" src=\"/blog-images/ghats-of-varanasi-196.webp\"/>\n<p>If you fancy modern history like me then a visit to Chet Singh Ghat would be the star experience for you. Maharaja Chet Singh constructed a small for here in mid-18th century. Touching the walls of the fort draws you back to the days when a fierce battle was fought here between East India Company and Chet Singh. A sense of grieve triggered my spirit when I was told the fort was captured and the maharaja was imprisoned here. The beautiful ghat is the best spot to sit with your journal with the birds flocking around you.</p>\n<h4>Darbhanga Ghat</h4>\n<img alt=\"\" loading=\"lazy\" src=\"/blog-images/ghats-of-varanasi-197.webp\"/>\n<p>An Instagram blog with pictures of Darbhanga Ghat would boom you with compliments. The towers and turrets of Dharbhanga Palace are delights to the touristy eyes. It is also home to a Shiva Temple. Take a stroll on this ghat with your ukulele to spread love.</p>\n<h4><strong>Manikarnika Ghat</strong></h4>\n<img alt=\"\" loading=\"lazy\" src=\"/blog-images/ghats-of-varanasi-198.webp\"/>\n<p>The most auspicious among all, Manikarnika Ghat is a place where the life cycle ends. One could persuade salvation when cremated here. The ghat is stacked up with piles of woods to perform the Hindu cremation rituals. It is believed when the Goddess Sati jumped into the fire her earrings fell at this ghat. Therefore, Manikarnika literally means earrings. The air is filled with smoke here. The place makes you realize how inevitable death is.</p>\n<h4><strong>Raj Ghat</strong></h4>\n<p>Situated in the southern part of Varanasi, Kedar ghat is named after Lord Shiva. It has a Gauri Kund, and the water of it is believed to have healing properties. The steps of the ghat are crowded with saints and devotees.</p>\n<h4><strong>Kedar Ghat</strong></h4>\n<img alt=\"\" loading=\"lazy\" src=\"/blog-images/ghats-of-varanasi-199.webp\"/>\n<p>Situated in the southern part of Varanasi, Kedar ghat is named after Lord Shiva. It has a Gauri Kund, and the water of it is believed to have healing properties. The steps of the ghat are crowded with saints and devotees.</p>\n<h4><strong>Tulsi Ghat</strong></h4>\n<img alt=\"\" loading=\"lazy\" src=\"/blog-images/ghats-of-varanasi-200.webp\"/>\n<p>Another important ghat of Varanasi is Tulsi Ghat. The ghat was built in respect of the 16th-century poet Goswami Tulsidas. He wrote the epic poem Ramcharitramanas when he was in Varanasi. Best time to visit here is during Diwali when Krishna Leela is staged.</p>\n<h4>Harishchandra Ghat</h4>\n<img alt=\"\" loading=\"lazy\" src=\"/blog-images/ghats-of-varanasi-201.webp\"/>\n<p>Founded to preserve truth and charity by King Harishchandra, this ghat is one of the oldest cremations ghats in Varanasi. It is believed the person whose last rites are performed here gets salvation.</p>\n<h2>Realted Posts :</h2>\n<img alt=\"\" loading=\"lazy\" src=\"/blog-images/ghats-of-varanasi-202.webp\"/>\n<h3><a href=\"https://lfwp.ddev.site/a-religious-odyssey-exploring-the-sacred-temples-of-varanasi/\">\n\t\t\t\tA Religious Odyssey: Exploring the Sacred Temples of Varanasi\t\t\t</a></h3>\n<img alt=\"\" loading=\"lazy\" src=\"/blog-images/ghats-of-varanasi-203.webp\"/>\n<h3><a href=\"https://lfwp.ddev.site/banaras-food-tour-best-food-at-the-right-place/\">\n\t\t\t\tBanaras Food Tour – Best Food at the Right Place\t\t\t</a></h3>\n<img alt=\"\" loading=\"lazy\" src=\"/blog-images/ghats-of-varanasi-204.webp\"/>\n<h3><a href=\"https://lfwp.ddev.site/unraveling-the-soul-of-banaras-dont-miss-to-visit-these-ghats/\">\n\t\t\t\tUnraveling the Soul of Banaras: Don’t Miss to Visit These Ghats\t\t\t</a></h3>\n</div>"
   },
   {
     "slug": "a-live-free-guide-to-the-cafes-of-rishikesh",
+    "city":"rishikesh",
     "title": "A Live Free Guide to the Cafes of Rishikesh",
     "excerpt": "There is no shortage of small cafes in the Laxman Jhula area of Rishikesh, and it can be really hit or miss just trying random cafes. Depending on what you...",
     "cover": "/blog-images/a-live-free-guide-to-the-cafes-of-rishikesh-205.webp",
@@ -295,6 +321,7 @@
   },
   {
     "slug": "listening-closely-to-rishikesh",
+    "city":"rishikesh",
     "title": "Listening closely to Rishikesh",
     "excerpt": "The cold water was embracing my body. The hullabaloo in my mind was put to rest with every wave of scented flowers. I was amenable to this change. Just like...",
     "cover": "/blog-images/listening-closely-to-rishikesh-217.webp",
@@ -302,6 +329,7 @@
   },
   {
     "slug": "a-stroll-through-rishikesh",
+    "city":"rishikesh",
     "title": "A Stroll Through Rishikesh",
     "excerpt": "Rishikesh is a happening city, with over 100 yoga ashrams, countless beautiful cafes, shops, swerving motorbikes, cows, and autorickshaws galore – it can be...",
     "cover": "/blog-images/a-stroll-through-rishikesh-221.webp",
@@ -309,6 +337,7 @@
   },
   {
     "slug": "that-awesome-day-at-live-free-hostel-rishikesh",
+    "city":"rishikesh",
     "title": "That Awesome day At Live Free Hostel, Rishikesh",
     "excerpt": "While taking a sip from my chai, I’m listening to a fellow traveler excitingly talk about his yoga training. Two other travelers are playing the Spanish...",
     "cover": "/blog-images/that-awesome-day-at-live-free-hostel-rishikesh-228.webp",
@@ -316,6 +345,7 @@
   },
   {
     "slug": "good-morning-kunjapuri",
+    "city":"rishikesh",
     "title": "Good morning Kunjapuri!",
     "excerpt": "So, as I casually roll out of my bed at 4 am, I am thinking why did I sign up for this. I mean it’s 4 am Come on, go back to sleep woman, I say to myself....",
     "cover": "/blog-images/good-morning-kunjapuri-236.webp",
@@ -323,6 +353,7 @@
   },
   {
     "slug": "cheap-stay-in-rishikesh-pay-less-and-relax-more",
+    "city":"rishikesh",
     "title": "Cheap Stay in Rishikesh: Pay Less and Relax More",
     "excerpt": "Traveling has become hard for many and the only factors which stop us from taking this path of life are money and time. Money, we understand and we don’t...",
     "cover": "/blog-images/cheap-stay-in-rishikesh-pay-less-and-relax-more-245.webp",
@@ -330,6 +361,7 @@
   },
   {
     "slug": "backpacking-in-rishikesh-here-are-all-the-things-you-need-to",
+    "city":"rishikesh",
     "title": "Backpacking in Rishikesh – Here are all the things you need to know before your trip",
     "excerpt": "If you are planning a trip to Rishikesh which one of the top 10 destinations for backpackers, you will need to be prepared. Be prepared to be blown away by...",
     "cover": "/blog-images/backpacking-in-rishikesh-here-are-all-the-things-you-need-to-250.webp",
@@ -338,6 +370,7 @@
   {
     "slug": "weekend-in-rishikesh",
     "title": "Weekend in Rishikesh",
+    "city":"rishikesh",
     "excerpt": "If you’re thinking about visiting Rishikesh for a weekend, stop thinking about it, and book your bus ticket now! Rishikesh has an activity for every mood....",
     "cover": "/blog-images/weekend-in-rishikesh-254.webp",
     "contentHtml": "<div class=\"post-body\">\n<p>If you’re thinking about visiting Rishikesh for a weekend, stop thinking about it, and book your bus ticket now! Rishikesh has an activity for every mood. Get your heart pumping on the Ganga River in an inflatable kayak, or slow down and relax with a yoga class. I’ve done a bit of both and have come up with a 3-day itinerary for travelers interested in exploring Rishikesh. .</p>\n<p>I stayed at Live Free Hostel which made it easy to make the most of my weekend. Grab your best friends or tell the family to pack their bags, here we go!</p>\n<h4><strong>Friday</strong></h4>\n<p>Whether you’re arriving by bus, car, train, or plane; arrive early! Once you get settled into your room, put on your walking shoes and head to the Laxman Jhula Bridge. You’ll have the opportunity to visit many smaller temples as well as the 13-story Trayambakeshwar Temple.</p>\n<img alt=\"\" loading=\"lazy\" src=\"/blog-images/weekend-in-rishikesh-254.webp\"/>\n<p>There are plenty of souvenir shops and restaurants along the way. If you’re hungry (for food and a view), stop at Cafe Delmar/Beatles Cafe before crossing the bridge. This is an open-air cafe with tasty food &amp; drink, an excellent view of the Ganga, and a chill vibe to settle you into vacation mode.</p>\n<p>Once you cross the bridge, go left to walk through the Trayambakeshwar Temple. Afterward, head to the right of the bridge. If you’ve got the energy and time, it’s about a 20-minute walk to Ganga Beach. Don’t forget your selfie stick 😉</p>\n<h4><strong>Saturday</strong></h4>\n<p>Wake up for 8:30 am yoga on the rooftop, at the hostel. This will get your body limber for an afternoon of kayaking or rafting. Arpan, from Live Free Hostel, suggested I try a tandem kayak. I am so glad I did! It was absolutely exhilarating.</p>\n<p>It’s an inflatable kayak and is much easier and cheaper than regular whitewater kayaking. It’s a lot more involved than the 10 person rafts yet fun and safe for beginners. I was nervous at first, but after the half-hour lesson we had in the water, I felt confident and excited to go down the rapids. Not to mention we were provided with a wetsuit, life jacket, and helmet. There’s also an opportunity to go cliff jumping if you’re feeling extra daring!</p>\n<img alt=\"\" loading=\"lazy\" src=\"/blog-images/weekend-in-rishikesh-255.webp\"/>\n<p>After all of the excitement, you’ll have a chance to relax before attending the Ganga Aarti at Triveni Ghat. It’s nice to arrive a bit early, around 5:30 pm. Spend some time walking the sacred ghat taking in the auspicious and spiritual air. Everyone is invited to enjoy in the dance circle at the end of the ceremony. The music is provided by a 5-piece band. It’s very lively and a lot of fun to dance or clap along.</p>\n<p>For dinner, I highly recommend you eat at Rajasthani Sweets Mishthan Bhandar. If you have to wait, you won’t regret it. Order from the Rajasthani section in the menu. There’s no way to forget the dessert, it’s conveniently located on the way in and out. Go ahead, and sample a few, you’re on holiday. Sleep well tonight, your last night in Rishikesh is an early one!</p>\n<h4><strong>Sunday</strong></h4>\n<p>Rent a motorcycle (the most fun option), hire a taxi, or go with the hostel and see the sunrise at Kunjapuri Devi Temple. This temple is dedicated to Goddess Sati, Lord Shiva’s wife before she was reborn as Goddess Parvati. Leave the hostel at 4 am to make it up the mountain in time to see the sky grow lighter and experience the sun making its initial peek above the mountains.</p>\n<p>Chai is available for purchase to warm you up. At 1676 meters, not only do you see the first rays of light, you get a panoramic view of the mountains that surround the temple. If it’s clear, you’ll even see some snow-capped mountains of the Himalayas. It is very beautiful and energizing and worth the chilly, early morning ride to the top. Additionally, going back down is a joy ride with stunning views of the surrounding mountains, valleys, farms, and forests.</p>\n<img alt=\"\" loading=\"lazy\" src=\"/blog-images/weekend-in-rishikesh-256.webp\"/>\n<p>Your vacation isn’t over yet! You’ll arrive back at the hostel in time for breakfast and a break before going to Vashishta cave and Shivpuri beach. Visiting Vashishta is a great way to reflect on your time in Rishikesh and offer some gratitude.</p>\n<p>This cave is where Lord Brahma’s godly son, Vashista, came to meditate. The peaceful cave and its silent surrounding area are located near River Ganga. Meditate in the cool, serene cave before walking to Shivpuri beach.</p>\n<p>This is a quiet, calming beach to swim and chill and say farewell, to Rishikesh and Mother Ganga. The shimmering sands and stunning beach are the perfect backgrounds for capturing some more photographs before returning back to the hostel to pack your bags.</p>\n<p>If you’re taking public transit home (or to your next destination), book a later ticket, 7 or 8 pm. This way, you’ll have enough time to enjoy your day and won’t have to rush. I hope you find Rishikesh as beautiful and unique as I do. Surely the breathtaking views and clear blue Ganga will capture your heart. Thanks so much for reading this post. Peace!</p>\n<h2>Realted Posts :</h2>\n<img alt=\"\" loading=\"lazy\" src=\"/blog-images/weekend-in-rishikesh-257.webp\"/>\n<h3><a href=\"https://lfwp.ddev.site/one-of-the-thrilling-experiences-in-rishikesh-white-water-rafting/\">\n\t\t\t\tOne of the thrilling experiences in Rishikesh: White Water Rafting\t\t\t</a></h3>\n<img alt=\"\" loading=\"lazy\" src=\"/blog-images/weekend-in-rishikesh-258.webp\"/>\n<h3><a href=\"https://lfwp.ddev.site/kyarki-sunset-point-a-breathtaking-birds-eye-view-of-rishikesh/\">\n\t\t\t\tKyarki Sunset Point – A Breathtaking Bird’s Eye View of Rishikesh\t\t\t</a></h3>\n<img alt=\"\" loading=\"lazy\" src=\"/blog-images/weekend-in-rishikesh-259.webp\"/>\n<h3><a href=\"https://lfwp.ddev.site/rishikeshs-evening-ganga-aarti-a-soul-stirring-experience-at-triveni-ghat-and-paramarth-niketan/\">\n\t\t\t\tRishikesh’s Evening Ganga Aarti: A Soul-Stirring Experience at Triveni Ghat and Paramarth Niketan\t\t\t</a></h3>\n</div>"
@@ -345,6 +378,7 @@
   {
     "slug": "yoga-in-rishikesh",
     "title": "Yoga In Rishikesh",
+    "city":"rishikesh",
     "excerpt": "There is a reason why Rishikesh is called the yoga capital of India. With like a bazillion courses and styles and ashrams to choose from, it can be quite...",
     "cover": "/blog-images/yoga-in-rishikesh-260.webp",
     "contentHtml": "<div class=\"post-body\">\n<p>There is a reason why Rishikesh is called the yoga capital of India. With like a bazillion courses and styles and ashrams to choose from, it can be quite overwhelming. I won’t be able to mention every single yoga center or course style. After walking around Rishikesh myself, consulting Google for hours, and chatting with a few experienced yogi students/teachers, I’d like to offer some suggestions for people interested in coming to Rishikesh to start or deepen their yoga practice.</p>\n<p>Rishikesh is a pilgrimage town and is considered a very holy place to Hindus. Sages and saints have been visiting since the days of old to meditate and gain enlightenment. What seemed to have really put Rishikesh on the map (for tourists), was a visit in 1968 from the popular English band, The Beatles. Rishikesh has a lot to offer.</p>\n<p>Decide how intensely you want to study. You can find single drop-in classes, 3 or 5 or 7-day courses, or completely immerse yourself in the practice and stay at an ashram for a month or more for a 24/7 yoga teacher training experience.</p>\n<p>If you’re interested in becoming a teacher, some would say it’s advisable to make sure the school is Yoga Alliance Registered. You also need to determine how much you’re willing to spend. Prices generally range from Rs. 400 for a single drop-in class, Rs. 1800 for a 6-class pack, Rs. 90,800/1300 USD or more for a month-long teacher training course.</p>\n<img alt=\"\" loading=\"lazy\" src=\"/blog-images/yoga-in-rishikesh-260.webp\"/>\n<p>If you are already in Rishikesh, stay at a hostel that offers yoga. Live Free Hostel offers donation-based yoga on their rooftop. This gives you an opportunity to meet other people, share experiences, ask for insight, and practice yoga without committing to a course.</p>\n<p>It’ll also give you a chance to visit the ashrams for yourself before making a decision. You can try a few drop-in classes to help you get an idea of what you want to focus on. Some of the websites offer an “early bird” discount; a deal for booking online 3 or more months in advance. Don’t worry, it’s likely you’ll be able to bargain with them when you arrive at their door.</p>\n<h4><strong>Shiva Yoga Peeth</strong></h4>\n<p>seemed to be pretty hard-core/authentic. They had a list of guidelines strongly suggested to be followed so you receive the most from your experience. They were the only website or entity to inform that the whole experience may not be easy at times. Emotions may come up. Remember to have an open heart and be compassionate with yourself.<a href=\"https://www.shivayogapeeth.in/\" style=\"color: #333333;\">https://www.shivayogapeeth.in/</a></p>\n<h4><strong>Iyengar Yoga Centre</strong></h4>\n<p>also had a list of guidelines and dress codes that must be followed. This ashram came across as being very authentic as well. If you’re at all interested in Iyengar Yoga, this is regarded as a must-attend school. This was the ashram Reka, the yoga instructor at Live Free Hostel, suggested to me. <a href=\"https://www.iyengaryoga.in/\" style=\"color: #333333;\">https://www.iyengaryoga.in/</a></p>\n<h4><strong>Yog Amritam</strong></h4>\n<p>Claims to be one of the oldest schools in Rishikesh. They primarily focus on the Hatha and Ashtanga yoga traditions. Their goal is to bridge the gap between yogis and non-yogis. They include the whole philosophy of yoga science in their curriculum, not just asanas. <a href=\"https://yogamritamrishikesh.org/\" style=\"color: #333333;\">https://yogamritamrishikesh.org/</a></p>\n<h4><strong>Jiva Yoga Academy</strong></h4>\n<p>Boasts small class sizes to deliver an authentic yoga experience. They offer 100hr and 200hr teacher training courses and a few options for “detox retreats.” This ashram seems a little more low-key, less intense. The facilities and accommodations look beautiful. <a href=\"https://jivayogaacademy.org/\" style=\"color: #333333;\">https://jivayogaacademy.org/</a></p>\n<h4><strong>Jivan Chakra Foundation</strong></h4>\n<p>Offers a holistic approach so students learn to develop a practice on their own and/or teach from true experience. They offer Hatha yoga teacher training, or if you want to study multiple styles; a multi-style ttc course. They also offer a pranayama course, which is nice if you’re looking for training in areas other than asana. <a href=\"https://jivanchakra.com/\" style=\"color: #333333;\">https://jivanchakra.com/</a></p>\n<p>Rishikesh Yog Mandir classes are all-inclusive, from asana, pranayam to meditation and philosophy per the Vedic standard. They offer 200hr, 300hr, and 500hr teacher training courses. They also offer meditation and Ayurveda classes. You can stay in their facilities or find your own if you require more accommodation. They didn’t have reviews on their website, I would personally check this one out before registering. They have a female yoga trainer! <a href=\"https://www.yogateachertrainingrishikesh.com/\" style=\"color: #333333;\">https://www.yogateachertrainingrishikesh.com/</a></p>\n<h4><strong>World Peace Yoga School</strong></h4>\n<p>offers teacher training in Hatha and Ashtanga yoga for a traditional, authentic yoga training experience. They claim to be #1 in Rishikesh. Their website is very comprehensive and will answer any questions you may have. They have a lot to offer. Their space looks beautiful. Read the orientation manual under the “About” tab if you’ve never been to India or have questions about what to expect when coming to Rishikesh. <a href=\"https://worldpeaceyogaschool.com/\" style=\"color: #333333;\">https://worldpeaceyogaschool.com/</a> No matter where you go, there you are. Best wishes on your yoga journey! Hari Om.</p>\n<h2>Realted Posts :</h2>\n<img alt=\"\" loading=\"lazy\" src=\"/blog-images/yoga-in-rishikesh-261.webp\"/>\n<h3><a href=\"https://lfwp.ddev.site/one-of-the-thrilling-experiences-in-rishikesh-white-water-rafting/\">\n\t\t\t\tOne of the thrilling experiences in Rishikesh: White Water Rafting\t\t\t</a></h3>\n<img alt=\"\" loading=\"lazy\" src=\"/blog-images/yoga-in-rishikesh-262.webp\"/>\n<h3><a href=\"https://lfwp.ddev.site/kyarki-sunset-point-a-breathtaking-birds-eye-view-of-rishikesh/\">\n\t\t\t\tKyarki Sunset Point – A Breathtaking Bird’s Eye View of Rishikesh\t\t\t</a></h3>\n<img alt=\"\" loading=\"lazy\" src=\"/blog-images/yoga-in-rishikesh-263.webp\"/>\n<h3><a href=\"https://lfwp.ddev.site/rishikeshs-evening-ganga-aarti-a-soul-stirring-experience-at-triveni-ghat-and-paramarth-niketan/\">\n\t\t\t\tRishikesh’s Evening Ganga Aarti: A Soul-Stirring Experience at Triveni Ghat and Paramarth Niketan\t\t\t</a></h3>\n</div>"

@@ -20,17 +20,13 @@ export default function BlogPostPage() {
   return (
     <div className={styles.page}>
       <div className={styles.container}>
-        <Link to="/blog" className={styles.back}>
+        <Link to="/blog-page" className={styles.back}>
           <ArrowLeft size={16} /> All posts
         </Link>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-        >
+        <h1>
           {post.title}
-        </motion.h1>
+        </h1>
 
         <div
           className={styles.content}

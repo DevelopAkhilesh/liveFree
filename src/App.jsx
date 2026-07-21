@@ -41,6 +41,7 @@ export default function App() {
           <Route path="/terms-conditions" element={<TermsConditions />} />
           <Route path="/data-protection-guidelines" element={<DataProtectionGuidelines />} />
           <Route path="/blog-page" element={<BlogPage/>}/>
+          
         </Routes>
       </main>
       <WhatsAppButton />

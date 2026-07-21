@@ -10,6 +10,7 @@ import {
 } from 'lucide-react'
 import { DESTINATIONS, CITY_ROOMS, CITY_ITINERARY, CITY_PROPERTY_POLICY, CITY_MUST_READS } from '../data/siteData'
 import styles from './DestinationPage.module.css'
+import {useNavigate} from "react-router-dom"
 
 const GALLERY_FALLBACKS = [
   'https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=600&q=80',
@@ -334,6 +335,7 @@ function GallerySection({ photosByCategory, allPhotos, onOpenLightbox, city }) {
 
 // ── Hostel Name + Address + About ──
 function HeroInfoSection({ dest, meta }) {
+   const navigate = useNavigate();
   return (
     <section style={{ padding: '44px 0 32px', background: '#fff' }}>
       <div className="container">
@@ -351,7 +353,7 @@ function HeroInfoSection({ dest, meta }) {
             onMouseEnter={e => e.currentTarget.style.opacity = '0.88'}
             onMouseLeave={e => e.currentTarget.style.opacity = '1'}
           >View Travel Itinerary →</a>
-          <a href="/blogs"
+          <a onClick={() => navigate(`/blog-page?city=${dest.id}`)}
             style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '12px 24px', borderRadius: 8, border: '1.5px solid rgba(0,0,0,0.15)', color: 'var(--text)', fontWeight: 700, fontSize: '0.85rem', textDecoration: 'none', background: '#fff', transition: 'border-color 0.2s' }}
             onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--primary)'}
             onMouseLeave={e => e.currentTarget.style.borderColor = 'rgba(0,0,0,0.15)'}

@@ -16,6 +16,7 @@ const LegalPage = lazy(() => import('./pages/LegalPage'))
 const TermsConditions = lazy(() => import('./pages/TermsConditions'))
 const DataProtectionGuidelines = lazy(() => import('./pages/DataProtectionGuidelines'))
 const BlogPage = lazy(() => import('./pages/BlogPage'))
+const BlogPostPage = lazy(() => import('./pages/BlogPostPage'))
 
 // wraps each lazy page in Suspense so navigation shows a loader instead of a blank screen
 const withSuspense = (Component) => (
@@ -45,6 +46,7 @@ export const router = createBrowserRouter(
         { path: 'terms-conditions', element: withSuspense(TermsConditions) },
         { path: 'data-protection-guidelines', element: withSuspense(DataProtectionGuidelines) },
         { path: 'blog-page', element: withSuspense(BlogPage) },
+        { path: 'blog/:slug', element: withSuspense(BlogPostPage) },
       ],
     },
   ],
