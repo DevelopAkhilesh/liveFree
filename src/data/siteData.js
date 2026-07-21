@@ -219,7 +219,7 @@ export const CITY_ROOMS = {
       bookingUrl: 'https://www.booking.com',  // TODO: Update booking link
       amenities: ['Privacy Curtain', 'Personal Locker', 'AC', 'WiFi'],
       roomdesc: "2  Bunk Beds",
-      images:RishikeshFemaleDorm,
+      images:[RishikeshFemaleDorm,RishikeshMixDorm4]
     },
     {
       id: 'dorm-4',
@@ -244,17 +244,6 @@ export const CITY_ROOMS = {
       images:RishikeshMixDorm6,
     },
     {
-      id: 'private',
-      name: 'Private Room',
-      type: 'Private',
-      desc: 'A clean, peaceful, and comfortable private space offering the perfect quiet escape after a day of adventure.',
-      price: 599,       // TODO: Update price
-      bookingUrl: 'https://www.booking.com',  // TODO: Update booking link
-      amenities: ['En‑suite Bathroom', 'AC', 'WiFi', 'Double Bed'],
-      roomdesc:"1 Queen Size Bed",
-      images:RishikeshPrivate
-    },
-    {
       id: 'DeluxePrivate',
       name: 'Deluxe Private Room',
       type: 'Private',
@@ -265,6 +254,17 @@ export const CITY_ROOMS = {
       roomdesc:"1 King Size Bed ",
       images:RishikeshDeluxe,
     },
+    {
+      id: 'private',
+      name: 'Standard Private Room',
+      type: 'Private',
+      desc: 'A clean, peaceful, and comfortable private space offering the perfect quiet escape after a day of adventure.',
+      price: 599,       // TODO: Update price
+      bookingUrl: 'https://www.booking.com',  // TODO: Update booking link
+      amenities: ['En‑suite Bathroom', 'AC', 'WiFi', 'Double Bed'],
+      roomdesc:"1 Queen Size Bed",
+      images:RishikeshPrivate
+    }
   ],
 
   dehradun: [

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { PawPrint, ShieldCheck, Heart, AlertCircle, Gift, Ban } from 'lucide-react'
+import { PawPrint, ShieldCheck, Heart, AlertCircle, Gift, Ban, icons } from 'lucide-react'
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 28 },
@@ -23,8 +23,9 @@ const TERMS = [
 ]
 
 const COMPLIMENTARY = [
-  { icon: '🛏️', label: 'Bed or mat for your pet' },
-  { icon: '🛍️', label: 'Waste bags at reception Pet bowls & Food' },
+  { icon: '🛏️', label: 'Bed or mat for your pet.' },
+  { icon: '🛍️', label: 'Waste bags at reception.'},
+  { icon:"🦴" , label:"Pet bowls & Food."}
 ]
 
 export default function PetFriendlyPage() {

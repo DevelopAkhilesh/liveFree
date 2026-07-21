@@ -127,7 +127,7 @@
 .cardImg {
   width: 100%;
   max-width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 4/2;
   height: auto;
   background-size: cover;
   background-position: center;

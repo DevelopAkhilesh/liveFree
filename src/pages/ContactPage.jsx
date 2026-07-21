@@ -57,13 +57,13 @@ export default function ContactPage() {
               <p>
                 Our team is here to help. Whether you have a question about a booking, want to know more about our stay options, or just want to say hello, we'll get back to you quickly.
               </p>
-              <a href="tel:+919971080044" className={styles.infoRow}>
+              <a href="tel:+919999020248" className={styles.infoRow}>
                 <Phone size={18} />
-                <span>+91 9971080044</span>
+                <span>+91 9999020248</span>
               </a>
-              <a href="mailto:info@thesocialstays.com" className={styles.infoRow}>
+              <a href="mailto:reservation@livefreehostel.com" className={styles.infoRow}>
                 <Mail size={18} />
-                <span>info@thesocialstays.com</span>
+                <span>reservation@livefreehostel.com</span>
               </a>
             </div>
             <div className={styles.imageWrap}>

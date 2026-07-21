@@ -16,6 +16,7 @@ import HostelPolicy from './pages/HostelPolicy'
 import LegalPage from './pages/LegalPage'
 import TermsConditions from './pages/TermsConditions'
 import DataProtectionGuidelines from './pages/DataProtectionGuidelines'
+import BlogPage from './pages/BlogPage'
 
 
 export default function App() {
@@ -39,6 +40,7 @@ export default function App() {
           <Route path="/privacy-policy" element={<LegalPage />} />
           <Route path="/terms-conditions" element={<TermsConditions />} />
           <Route path="/data-protection-guidelines" element={<DataProtectionGuidelines />} />
+          <Route path="/blog-page" element={<BlogPage/>}/>
         </Routes>
       </main>
       <WhatsAppButton />

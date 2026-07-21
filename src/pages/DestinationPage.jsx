@@ -191,13 +191,16 @@ rishikesh: {
 }
 
 // ── SINGLE LightBox — with category tabs ──
-function LightBox({ images, index, onClose, photosByCategory, allPhotos, city }) {
+function LightBox({ images, index, onClose, photosByCategory = {}, allPhotos,city }) {
   const thumbContainerRef = useRef(null)
   const [activeCategory, setActiveCategory] = useState('All')
   const [localIndex, setLocalIndex] = useState(index)
 
+  // NEW — if allPhotos isn't passed (room mode), fall back to just `images`
+  const resolvedAllPhotos = allPhotos || images
   const categories = ['All', ...Object.keys(photosByCategory)]
-  const currentPhotos = activeCategory === 'All' ? allPhotos : (photosByCategory[activeCategory] || [])
+  const currentPhotos = activeCategory === 'All' ? resolvedAllPhotos : (photosByCategory[activeCategory] || [])
+  const showTabs = categories.length > 1   // NEW — only show tab bar when there's more than "All"
 
   useEffect(() => { setLocalIndex(index) }, [index])
   useEffect(() => { setLocalIndex(0) }, [activeCategory])
@@ -227,6 +230,12 @@ function LightBox({ images, index, onClose, photosByCategory, allPhotos, city })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentPhotos.length])
 
+  // NEW — detect whether an image is a local import (full URL) or a Cloudinary ID
+  const resolveImg = (id) =>
+    typeof id === 'string' && (id.startsWith('http') || id.startsWith('/') || id.startsWith('data:'))
+      ? id
+      : cld(id,city)
+
   return (
     <motion.div
       initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
@@ -238,11 +247,11 @@ function LightBox({ images, index, onClose, photosByCategory, allPhotos, city })
         style={{ background: '#111', borderRadius: 16, maxWidth: '90vw', maxHeight: '90vh', width: '100%', height: '100%', display: 'flex', flexDirection: 'column', overflow: 'hidden', position: 'relative', boxShadow: '0 20px 60px rgba(0,0,0,0.8)' }}
         onClick={e => e.stopPropagation()}
       >
-        {/* TOP BAR — category tabs + close */}
+        {/* TOP BAR — category tabs (only in gallery mode) + close */}
         <div style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '12px 16px', background: '#1a1a1a', overflowX: 'auto', flexShrink: 0, scrollbarWidth: 'none' }}>
-          {categories.map(cat => (
+          {showTabs && categories.map(cat => (
             <button key={cat} onClick={() => setActiveCategory(cat)} style={{ padding: '6px 14px', borderRadius: 99, fontSize: '0.75rem', fontWeight: 600, cursor: 'pointer', border: 'none', whiteSpace: 'nowrap', flexShrink: 0, background: activeCategory === cat ? 'var(--primary)' : 'rgba(255,255,255,0.1)', color: activeCategory === cat ? '#fff' : 'rgba(255,255,255,0.6)', transition: 'all 0.2s' }}>
-              {cat} ({cat === 'All' ? allPhotos.length : (photosByCategory[cat] || []).length})
+              {cat} ({cat === 'All' ? resolvedAllPhotos.length : (photosByCategory[cat] || []).length})
             </button>
           ))}
           <button onClick={onClose} style={{ marginLeft: 'auto', flexShrink: 0, background: 'rgba(255,255,255,0.1)', border: 'none', borderRadius: '50%', width: 36, height: 36, cursor: 'pointer', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -255,7 +264,7 @@ function LightBox({ images, index, onClose, photosByCategory, allPhotos, city })
           <button className={styles.lightboxNavBtn} onClick={e => { e.stopPropagation(); goPrev() }} style={{ position: 'absolute', left: 8, background: 'rgba(0,0,0,0.5)', border: 'none', borderRadius: '50%', width: 40, height: 40, cursor: 'pointer', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 10 }}>
             <ChevronLeft size={22} />
           </button>
-          <img src={cld(currentPhotos[localIndex], city)} alt="" style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', borderRadius: 8 }} />
+          <img src={resolveImg(currentPhotos[localIndex])} alt="" style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', borderRadius: 8 }} />
           <button className={styles.lightboxNavBtn} onClick={e => { e.stopPropagation(); goNext() }} style={{ position: 'absolute', right: 8, background: 'rgba(0,0,0,0.5)', border: 'none', borderRadius: '50%', width: 40, height: 40, cursor: 'pointer', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 10 }}>
             <ChevronRight size={22} />
           </button>
@@ -267,8 +276,8 @@ function LightBox({ images, index, onClose, photosByCategory, allPhotos, city })
         {/* THUMBNAIL STRIP */}
         <div ref={thumbContainerRef} style={{ width: '100%', overflowX: 'auto', overflowY: 'hidden', padding: '10px 16px', display: 'flex', gap: 8, scrollbarWidth: 'thin', scrollbarColor: 'rgba(255,255,255,0.3) transparent', flexShrink: 0, height: 100, background: 'rgba(0,0,0,0.3)' }} onClick={e => e.stopPropagation()}>
           {currentPhotos.map((id, i) => (
-            <div key={id} className={styles.lightboxThumb} onClick={() => setLocalIndex(i)} style={{ flex: '0 0 auto', width: 80, height: 80, borderRadius: 6, overflow: 'hidden', border: i === localIndex ? '3px solid var(--primary)' : '3px solid transparent', transition: 'all 0.2s', cursor: 'pointer', transform: i === localIndex ? 'scale(1.05)' : 'scale(1)' }}>
-              <img src={cld(id, city)} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+            <div key={i} className={styles.lightboxThumb} onClick={() => setLocalIndex(i)} style={{ flex: '0 0 auto', width: 80, height: 80, borderRadius: 6, overflow: 'hidden', border: i === localIndex ? '3px solid var(--primary)' : '3px solid transparent', transition: 'all 0.2s', cursor: 'pointer', transform: i === localIndex ? 'scale(1.05)' : 'scale(1)' }}>
+              <img src={resolveImg(id)} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
             </div>
           ))}
         </div>
@@ -329,7 +338,7 @@ function HeroInfoSection({ dest, meta }) {
     <section style={{ padding: '44px 0 32px', background: '#fff' }}>
       <div className="container">
         <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)', fontWeight: 800, color: 'var(--text)', marginBottom: 10, lineHeight: 1.15 }}>
-          Live Free Hostel, {dest.name}
+          Live Free Hostel {dest.name}
         </h1>
         <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 20, color: '#888', fontSize: '0.92rem' }}>
           <MapPin size={15} style={{ color: 'var(--primary)', flexShrink: 0 }} />
@@ -425,21 +434,37 @@ function SelectRoomSection({ rooms,  onOpenLightbox }) {
      <section id="select-room" style={{ padding: '40px 0 56px', background: '#fff', borderTop: '1px solid #efefef' }}>
       <div className="container">
         <h2 style={{ fontWeight: 800, fontSize: '0.75rem', letterSpacing: '4px', textTransform: 'uppercase', marginBottom: 28, color: '#c0c0c0', textAlign: 'center' }}>SELECT ROOM</h2>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 50 }}>
+         <div style={{ display: 'flex', flexDirection: 'column', gap: 50 }}>
           {displayedRooms.map((room, roomIdx) => {
-            const displayImg = room.images || FALLBACK_IMGS[roomIdx % FALLBACK_IMGS.length]  // NEW — direct read, fallback if missing
+            const roomPhotos = Array.isArray(room.images) ? room.images : [];
+            const currentImgIdx = imgIndex[room.id] || 0
+            const displayImg = roomPhotos.length > 0
+              ? roomPhotos[currentImgIdx % roomPhotos.length]
+              : FALLBACK_IMGS[roomIdx % FALLBACK_IMGS.length]
+
             const isSoldOut = room.soldOut || false
             const availText = room.availability || '2 BEDS AVAILABLE'
             const orig = origPrice(room.price)
 
             return (
              <div key={room.id} className={styles.roomCard}>
-                <div className={styles.roomImageWrap} onClick={() => room.image && onOpenLightbox([room.image], 0)}>
+                <div
+                  className={styles.roomImageWrap}
+                  onClick={() => roomPhotos.length > 0 && onOpenLightbox(roomPhotos, currentImgIdx)}  // 👈 opens popup with THIS room's images
+                >
                   <img src={displayImg} alt={room.name} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform 0.4s' }}
                     onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.04)'}
                     onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
                   />
-                  {/* dot indicators removed — only one image per room, nothing to cycle */}
+                  {roomPhotos.length > 1 && (
+                    <div style={{ position: 'absolute', bottom: 10, left: '50%', transform: 'translateX(-50%)', display: 'flex', gap: 5 }}>
+                      {roomPhotos.map((_, i) => (
+                        <button key={i} onClick={e => { e.stopPropagation(); setImgIndex(prev => ({ ...prev, [room.id]: i })) }}
+                          style={{ width: 6, height: 6, borderRadius: '50%', border: 'none', padding: 0, cursor: 'pointer', background: i === currentImgIdx ? '#fff' : 'rgba(255,255,255,0.45)', transition: 'background 0.2s' }}
+                        />
+                      ))}
+                    </div>
+                  )}
                 </div>
                 <div className={styles.roomBody}>
                   <div className={styles.roomHeadRow}>
@@ -781,18 +806,30 @@ export default function DestinationPage({ city }) {
 
   const [lightboxPhotos, setLightboxPhotos] = useState([])
   const [lightboxIndex, setLightboxIndex] = useState(null)
+  const [lightboxMode, setLightboxMode] = useState('gallery')   // NEW — 'gallery' | 'room'
 
-  const openLightbox = (photos, i) => { setLightboxPhotos(photos); setLightboxIndex(i) }
+  const openLightbox = (photos, i) => {
+    setLightboxPhotos(photos)
+    setLightboxIndex(i)
+    setLightboxMode('gallery')       // NEW — gallery clicks use full category tabs
+  }
+
+  const openRoomLightbox = (photos, i) => {   // NEW — separate opener for rooms
+    setLightboxPhotos(photos)
+    setLightboxIndex(i)
+    setLightboxMode('room')
+  }
+
   const closeLightbox = () => setLightboxIndex(null)
 
   if (!dest || !meta) return null
 
   return (
     <>
-      <GallerySection photosByCategory={photosByCategory} allPhotos={allPhotos} onOpenLightbox={openLightbox} city={city} />
+      <GallerySection photosByCategory={photosByCategory} allPhotos={allPhotos} onOpenLightbox={openLightbox}  city={city} />
       <HeroInfoSection dest={dest} meta={meta} />
       <GoodToKnowSection meta={meta} />
-      <SelectRoomSection rooms={rooms}  onOpenLightbox={openLightbox} />
+      <SelectRoomSection rooms={rooms} onOpenLightbox={openRoomLightbox} />   {/* 👈 uses room opener */}
       <FeaturesSection meta={meta} />
       <CharacteristicsSection meta={meta} />
       <ReachUsSection meta={meta} dest={dest} />
@@ -806,9 +843,9 @@ export default function DestinationPage({ city }) {
             images={lightboxPhotos}
             index={lightboxIndex}
             onClose={closeLightbox}
-            photosByCategory={photosByCategory}
-            allPhotos={allPhotos}
             city={city}
+            // NEW — only pass gallery context in gallery mode; room mode gets neither, so LightBox falls back to just `images`
+            {...(lightboxMode === 'gallery' ? { photosByCategory, allPhotos } : {})}
           />
         )}
       </AnimatePresence>

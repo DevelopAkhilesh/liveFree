@@ -51,6 +51,7 @@ export default function Footer() {
               <li><a href="#" onClick={e => { e.preventDefault(); navigate('/awards') }}>Awards</a></li>
               <li><a href="#workation">Workations</a></li>
               <li><a href="#" onClick={e => { e.preventDefault(); navigate('/contact') }}>Contact Us</a></li>
+              <li> <a href="#" onClick={e=>{e.preventDefault(); navigate("/blog-page")}}>Blogs</a></li> 
             </ul>
           </div>
 
