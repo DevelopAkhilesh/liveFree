@@ -98,3 +98,63 @@
   border-radius: 8px;
   margin-bottom: 8px;
 }
+.moreStories {
+  margin-top: 56px;
+  padding-top: 32px;
+  border-top: 1px solid #eee;
+}
+
+.moreStories h3 {
+  margin: 0 0 18px;
+  font-size: 1.1rem;
+}
+
+.moreStoriesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.moreStoriesCard {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #eee;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.moreStoriesCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.moreStoriesCard img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.moreStoriesCard > div {
+  padding: 12px 14px;
+}
+
+.moreStoriesTitle {
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.moreStoriesExcerpt {
+  font-size: 0.8rem;
+  color: #888;
+  line-height: 1.5;
+  margin-top: 6px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

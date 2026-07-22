@@ -1,19 +1,21 @@
-import { useSearchParams, Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import { Link, useSearchParams } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import blogPosts from '../data/blogPosts.json'
 import styles from './BlogPage.module.css'
+
+function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
 
 export default function BlogPage({ filterFn, title, subtitle, limit }) {
   const [searchParams] = useSearchParams()
   const cityParam = searchParams.get('city')
 
-  // priority: explicit filterFn prop > city query param > show all
   const activeFilter = filterFn || (cityParam ? (post) => post.city === cityParam : null)
-
   const posts = (activeFilter ? blogPosts.filter(activeFilter) : blogPosts).slice(0, limit ?? blogPosts.length)
 
-  const displayTitle = title || (cityParam ? `Stories from ${cityParam}` : 'Stories from the Road')
+  const displayTitle = title || (cityParam ? `Stories from ${capitalize(cityParam)}` : 'Stories from the Road')
   const displaySubtitle = subtitle || 'Travel guides, local tips & everything happening around our hostels in Rishikesh, Varanasi & Dehradun.'
 
   return (
@@ -39,7 +41,10 @@ export default function BlogPage({ filterFn, title, subtitle, limit }) {
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.4, delay: (i % 6) * 0.05 }}
           >
-            <Link to={`/blog/${post.slug}`} className={styles.cardLink}>
+            <Link
+              to={cityParam ? `/blog/${post.slug}?city=${cityParam}` : `/blog/${post.slug}`}
+              className={styles.cardLink}
+            >
               {post.cover && (
                 <div className={styles.imgWrap}>
                   <img src={post.cover} alt={post.title} loading="lazy" />
