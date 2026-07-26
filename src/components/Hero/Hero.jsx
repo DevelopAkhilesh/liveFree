@@ -8,7 +8,7 @@ import heroImg from '../../assets/hero_img.jpeg'
 const getToday = () => new Date().toISOString().split('T')[0]
 const getTomorrow = () => {
   const d = new Date()
-  d.setDate(d.getDate() + 1)
+  d.setDate(d.getDate() + 6)
   return d.toISOString().split('T')[0]
 }
 
