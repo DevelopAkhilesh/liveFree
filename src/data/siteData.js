@@ -217,7 +217,12 @@ export const CITY_ROOMS = {
       desc: 'A cozy, secure, and spacious shared sanctuary designed exclusively for female solo travellers seeking privacy and community.',
       price: 599,        // TODO: Update price
       bookingUrl: 'https://www.booking.com',  // TODO: Update booking link
-      amenities: ['Privacy Curtain', 'Personal Locker', 'AC', 'WiFi'],
+      amenities: [
+    "Dustbin", "Daily Housekeeping", "Non Smoking Room", "Lockers", "Wi-fi",
+    "Bed Curtains", "Ceiling Fan", "Bed Fan", "Air Conditioner", "Ensuite Bathroom",
+    "Hot Water", "Hair Dryer", "Towel Rental", "Toilet", "Shower", "Toilet Paper",
+    "Non-feather Pillows", "Linen", "Socket Near the Bed", "Bedside Lamp", "Work Desk"
+  ],
       roomdesc: "2  Bunk Beds",
       images:[RishikeshFemaleDorm,RishikeshMixDorm4]
     },
@@ -228,7 +233,12 @@ export const CITY_ROOMS = {
       desc: 'A small, intimate mixed dorm that perfectly balances a social backpacker vibe with ample personal space.',
       price: 599,        // TODO: Update price
       bookingUrl: 'https://www.booking.com',  // TODO: Update booking link
-      amenities: ['Personal Locker', 'AC', 'WiFi', 'Common Bathroom'],
+      amenities: [
+    "Dustbin", "Daily Housekeeping", "Non Smoking Room", "Lockers", "Wi-fi",
+    "Bed Curtains", "Ceiling Fan", "Bed Fan", "Air Conditioner", "Ensuite Bathroom",
+    "Hot Water", "Hair Dryer", "Towel Rental", "Toilet", "Shower", "Toilet Paper",
+    "Non-feather Pillows", "Linen", "Socket Near the Bed", "Bedside Lamp", "Work Desk"
+  ],
       roomdesc: "2 Bunk Beds",
       images:RishikeshMixDorm4,
     },
@@ -239,7 +249,12 @@ export const CITY_ROOMS = {
       desc: 'A lively and budget-friendly shared room ideal for making friends and sharing stories with fellow globetrotters.',
       price: 599,        // TODO: Update price
       bookingUrl: 'https://www.booking.com',  // TODO: Update booking link
-      amenities: ['Personal Locker', 'AC', 'WiFi', 'Common Bathroom'],
+      amenities:[
+    "Dustbin", "Daily Housekeeping", "Non Smoking Room", "Lockers", "Wi-fi",
+    "Bed Curtains", "Ceiling Fan", "Bed Fan", "Air Conditioner", "Ensuite Bathroom",
+    "Hot Water", "Hair Dryer", "Towel Rental", "Toilet", "Shower", "Toilet Paper",
+    "Non-feather Pillows", "Linen", "Socket Near the Bed", "Bedside Lamp", "Work Desk"
+  ],
       roomdesc: "3 Bunk Beds",
       images:RishikeshMixDorm6,
     },
@@ -250,7 +265,13 @@ export const CITY_ROOMS = {
       desc: 'A premium, spacious well ventilated retreat featuring seating furniture &  extra comfort for ultimate relaxation.',
       price: 599,       // TODO: Update price
       bookingUrl: 'https://www.booking.com',  // TODO: Update booking link
-      amenities: ['En‑suite Bathroom', 'AC', 'WiFi', 'Double Bed'],
+      amenities: [
+    "Dustbin", "Daily Housekeeping", "Non Smoking Room", "Clothes Rack", "Linen",
+    "Electric Kettle", "Tea/ Coffee Sachets", "Wi-fi", "Flat Screen TV", "Ceiling Fan",
+    "Air Conditioner", "Ensuite Bathroom", "Toiletries", "Hair Dryer", "Hot Water",
+    "Towels", "Toilet", "Shower", "Toilet Paper", "Non-feather Pillows", "Linen",
+    "Socket Near the Bed", "Bedside Lamp", "Coffee Table Set"
+  ],
       roomdesc:"1 King Size Bed ",
       images:RishikeshDeluxe,
     },
@@ -261,7 +282,13 @@ export const CITY_ROOMS = {
       desc: 'A clean, peaceful, and comfortable private space offering the perfect quiet escape after a day of adventure.',
       price: 599,       // TODO: Update price
       bookingUrl: 'https://www.booking.com',  // TODO: Update booking link
-      amenities: ['En‑suite Bathroom', 'AC', 'WiFi', 'Double Bed'],
+      amenities: [
+    "Dustbin", "Daily Housekeeping", "Non Smoking Room", "Clothes Rack", "Linen",
+    "Electric Kettle", "Tea/ Coffee Sachets", "Wi-fi", "Flat Screen TV", "Ceiling Fan",
+    "Air Conditioner", "Ensuite Bathroom", "Toiletries", "Hair Dryer", "Hot Water",
+    "Towels", "Toilet", "Shower", "Toilet Paper", "Non-feather Pillows", "Linen",
+    "Socket Near the Bed", "Bedside Lamp", "Coffee Table Set"
+  ],
       roomdesc:"1 Queen Size Bed",
       images:RishikeshPrivate
     }
@@ -269,106 +296,135 @@ export const CITY_ROOMS = {
 
   dehradun: [
     {
-      id: 'dorm-4',
-      name: '4 Bed Dormitory',
+      id: 'dorm-8',
+      name: '8 Bed Mixed Dorm',
       type: 'Dormitory',
-      desc: 'Comfortable bunk beds with privacy curtains, personal lockers, and charging points.',
+      desc: 'A spacious, air-conditioned shared room offering the perfect blend of a lively community vibe and comfortable resting space.',
       price: 599,        // TODO: Update price
       bookingUrl: 'https://www.booking.com',  // TODO: Update booking link
-      amenities: ['Privacy Curtain', 'Personal Locker', 'AC', 'WiFi'],
+      amenities: ["Dustbin", "Daily Housekeeping", "Non Smoking Room", "Lockers", "Wi-fi", "Bed Curtains", "Ceiling Fan", "Bed Fan", "Air conditioner", "Shared Bathroom", "Hot water", "Hair dryer", "Towel Rental", "Toilet", "Shower", "Toilet paper", "Non-feather pillows", "Linen", "Socket near the bed", "Bedside lamp"],
+      roomdesc:"4 Bunk Beds"
     },
     {
       id: 'dorm-6',
-      name: '6 Bed Dormitory',
+      name: '6 Bed Mixed Dorm',
       type: 'Dormitory',
-      desc: 'Budget-friendly dorm with all essentials — perfect for solo travelers.',
-      price: 499,        // TODO: Update price
+      desc: 'A spacious, lively and budget-friendly shared room ideal for making friends and sharing stories with fellow globetrotters.',
+      price: 599,        // TODO: Update price
       bookingUrl: 'https://www.booking.com',  // TODO: Update booking link
-      amenities: ['Personal Locker', 'AC', 'WiFi', 'Common Bathroom'],
+      amenities: ["Dustbin", "Daily Housekeeping", "Non Smoking Room", "Lockers", "Wi-fi", "Bed Curtains", "Ceiling Fan", "Bed Fan", "Air conditioner", "Ensuite Bathroom", "Hot water", "Towel Rental", "Toilet", "Shower", "Toilet paper", "Non-feather pillows", "Linen", "Socket near the bed", "Bedside lamp"],
+      roomdesc:"3 Bunk Beds"
     },
     {
-      id: 'dorm-8',
-      name: '8 Bed Dormitory',
+      id: 'dorm-4',
+      name: '4 Bed Mixed Dorm',
       type: 'Dormitory',
-      desc: 'Great value dorm for backpackers with secure lockers and clean bathrooms.',
-      price: 399,        // TODO: Update price
+      desc: 'A premium, small-scale shared space offering extra comfort and quietness for close-knit groups or individual travellers.',
+      price: 599,        // TODO: Update price
       bookingUrl: 'https://www.booking.com',  // TODO: Update booking link
-      amenities: ['Personal Locker', 'WiFi', 'Common Bathroom'],
+      amenities: ["Dustbin", "Daily Housekeeping", "Non Smoking Room", "Lockers", "Wi-fi", "Bed Curtains", "Ceiling Fan", "Air conditioner", "Ensuite Bathroom", "Hot water", "Towel Rental", "Toilet", "Shower", "Toilet paper", "Non-feather pillows", "Linen", "Socket near the bed", "Bedside lamp", "Work Desk"],
+      roomdesc:"2 Bunk Beds"
+    },
+    {
+      id: 'female-dorm-4',
+      name: '4 Bed Female Dorm',
+      type: 'Dormitory',
+      desc: 'A premium, small-scale shared space offering extra comfort and quietness for close-knit groups or individual travellers.',
+      price: 599,       // TODO: Update price
+      bookingUrl: 'https://www.booking.com',  // TODO: Update booking link
+      amenities: ["Dustbin", "Daily Housekeeping", "Non Smoking Room", "Lockers", "Wi-fi", "Bed Curtains", "Ceiling Fan", "Air conditioner", "Ensuite Bathroom", "Hot water", "Hair Dryer", "Towel Rental", "Toilet", "Shower", "Toilet paper", "Non-feather pillows", "Linen", "Socket near the bed", "Bedside lamp", "Work Desk"],
+      roomdesc:"2 Bunk Beds"
     },
     {
       id: 'deluxe-private',
       name: 'Deluxe Private Room',
       type: 'Private',
-      desc: 'Spacious private room with premium amenities and mountain views.',
-      price: 1999,       // TODO: Update price
+      desc: 'A  spacious, and beautifully furnished premium retreat with Balcony offering top-tier comfort and maximum room to unwind.',
+      price: 599,       // TODO: Update price
       bookingUrl: 'https://www.booking.com',  // TODO: Update booking link
-      amenities: ['En‑suite Bathroom', 'AC', 'WiFi', 'King Bed', 'Mountain View'],
+      amenities: ["Dustbin", "Daily Housekeeping", "Non Smoking Room", "Clothes Rack", "Linen", "Electric Kettle", "Tea/ Coffee Sachets", "Wi-fi", "Flat Screen TV", "Ceiling Fan", "Air conditioner (Hot & Cold)", "Ensuite Bathroom", "Toiletries", "Hair Dryer", "Hot water", "Towels", "Toilet", "Shower", "Toilet paper", "Non-feather pillows", "Socket near the bed", "Bedside lamp", "Patio Set"],
+      roomdesc:"1 King Size Bed"
     },
     {
       id: 'family-private',
       name: 'Family Private Room',
-      type: 'Private',
-      desc: 'Perfect for families — spacious room with multiple beds and all comforts.',
-      price: 2499,       // TODO: Update price
+      type: 'Family-Private',
+      desc: 'A spacious, welcoming sanctuary equipped with a king bed and a extra bunk bed to comfortably host families or small groups.',
+      price: 599,        // TODO: Update price
       bookingUrl: 'https://www.booking.com',  // TODO: Update booking link
-      amenities: ['En‑suite Bathroom', 'AC', 'WiFi', 'Multiple Beds'],
-    },
-    {
-      id: 'female-dorm',
-      name: 'Female Only Dormitory',
-      type: 'Dormitory',
-      desc: 'Safe and comfortable female-only dorm with extra privacy.',
-      price: 549,        // TODO: Update price
-      bookingUrl: 'https://www.booking.com',  // TODO: Update booking link
-      amenities: ['Female Only', 'Personal Locker', 'AC', 'WiFi'],
+      amenities: ["Dustbin", "Daily Housekeeping", "Non Smoking Room", "Clothes Rack", "Linen", "Electric Kettle", "Tea/ Coffee Sachets", "Wi-fi", "Flat Screen TV", "Ceiling Fan", "Air conditioner", "Ensuite Bathroom", "Toiletries", "Hair Dryer", "Hot water", "Towels", "Toilet", "Shower", "Toilet paper", "Non-feather pillows", "Socket near the bed", "Bedside lamp", "Work Desk", "Patio Set"],
+      roomdesc:"1 King Size Bed & 1 Bunk Bed"
     },
   ],
 
   varanasi: [
     {
-      id: 'dorm-6',
-      name: '6 Bed Dormitory',
+      id: 'dorm-10',
+      name: '10 Bed Mixed Dorm',
       type: 'Dormitory',
-      desc: 'Budget-friendly dorm with all essentials — perfect for solo travelers.',
-      price: 499,        // TODO: Update price
+      desc: 'Our largest, high-energy shared bunk room is well under your budget with a lively backpacker vibe.',
+      price: 599,        // TODO: Update price
       bookingUrl: 'https://www.booking.com',  // TODO: Update booking link
-      amenities: ['Personal Locker', 'AC', 'WiFi', 'Common Bathroom'],
-    },
-    {
-      id: 'dorm-6-female',
-      name: '6 Bed Female Dormitory',
-      type: 'Dormitory',
-      desc: 'Safe and comfortable female-only dorm near the ghats.',
-      price: 549,        // TODO: Update price
-      bookingUrl: 'https://www.booking.com',  // TODO: Update booking link
-      amenities: ['Female Only', 'Personal Locker', 'AC', 'WiFi'],
+      amenities: [
+              "Dustbin","Daily Housekeeping","Non Smoking Room", "Linen","Lockers",
+              "Wi-fi", "Bed Curtains","Ceiling Fan", "Bed Fan","Air conditioner",
+              "Shared Bathroom","Hot water","Hair dryer","Towel Rental","Toilet",
+              "Shower","Toilet paper","Non-feather pillows","Socket near the bed",
+              "Bedside lamp"
+            ],
+      roomdesc:" 5 Bunk Beds"
     },
     {
       id: 'dorm-8',
-      name: '8 Bed Dormitory',
+      name: '8 Bed Mixed Dorm',
       type: 'Dormitory',
-      desc: 'Great value dorm for backpackers with secure lockers.',
-      price: 399,        // TODO: Update price
+      desc: 'A spacious, air-conditioned shared space offering an excellent balance of social community and comfortable resting room.',
+      price: 599,        // TODO: Update price
       bookingUrl: 'https://www.booking.com',  // TODO: Update booking link
-      amenities: ['Personal Locker', 'WiFi', 'Common Bathroom'],
+      amenities: [
+              "Dustbin","Daily Housekeeping","Non Smoking Room", "Linen","Lockers",
+              "Wi-fi", "Bed Curtains","Ceiling Fan", "Bed Fan","Air conditioner",
+              "Shared Bathroom","Hot water","Hair dryer","Towel Rental","Toilet",
+              "Shower","Toilet paper","Non-feather pillows","Socket near the bed",
+              "Bedside lamp"
+            ],
+      roomdesc:"4 Bunk Beds"
     },
     {
-      id: 'dorm-10',
-      name: '10 Bed Dormitory',
+      id: 'dorm-6',
+      name: '6 Bed Mix Dorm',
       type: 'Dormitory',
-      desc: 'Most affordable option — great for budget backpackers.',
-      price: 349,        // TODO: Update price
+      desc: 'A cozy, more intimate shared setup perfectly tailored for small squads, digital nomads and solo explorers',
+      price: 599,        // TODO: Update price
       bookingUrl: 'https://www.booking.com',  // TODO: Update booking link
-      amenities: ['Personal Locker', 'WiFi', 'Common Bathroom'],
+      amenities: ["Dustbin", "Daily Housekeeping", "Non Smoking Room", "Linen", "Lockers", "Wi-fi", "Bed Curtains", "Ceiling Fan", "Bed Fan", "Air conditioner", "Ensuite Bathroom", "Hot water", "Towel Rental", "Toilet", "Shower", "Toilet paper", "Non-feather pillows", "Socket near the bed", "Bedside lamp"],
+      roomdesc:"3 Bunk Beds"
+    },
+    {
+      id: 'female-dorm-6',
+      name: '6 Bed Female Dorm',
+      type: 'Dormitory',
+      desc: 'A cozy, secure, and spacious shared sanctuary designed exclusively for female solo travellers seeking privacy and community.',
+      price: 599,        // TODO: Update price
+      bookingUrl: 'https://www.booking.com',  // TODO: Update booking link
+      amenities: [
+              "Dustbin","Daily Housekeeping","Non Smoking Room", "Linen","Lockers",
+              "Wi-fi", "Bed Curtains","Ceiling Fan", "Bed Fan","Air conditioner",
+              "Shared Bathroom","Hot water","Hair dryer","Towel Rental","Toilet",
+              "Shower","Toilet paper","Non-feather pillows","Socket near the bed",
+              "Bedside lamp"
+            ],
+      roomdesc:"3 Bunk Beds"
     },
     {
       id: 'deluxe-private',
       name: 'Deluxe Private Room',
       type: 'Private',
-      desc: 'Spacious private room with premium amenities near the ghats.',
-      price: 1999,       // TODO: Update price
+      desc: 'A clean, peaceful, and comfortable private space offering the perfect quiet escape after a day of adventure.',
+      price: 599,       // TODO: Update price
       bookingUrl: 'https://www.booking.com',  // TODO: Update booking link
-      amenities: ['En‑suite Bathroom', 'AC', 'WiFi', 'Double Bed'],
+      amenities: ["Dustbin", "Daily Housekeeping", "Non Smoking Room", "Linen", "Lockers", "Wi-fi", "Bed Curtains", "Ceiling Fan", "Bed Fan", "Air conditioner", "Ensuite Bathroom", "Hot water", "Towel Rental", "Toilet", "Shower", "Toilet paper", "Non-feather pillows", "Socket near the bed", "Bedside lamp"],
+      roomdesc:"1 King Size Bed"
     },
   ],
 }
@@ -407,54 +463,65 @@ export const CITY_ITINERARY = {
 
   dehradun: [
     {
-      day: 'Day 1 · Arrive & Settle',
+      day: 'Day 1 · Caves, Cafés & Local Vibes',
       activities: [
-        'Check-in at Live Free Hostel',   // TODO: Update activities
-        'Explore Paltan Bazaar',
-        'Dinner at a local dhaba',
+        'Dehradun Zoo (Malsi) - Peaceful woodland park to see deer, leopards, and native bird',   // TODO: Update activities
+        'Robber’s Cave (Gucchupani) - stunning natural river cave gorge, Wade through knee-deep cold water inside the dark rock formations.',
+        'Café lunch at Rajpur Road',
+        'Sahastradhara – sulphur water springs and waterfalls'
       ],
     },
     {
-      day: 'Day 2 · Nature & History',
+      day: 'Day 2 ·  Day Trip to the Queen of Hills (Mussoorie & Landour)',
       activities: [
-        "Robber's Cave (Guchupani)",      // TODO: Update activities
-        'Forest Research Institute',
-        'Sahastradhara waterfalls',
+        " Rent a scooter or hop on a local bus right outside  hostel on Mussoorie Road. The winding mountain road takes you straight up into the clouds.",
+        'Landour Exploration - Skip the crowded main town initially and head higher up to quiet',
+        'Mussoorie Mall Road- Grab lunch overlooking the deep mountain valleys',
+        " George Everest - Visit the historic estate of India's Surveyor General. Hike the short ridge line for an incredible, unobstructed 360-degree view of the snow-capped Himalayas."
       ],
     },
     {
-      day: 'Day 3 · Mussoorie Day Trip',
+      day: 'Day 3 · Architecture, Temples & Tibet (Heritage Loop)',
       activities: [
-        'Drive up to Mussoorie',          // TODO: Update activities
-        'Mall Road & Kempty Falls',
-        'Back to hostel by evening',
+      "Forest Research Institute (FRI)- Visit this massive, jaw-dropping Greco-Roman colonial campus and explore the forestry museums.",
+      "Tapkeshwar Mahadev Mandir- Head to this ancient Shiva temple built inside a natural river cave.",
+      "Mindrolling Monastery - Explore one of India's largest Tibetan Buddhist centres. Marvel at the soaring, multi-story Great Stupa and its beautifully manicured gardens.",
+      "Paltan Bazaar - Old heart of the city near the iconic Clock Tower. Gorge on local street treats like spicy Kandalee momos, bun-tikki, and sweet rusmalai."
+
       ],
     },
   ],
 
   varanasi: [
     {
-      day: 'Day 1 · Arrive & Absorb',
+      day: 'Day 1 · Ghats, Devotion & Street food',
       activities: [
         'Check-in at Live Free Hostel',   // TODO: Update activities
-        'Evening boat ride on the Ganges',
-        'Dashashwamedh Ghat aarti',
+        'Grab local Kachori Sabzi and Jalebi at Chachi Ki Kachori near BHU.',
+        'Explore Sankat Mochan Temple & BHU.',
+        'Ghat walking tour from Assi ghat to Dashashwamedh ghat.',
+        'Evening Ganga Aarti at Dashashwamedh ghat.',
+        'Walk to Kashi Chat Bhandar for Tamatar Chat & Palak Patta Chat.',
       ],
     },
     {
-      day: 'Day 2 · Culture & Food',
+      day: 'Day 2 · Alleys, Temples & The Eternal Flame',
       activities: [
-        'Sunrise boat ride',              // TODO: Update activities
-        'Vishwanath Temple & narrow lanes',
-        'Street food & chai walk',
+        'Subah-e-Banaras – Vedic Chants, Yoga and Classical Music Program at Assi Ghat.',              // TODO: Update activities
+        'Sunrise boat tour.',
+        'Kashi Vishwanath Temple.',
+        'Old Lane Exploration surrounding the temple.',
+        'Manikarnika Ghat.',
+        'Back to Hostel and chill.'
       ],
     },
     {
-      day: 'Day 3 · History & Shopping',
+      day: 'Day 3 · Peace Silk and Sunsets',
       activities: [
-        'Sarnath Buddhist ruins',         // TODO: Update activities
-        'Banarasi silk shopping',
-        'Farewell dinner by the ghats',
+        'Sarnath Excursion.',         // TODO: Update activities
+        'Silk weaving tour',
+        'Ramnagar Fort – Explore fort and catch Sunset over ganga.',
+        'End your trip with a traditional bati chokha meal for dinner.'
       ],
     },
   ],
@@ -476,7 +543,7 @@ export const CITY_PROPERTY_POLICY = {
     'Common areas must be kept clean — please wash your dishes after use.',
     'Visitors (non-guests) are not allowed inside dormitory areas.',
     'The hostel is not responsible for loss of valuables — use the provided lockers.',
-    'Pets are not allowed anywhere on the property.',
+    
   ],
   dehradun: [
     // TODO: Replace with actual property policies for Dehradun
@@ -487,7 +554,7 @@ export const CITY_PROPERTY_POLICY = {
     'Common areas must be kept clean — please wash your dishes after use.',
     'Visitors (non-guests) are not allowed inside dormitory areas.',
     'The hostel is not responsible for loss of valuables — use the provided lockers.',
-    'Pets are not allowed anywhere on the property.',
+    
   ],
   varanasi: [
     // TODO: Replace with actual property policies for Varanasi
@@ -498,7 +565,7 @@ export const CITY_PROPERTY_POLICY = {
     'Common areas must be kept clean — please wash your dishes after use.',
     'Visitors (non-guests) are not allowed inside dormitory areas.',
     'The hostel is not responsible for loss of valuables — use the provided lockers.',
-    'Pets are not allowed anywhere on the property.',
+    
   ],
 }
 

@@ -40,21 +40,6 @@ const ROOM_AMENITIES_BY_TYPE = {
   ],
 }
 
-const HOTEL_AMENITIES = {
-  Standard: [
-    "Dustbin", "Daily Housekeeping", "Non Smoking Room", "Lockers", "Wi-fi",
-    "Bed Curtains", "Ceiling Fan", "Bed Fan", "Air Conditioner", "Ensuite Bathroom",
-    "Hot Water", "Hair Dryer", "Towel Rental", "Toilet", "Shower", "Toilet Paper",
-    "Non-feather Pillows", "Linen", "Socket Near the Bed", "Bedside Lamp", "Work Desk"
-  ],
-  Deluxe: [
-    "Dustbin", "Daily Housekeeping", "Non Smoking Room", "Clothes Rack", "Linen",
-    "Electric Kettle", "Tea/ Coffee Sachets", "Wi-fi", "Flat Screen TV", "Ceiling Fan",
-    "Air Conditioner", "Ensuite Bathroom", "Toiletries", "Hair Dryer", "Hot Water",
-    "Towels", "Toilet", "Shower", "Toilet Paper", "Non-feather Pillows", "Linen",
-    "Socket Near the Bed", "Bedside Lamp", "Coffee Table Set"
-  ]
-}
 
 const CLD = 'https://res.cloudinary.com/dtksfqdju/image/upload'
 const CLD_RISHIKESH = 'https://res.cloudinary.com/vdxhnvbh/image/upload'
@@ -65,9 +50,15 @@ const CITY_META = {
   rishikesh: {
     tagline: 'Uttarakhand - Land of Spirituality and Adventure',
     address: 'Laxman Jhula Road, Rishikesh.',
-    about: `Rishikesh offers backpackers a perfect mix of soul-stirring adventure, vibrant cafe culture, and spiritual depth along the sacred Ganga River. Travelers can experience white-water rafting, hike to hidden waterfalls, go on a Rajaji safari, practice yoga & meditation at peaceful ashrams, and connect in lively local cafes.`,
+    about: [`Located in Tapovan, just 400 meters away from Lakshman Jhula, Live Free Hostel perfectly blends high-energy adventure with mindful relaxation. Our expansive rooftop terrace offers panoramic views of the rolling green Himalayan foothills and the sacred Ganga River, serving as an idyllic backdrop for morning sunbathing or peaceful rooftop yoga classes.
+Throughout our vibrant and colorful multi-story property, active common areas invite travelers to bond over guitar sessions, shared board games, or competitive foosball and table tennis tournaments. Choose from spacious, bright dorms designed with individual privacy curtains and power outlets, or retreat to comfortable private rooms with ensuite bathrooms after a long day out.
+As a preferred launchpad and trusted base camp for massive “India Hikes” trekking expeditions, our expertly trained team makes transitioning between work and play effortless. Whether you are sipping espresso at our ground-floor, in-house cafe or coordinating a white-water rafting trip from our travel desk, this hostel transforms your mountain escape into an immersive community experience.
+`,`Rishikesh offers backpackers a perfect mix of soul-stirring adventure, vibrant cafe culture, and spiritual depth along the sacred Ganga River. Travelers can experience white-water rafting, hike to hidden waterfalls, go on a Rajaji safari, practice yoga & meditation at peaceful ashrams, and connect in lively local cafes.
+`],
     checkIn: '13:00 until 23:59',
     checkOut: 'until 10:00',
+    bed:"Extra bed – 700 Rs (Only 1 bed allowed in a room)",
+    rule:"This is not a party hostel — silent hours after 11 PM are strictly observed.",
     highlights: ['Laxman Jhula – 400 mtrs', 'Sai Ghat – 600 mtrs', 'Ram Jhula – 2 Kms', 'Parmarth Niketan – 3 Kms', 'Beatles Aashram – 3.5 Kms', 'Triveni Ghat – 4.5 Kms','Kunjapuri Temple – 25 Kms','Neem Beach – 1.8 Kms','Neer Garh Waterfall – 4.5 Kms','Neelkanth Mahadev – 22 Kms','Shivpuri – 12 Kms','Vashisth Cave – 18 Kms'],
     video: 'sPQQLwdT1rQ',
     mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3450.82505972936!2d78.3251937!3d30.127819!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39091644ee11e80d%3A0x9f80ed977d1916c6!2sLive%20Free%20Hostel%20Rishikesh!5e0!3m2!1sen!2sin!4v1779344624890!5m2!1sen!2sin',
@@ -95,10 +86,14 @@ const CITY_META = {
   dehradun: {
     tagline: 'Uttarakhand · Gateway to Himalayas',
     address: 'Rajpur Road, Dehradun, Uttarakhand 248001',
-    about: `Dehradun is a city of pine forests, colonial architecture, and mountain air. Nestled in the Doon Valley between the Ganges and Yamuna rivers, it serves as the perfect basecamp for exploring the Himalayas. Live Free Dehradun brings the same community-driven spirit to this vibrant city — where remote workers, backpackers, and wanderers find a warm home away from home.`,
+    about: [`Located in a peaceful, tree-lined valley just minutes from the city's key transit lines, Live Free Hostel Dehradun serves as the ultimate gateway town launchpad and a productive work sanctuary. The absolute heart of our property is our expansive rooftop terrace café—a vibrant, active common area with beautiful, sweeping views of the surrounding green hills and shifting mountain mist. It is the perfect scenic backdrop where travellers, trekkers and remote professionals naturally gather to connect over fresh food, acoustic guitar strumming, or casual sundowner chats over a cup of coffee. This multi-functional rooftop café space seamlessly blend work, play, and community. Digital nomads can settle into quiet seating corners with stable Wi-Fi and plenty of accessible socket points, while others challenge new friends to high-energy table tennis or foosball matches, board games and casual poker nights. Accommodation options cater to every traveller’s preference, featuring clean, spacious, air-conditioned mixed and female-only dorms equipped with personal privacy curtains and secure storage lockers, alongside premium private rooms for peaceful downtime.
+As a preferred transit launchpad and trusted base camp for massive Indiahikes trekking expeditions, our expertly trained hospitality team is uniquely equipped to manage group logistics. Whether you are having a meal at the rooftop café with your travel squad, swapping trail stories under the open sky, or getting insider route tips from our 24/7 reception desk, this hostel transforms your valley stopover into an immersive community experience that feels just like home.
+`,'Dehradun offers backpackers lush river caves, sulphur springs, and a vibrant café culture. Nestled in the Himalayan foothills, it provides easy access to mountain treks, historic colonial architecture, and serene Buddhist monasteries. It is the perfect hub for nature lovers, adventure seekers, and travellers exploring northern India.'],
     checkIn: 'from 13:00 until 23:59',
     checkOut: 'until 10:00',
-    highlights: ["Robber's Cave", "Sahastradhara waterfalls", "Mussoorie day-trip", "Forest Research Institute", "Paltan Bazaar", "Mountain biking"],
+    rule:" This is not a party hostel — silent hours after 11 PM are strictly observed.",
+    bed:"Extra bed – 700 Rs (Allowed in few rooms only)",
+    highlights: ["Robbers Cave – 3.6 Kms", "Dehradun Zoo – 750 mtrs", "Tapkeshwar Mahadev Temple – 8.2 Kms", "Mindrolling Monastery – 20 Kms", "FRI Dehradun – 10  Kms", "Paltan Bazaar – 9 Kms","Sahastradhara – 11 Kms","Mussoorie – 19 Kms","George Everest– 27 Kms","Clock Tower – 8.8 Kms","Shikhar Falls – 7.6 Kms"],
     video: null,
     mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3441.7862564688057!2d78.07051957618397!3d30.385426802333587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3908d798eee5f1b5%3A0xb57a22052215b674!2sLive%20Free%20Hostel%20Dehradun!5e0!3m2!1sen!2sin!4v1779344677046!5m2!1sen!2sin',
     cancellationPolicy: 'Free cancellation up to 48 hours before check-in. After that, the first night is non-refundable. No-show will be charged the full amount.',
@@ -112,29 +107,39 @@ const CITY_META = {
       { label: '24-hour reception', icon: ConciergeBell },
       { label: 'Express check-in/-out', icon: KeyRound },
       { label: 'Air conditioning', icon: Wind },
-      { label: 'No pets', icon: PawPrint },
+      { label: 'Pets allowed', icon: PawPrint },
     ],
     characteristics: [
-      { label: 'INTERNET CONNECTION', icon: Globe, items: ['Wi-Fi'] },
       { label: 'PARKING', icon: ParkingCircle, items: ['Limited Parking Slots Available'] },
-      { label: 'SERVICES', icon: ConciergeBell, items: ['24-hour reception', 'Online check-in/-out', 'Night security', 'Luggage storage', 'Laundry', 'City Activity assistance'] },
+      {label:"MEDIA & GAMES",icon:Gamepad,items:["Sports Matches & Movie Screening","Board Games","Foosball Table","Table Tennis"]},
+      { label: 'SERVICES', icon: ConciergeBell, items: ['Limited hour reception', 'Daily Housekeeping', 'CCTV', 'Online/ Mobile check-in', 'Luggage storage', 'Laundry Service (Extra)','Tours/Ticket assistance','Power Backup'] },
       { label: 'FOOD', icon: UtensilsCrossed, items: ['In-house Cafe', 'Freshly brewed coffee'] },
-      { label: 'PRIVATE ROOM HAS', icon: BedDouble, items: ['AC', 'En-suite Bathroom', 'King Bed', 'WiFi', 'Mountain View'] },
+      { label: 'OTHERS', icon:ShieldPlus, items: ['Common Hangout Areas', 'Non-Smoking Rooms', 'Outdoor Smoking Areas', 'Card/UPI Payments Accepted','Hot & Cold Drinking Water Dispensers'] },
     ],
   },
   varanasi: {
     tagline: 'Uttar Pradesh · City of Light',
-    address: 'Near Assi Ghat, Varanasi, Uttar Pradesh 221005',
-    about: `One of the oldest living cities on earth, Varanasi pulses with ancient ritual, colour, and sound. The city lives and breathes on the banks of the Ganges, where life and death coexist in the most poetic way imaginable. Live Free Varanasi puts you right in the middle of it all — close to the ghats, the temples, and the unforgettable energy that makes this city like no other.`,
+    address: 'Near Assi Ghat, Varanasi.',
+    about: [`Located in Nagwa just 500 metres away from the iconic Assi Ghat, Live Free Hostel Varanasi perfectly blends deep cultural immersion with contemporary backpacker comfort. Our expansive rooftop terrace offers serene views of the sacred Ganga River and its sprawling landscape, serving as an idyllic backdrop for morning tea or peaceful yoga sessions before diving into the high-energy streets.
+Throughout our vibrant colourful multi-story property, active common areas like our central indoor lounge invite travellers to bond over acoustic guitar sessions, shared board games, or competitive table tennis matches. Our lively open-air courtyard café acts as the social heartbeat of the property, where digital nomads and solo explorers network over reliable Wi-Fi, sip fresh espresso, 
+and enjoy pocket-friendly, home-style Indian comfort food. Choose from spacious, air-conditioned mixed or female-only dorms designed with sturdy metal bunk beds, individual privacy curtains, and multiple charging points, 
+or retreat to comfortable private rooms with ensuite bathrooms after a long day of heritage exploration.
+Whether you are swapping travel stories with fellow backpackers, or coordinating an authentic boat ride and sunset Ganga Aarti tour from our helpful reception desk, our dedicated local team treats you like family to discover the true spiritual soul of Varanasi.
+`,
+`Varanasi offers backpackers vibrant street food, unforgettable spiritual energy, and deep cultural immersion. You can witness mesmerizing Ganga Aarti rituals, explore ancient maze-like alleys, and enjoy serene sunrise boat rides.
+ It is the ultimate destination for historic temples, ancient traditions, and connecting with fellow travellers along the sacred Ganges.`
+],
     checkIn: 'from 13:00 until 23:59',
     checkOut: 'until 10:00',
-    highlights: ['Sunrise boat ride', 'Evening Ganga aarti', 'Vishwanath Temple', 'Sarnath ruins', 'Silk shopping', 'Street food walk'],
+    rule:" This is not a party hostel — silent hours after 11 PM are strictly observed.",
+    bed:"Extra bed – 700 Rs (Allowed in few rooms only)",
+    highlights: ['Assi Ghat – 400 mtrs', 'Ram Nagar Fort – 3.4 Kms', 'Manikarnika Ghat – 3.3 Kms', 'Dashashwamedh Ghat – 2.5 Kms', 'Kashi Vishwanath Temple – 4  Kms', 'Sankat Mochan Temple – 1.5 Kms','Sarnath – 16 Kms','BHU – 2 Kms','Harishchandra Ghat– 2.2 Kms','Bangali Tola – 2.7 Kms','Godowlia – 3.7 Kms'],
     video: 'B7QUA2zZsQ8',
     mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.5776986113897!2d83.00443047605633!3d25.284787728146224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398e33ba110bfd13%3A0x16133790c1ae2c19!2sLive%20Free%20Hostel%20Varanasi!5e0!3m2!1sen!2sin!4v1779344741618!5m2!1sen!2sin',
     cancellationPolicy: 'Free cancellation up to 48 hours before check-in. After that, the first night is non-refundable. No-show will be charged the full amount.',
     directions: {
-      air: { label: 'By Air', icon: Plane, content: 'Lal Bahadur Shastri Airport (VNS), then taxi to Live Free Varanasi (~30 mins).' },
-      train: { label: 'By Train', icon: Train, content: 'Varanasi Junction, then auto/cab to the hostel (~20 mins).' },
+      air: { label: 'By Air', icon: Plane, content: 'Lal Bahadur Shastri Airport (VNS), then taxi to Live Free Hostel Varanasi (~30 mins).' },
+      train: { label: 'By Train', icon: Train, content: 'Varanasi Junction, then auto/cab to Live Free Hostel (~20 mins).' },
       road: { label: 'By Road', icon: Car, content: 'From Lucknow: NH30. From Allahabad: NH19. GPS: Live Free Hostel Varanasi.' },
     },
     features: [
@@ -142,14 +147,14 @@ const CITY_META = {
       { label: '24-hour reception', icon: ConciergeBell },
       { label: 'Express check-in/-out', icon: KeyRound },
       { label: 'Air conditioning', icon: Wind },
-      { label: 'No pets', icon: PawPrint },
+      { label: 'Pets allowed', icon: PawPrint },
     ],
     characteristics: [
-      { label: 'INTERNET CONNECTION', icon: Globe, items: ['Wi-Fi'] },
-      { label: 'PARKING', icon: ParkingCircle, items: ['Limited Parking Slots Available'] },
-      { label: 'SERVICES', icon: ConciergeBell, items: ['24-hour reception', 'Online check-in/-out', 'Night security', 'Luggage storage', 'Laundry', 'City Activity assistance'] },
+      { label: 'PARKING', icon: ParkingCircle, items: ['Offsite Free Parking Available'] },
+      {label:"MEDIA & GAMES",icon:Gamepad,items:["Sports Matches & Movie Screening","Board Games","Table Tennis"]},
+      { label: 'SERVICES', icon: ConciergeBell, items: ['Limited hour reception', 'Daily Housekeeping', 'CCTV', 'Online/ Mobile check-in', 'Luggage storage', 'Laundry Service (Extra)','Tours/Ticket assistance','Power Backup'] },
       { label: 'FOOD', icon: UtensilsCrossed, items: ['In-house Cafe', 'Freshly brewed coffee'] },
-      { label: 'PRIVATE ROOM HAS', icon: BedDouble, items: ['AC', 'En-suite Bathroom', 'Double Bed', 'WiFi'] },
+      { label: 'OTHERS', icon:ShieldPlus, items: ['Common Hangout Areas', 'Non-Smoking Rooms', 'Outdoor Smoking Areas', 'Card/UPI Payments Accepted','Hot & Cold Drinking Water Dispensers'] },
     ],
   },
 }
@@ -346,7 +351,7 @@ function HeroInfoSection({ dest, meta }) {
           <MapPin size={15} style={{ color: 'var(--primary)', flexShrink: 0 }} />
           <span>{meta.address}</span>
         </div>
-        <p style={{ fontSize: '0.96rem', color: '#555', lineHeight: 1.9, width: '100%', marginBottom: 28 }}>{meta.about}</p>
+        <p style={{ fontSize: '0.96rem', color: '#555', lineHeight: 1.9, width: '100%', marginBottom: 28 }}>{meta.about[0]}</p>
         <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
           <a href="#travel-itinerary" onClick={e => { e.preventDefault(); document.getElementById('travel-itinerary')?.scrollIntoView({ behavior: 'smooth' }) }}
             style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '12px 24px', borderRadius: 8, background: 'var(--primary)', color: '#fff', fontWeight: 700, fontSize: '0.85rem', textDecoration: 'none', transition: 'opacity 0.2s' }}
@@ -391,11 +396,11 @@ function GoodToKnowSection({ meta }) {
                     <ul style={{ marginTop: 10, paddingTop: 10, display: 'flex', flexDirection: 'column', gap: 10, listStyle: 'none' }}>
                     <li style={{ display: 'flex', gap: 10, alignItems: 'flex-start', fontSize: '0.92rem', color: 'var(--text)', lineHeight: 1.6 }}>
                       
-                      Extra bed – ₹700 (only 1 bed allowed in a room)
+                     {meta.bed}
                     </li>
                     <li style={{ display: 'flex', gap: 10, alignItems: 'flex-start', fontSize: '0.92rem', color: 'var(--text)', lineHeight: 1.6 }}>
                       
-                      This is not a party hostel — silent hours after 11 PM are strictly observed.
+                     {meta.rule}
                     </li>
                   </ul>
                 </div>
@@ -535,7 +540,7 @@ function SelectRoomSection({ rooms,  onOpenLightbox }) {
 
                         <h4 style={{ fontWeight: 800, fontSize: '0.95rem', color: 'var(--text)', marginBottom: 12 }}>Hotel Amenities</h4>
                         <div className={styles.roomDetailsGrid}>
-                          {(room.type.includes('Private') ? HOTEL_AMENITIES.Deluxe : HOTEL_AMENITIES.Standard).map(item => (
+                          {(room.amenities).map(item => (
                             <span key={item} style={{ display: 'flex', alignItems: 'center', gap: 7, fontSize: '0.86rem', color: '#444' }}>
                               <Check size={14} style={{ color: '#2d9b5a', flexShrink: 0 }} /> {item}
                             </span>
@@ -678,7 +683,7 @@ function ItinerarySection({ itinerary, dest, meta }) {
             <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&q=80" alt="Travel" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           </div>
           <div style={{ marginTop: 20, padding: '24px 28px', background: '#fff', borderRadius: 14, boxShadow: '0 2px 12px rgba(0,0,0,0.06)' }}>
-            <p style={{ fontSize: '0.95rem', color: '#666', lineHeight: 1.8, margin: 0 }}>{ meta.about}</p>
+            <p style={{ fontSize: '0.95rem', color: '#666', lineHeight: 1.8, margin: 0 }}>{ meta.about[1]}</p>
             {/* <button type="button" onClick={() => setExpanded(v => !v)}
               style={{ display: 'inline-flex', alignItems: 'center', gap: 8, marginTop: 18, padding: '10px 18px', borderRadius: 999, background: 'linear-gradient(135deg, var(--primary), var(--primary-dark))', color: '#fff', fontSize: '0.82rem', fontWeight: 800, letterSpacing: '0.04em', textTransform: 'uppercase', boxShadow: '0 10px 24px rgba(232,93,58,0.22)', transition: 'transform 0.22s ease, box-shadow 0.22s ease', border: 'none', cursor: 'pointer' }}
               onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 14px 30px rgba(232,93,58,0.3)' }}
