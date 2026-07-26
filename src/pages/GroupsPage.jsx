@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { Users, Send, Phone, Mail } from 'lucide-react'
 import styles from './GroupsPage.module.css'
 import IndianHikesImg from '../assets/IndianHikes.png'
+import Cover from "../assets/cover_photo.jpg"
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 28 },
@@ -58,7 +59,7 @@ export default function GroupsPage() {
       {/* 1. HERO BANNER */}
       <section style={{ position: 'relative', minHeight: 'calc(75vh + 90px)', paddingTop: 90, display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0 }}>
-          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1400&q=80" alt="Groups" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+          <img src={Cover} alt="Groups" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, rgba(0,80,60,0.5) 0%, rgba(0,80,60,0.25) 100%)' }} />
         </div>
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>

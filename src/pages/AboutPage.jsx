@@ -1,6 +1,7 @@
 import { useRef, useEffect, useState } from 'react';
 import { motion, useAnimationFrame } from 'framer-motion';
 import { Heart, Globe, Home, Users, AlertCircle, ChevronLeft, ChevronRight } from 'lucide-react';
+import GroupImage from "../assets/Our_Story.jpg"
 
 const VALUES = [
   { icon: Users, title: 'People First, Always', desc: 'Our staff are travelers too. They know what matters — a genuine smile, local tips, and a door that always feels open. At Live Free Hostels, People First, Always is more than a philosophy—it is the heart of everything we do. Because at the end of the day, hostels are not just buildings—they are collections of stories, friendships, and experiences shared by people from around the world.' },
@@ -46,7 +47,7 @@ const styles = {
     overflow: 'hidden',
     boxShadow: 'var(--shadow-lg)',
   },
-  storyImg: { width: '100%', height: '100%', objectFit: 'cover', display: 'block' },
+  storyImg: { width: '100%', height: '100%', objectFit: 'cover',objectPosition:"5% 10%", display: 'block' },
   storyLabel: { fontSize: '0.75rem', fontWeight: 700, letterSpacing: 3, textTransform: 'uppercase', color: 'var(--primary)', display: 'block', marginBottom: 14 },
   storyH2: { fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem, 4vw, 2.2rem)', fontWeight: 800, color: 'var(--text)', lineHeight: 1.15, marginBottom: 24 },
   storyP: { color: 'var(--text-muted)', fontSize: '1rem', lineHeight: 1.85, marginBottom: 20, textAlign: 'justify' },
@@ -233,7 +234,7 @@ export default function AboutPage() {
               viewport={{ once: true }}
             >
               <img
-                src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&q=80"
+                src={GroupImage}
                 alt="Live Free Story"
                 style={styles.storyImg}
               />
