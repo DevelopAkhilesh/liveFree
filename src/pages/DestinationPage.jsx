@@ -98,9 +98,9 @@ As a preferred transit launchpad and trusted base camp for massive Indiahikes tr
     mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3441.7862564688057!2d78.07051957618397!3d30.385426802333587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3908d798eee5f1b5%3A0xb57a22052215b674!2sLive%20Free%20Hostel%20Dehradun!5e0!3m2!1sen!2sin!4v1779344677046!5m2!1sen!2sin',
     cancellationPolicy: 'Free cancellation up to 48 hours before check-in. After that, the first night is non-refundable. No-show will be charged the full amount.',
     directions: {
-      air: { label: 'By Air', icon: Plane, content: 'Jolly Grant Airport (DED), then taxi to Live Free Dehradun (~45 mins).' },
-      train: { label: 'By Train', icon: Train, content: 'Dehradun Railway Station, then auto/cab to Live Free (~10–15 mins).' },
-      road: { label: 'By Road', icon: Car, content: 'From Delhi: NH58 via Haridwar. GPS: Live Free Hostel Dehradun.' },
+      air: { label: 'By Air', icon: Plane, content: 'Jolly Grant Airport (DED), then taxi to Live Free Dehradun (~60 mins).' },
+      train: { label: 'By Train', icon: Train, content: 'Dehradun Railway Station, then a taxi or Auto to Live Free Dehradun (~25 mins).' },
+      road: { label: 'By Road', icon: Car, content: 'From Delhi: Take Delhi- Dehradun expressway. GPS: Live Free Hostel, Dehradun (~ 4 Hrs)' },
     },
     features: [
       { label: 'Wi-Fi', icon: Wifi },

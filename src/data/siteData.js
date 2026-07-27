@@ -15,6 +15,18 @@ export const FEATURES = [
     desc: 'Every Live Free property is strategically situated to offer breathtaking aesthetics and unmatched convenience for backpackers. Positioned steps away from major transport hubs, vibrant old-town markets, local cafés, and iconic spiritual centres, we are your perfect exploration launchpad. Step out to discover hidden gems, or return to recharge in style.',
   },
   {
+    id:'comfort',
+    icon:'PawPrint',
+    title:'Inclusivity',
+    desc:`At Live Free, everyone is welcome. Whether you are traveling with family, kids, as a young backpacker, or a solo explorer, our property suits every journey. Our multiple, diverse common areas naturally bring people together, making it incredibly easy to connect, share stories, and mingle with similar, like-minded groups throughout your stay.`
+  },
+  {
+    id: 'travel',
+    icon: 'Sunset',
+    title: 'Built for Digital Nomads ',
+    desc: 'We ensure your work never suffers while you travel. Our properties feature reliable, fast Wi-Fi across all communal spaces, alongside robust power backup systems. Access dedicated workspaces equipped with desks and multiple socket points across our seating areas—the perfect environment to network and collaborate with a thriving global creative community.',
+  },
+  {
     id: 'cafe',
     icon: 'Coffee',
     title: 'The Live Free Café',
@@ -31,18 +43,6 @@ export const FEATURES = [
     icon:'PartyPopper',
     title:'Unforgettable Hostel Events ',
     desc:`The fun never stops with our rotating calendar of community activities. Bond over vibrant in-house dinners, showcase your talent at open-mic acoustic nights, or dive into competitive trivia and board games. From morning yoga to sunset hikes, our curated gatherings ensure you leave with new friends and lifelong memories.`
-  },
-  {
-    id: 'travel',
-    icon: 'Sunset',
-    title: 'Built for Digital Nomads ',
-    desc: 'We ensure your work never suffers while you travel. Our properties feature reliable, fast Wi-Fi across all communal spaces, alongside robust power backup systems. Access dedicated workspaces equipped with desks and multiple socket points across our seating areas—the perfect environment to network and collaborate with a thriving global creative community.',
-  },
-  {
-    id:'comfort',
-    icon:'PawPrint',
-    title:'Inclusivity',
-    desc:`At Live Free, everyone is welcome. Whether you are traveling with family, kids, as a young backpacker, or a solo explorer, our property suits every journey. Our multiple, diverse common areas naturally bring people together, making it incredibly easy to connect, share stories, and mingle with similar, like-minded groups throughout your stay.`
   },
 ]
 
