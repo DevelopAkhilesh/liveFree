@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
-import { ChevronDown, MapPin, Heart, Home, Info, Compass, Users, ArrowLeft } from 'lucide-react'
+import { ChevronDown, MapPin, Heart, Home, Info, BookOpen, Users, ArrowLeft } from 'lucide-react'
 import { AnimatePresence, motion } from 'framer-motion'
 import styles from './Navbar.module.css'
 import logoImg from '../../assets/l1.png'
@@ -140,10 +140,10 @@ export default function Navbar() {
 
               <li className={styles.navItem}>
                 <button
-                  className={`${styles.navLink} ${location.pathname === '/experience' ? styles.active : ''}`}
-                  onClick={() => goTo('/experience')}
+                  className={`${styles.navLink} ${location.pathname === '/blog-page' ? styles.active : ''}`}
+                  onClick={() => goTo('/blog-page')}
                 >
-                  Experiences
+                  Blogs
                 </button>
               </li>
 
@@ -252,10 +252,10 @@ export default function Navbar() {
         </button>
 
         <button
-          className={`${styles.mobileNavLink} ${location.pathname === '/experience' ? styles.active : ''}`}
-          onClick={() => goTo('/experience')}
+          className={`${styles.mobileNavLink} ${location.pathname === '/blog-page' ? styles.active : ''}`}
+          onClick={() => goTo('/blog-page')}
         >
-          <Compass size={18} /> Experiences
+          <BookOpen size={18} /> Blogs
         </button>
 
         <div className={styles.mobileDivider} />

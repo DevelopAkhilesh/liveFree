@@ -47,7 +47,8 @@ export default function Footer() {
             <h4>Quick Links</h4>
             <ul>
               <li><a href="#" onClick={e => { e.preventDefault(); navigate('/about') }}>About Us</a></li>
-              <li><a href="#" onClick={e => { e.preventDefault(); navigate('/groups') }}>Experience</a></li>
+              <li><a href="#" onClick={e => { e.preventDefault(); navigate('/groups') }}>Groups</a></li>
+              <li><a href="#" onClick={e => { e.preventDefault(); navigate('/experience') }}>Experience</a></li>
               <li><a href="#" onClick={e => { e.preventDefault(); navigate('/awards') }}>Awards</a></li>
               <li><a href="#workation">Workations</a></li>
               <li><a href="#" onClick={e => { e.preventDefault(); navigate('/contact') }}>Contact Us</a></li>

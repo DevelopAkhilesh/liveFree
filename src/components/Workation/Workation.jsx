@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { ChevronDown, Coffee, Heart, Laptop2, MessageCircle, Moon, PartyPopper, Sun, Wifi } from 'lucide-react'
 import styles from './Workation.module.css'
 import { CgStories } from 'react-icons/cg'
-import workationImg from '../../assets/workstation.jpeg'
+import workationImg from '../../assets/image_efaab999.png'
 
 const stays = [
   'Live Free Rishikesh',
