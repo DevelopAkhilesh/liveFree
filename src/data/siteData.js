@@ -271,7 +271,7 @@ export const CITY_ROOMS = {
         "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh/6+bed+mixed+dorm/2.HEIC",
         "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh/6+bed+mixed+dorm/3.JPG",
         "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh/6+bed+mixed+dorm/bathroom.jpg",
-        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh/6+bed+mixed+dorm/bathroom.jpg",
+        
       ],
     },
     {
@@ -313,7 +313,7 @@ export const CITY_ROOMS = {
     "Socket Near the Bed", "Bedside Lamp", "Coffee Table Set"
   ],
       roomdesc:"1 Queen Size Bed",
-      images:["https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh/Std+Private+Room/bathroom.jpg",
+      images:["https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh/Std+Private+Room/Main.jpg",
         "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh/Std+Private+Room/1.HEIC",
         "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh/Std+Private+Room/2.jpg",
         "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh/Std+Private+Room/3.jpg",
