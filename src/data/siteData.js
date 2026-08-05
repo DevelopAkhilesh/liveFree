@@ -225,10 +225,10 @@ export const CITY_ROOMS = {
   ],
       roomdesc: "2  Bunk Beds",
       images: ["https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh/4+bed+female+dorm/Main.jpg",
-        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh/4+bed+female+dorm/1.jpg",
-        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh/4+bed+female+dorm/2.HEIC",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh/4+bed+female+dorm/1+(1)+(1).jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh/4+bed+female+dorm/2.jpg",
         "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh/4+bed+female+dorm/3.jpg",
-        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh/4+bed+female+dorm/Bathroom.HEIC"
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh/4+bed+female+dorm/Bathroom.jpg"
       ]
     },
     {
@@ -268,7 +268,7 @@ export const CITY_ROOMS = {
       roomdesc: "3 Bunk Beds",
       images:["https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh/6+bed+mixed+dorm/main.JPG",
         "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh/6+bed+mixed+dorm/1.jpg",
-        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh/6+bed+mixed+dorm/2.HEIC",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh/6+bed+mixed+dorm/2.jpg",
         "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh/6+bed+mixed+dorm/3.JPG",
         "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh/6+bed+mixed+dorm/bathroom.jpg",
         
@@ -314,8 +314,8 @@ export const CITY_ROOMS = {
   ],
       roomdesc:"1 Queen Size Bed",
       images:["https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh/Std+Private+Room/Main.jpg",
-        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh/Std+Private+Room/1.HEIC",
-        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh/Std+Private+Room/2.jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh/Std+Private+Room/1+(1).jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh/Std+Private+Room/2+(1)+(1).jpg",
         "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh/Std+Private+Room/3.jpg",
         "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh/Std+Private+Room/4.jpg",
         "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh/Std+Private+Room/bathroom.jpg",
@@ -376,7 +376,7 @@ export const CITY_ROOMS = {
         "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun/final+4+bed+dorm+pics/1.png",
         "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun/final+4+bed+dorm+pics/2.png",
         "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun/final+4+bed+dorm+pics/3.jpg",
-        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun/final+4+bed+dorm+pics/4.HEIC",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun/final+4+bed+dorm+pics/4.jpg",
         "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun/final+4+bed+dorm+pics/washroom.png"
 
       ]
@@ -536,7 +536,7 @@ export const CITY_ROOMS = {
         "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi/Deluxe+Private+Dorm/2.jpg",
         "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi/Deluxe+Private+Dorm/3.jpg",
         "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi/Deluxe+Private+Dorm/4.jpg",
-        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi/Deluxe+Private+Dorm/5.heic",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi/Deluxe+Private+Dorm/5.jpg",
         "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi/Deluxe+Private+Dorm/6.jpeg",
         "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi/Deluxe+Private+Dorm/Bathroom.jpg"
         
