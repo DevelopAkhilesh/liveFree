@@ -30,36 +30,62 @@ const SUSTAINABILITY_POLICIES = [
   '… More on the way!',
 ];
 
-const styles = {
-  hero: { padding: 'clamp(100px, 20vw, 140px) 24px clamp(56px, 8vw, 80px)', background: 'linear-gradient(160deg, var(--bg) 60%, var(--accent-light) 100%)', textAlign: 'center' },
-  h1: { fontFamily: 'var(--font-display)', fontSize: 'clamp(2.4rem, 5vw, 4rem)', fontWeight: 800, marginBottom: 18, lineHeight: 1.1 },
-  sub: { color: 'var(--text-muted)', fontSize: '1.1rem', maxWidth: 600, margin: '0 auto 36px', lineHeight: 1.7 },
+// ---- Simple responsive hook (no CSS media queries needed for inline styles) ----
+function useViewport() {
+  const [width, setWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
+  useEffect(() => {
+    const onResize = () => setWidth(window.innerWidth);
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
+  return width;
+}
 
-  storySection: { padding: '70px 0px', background: 'var(--surface-alt)' },
-  storyContainer: { maxWidth: 1100, margin: '0 auto' },
-  storyHeader: { textAlign: 'center', maxWidth: 640, margin: '0 auto 56px' },
-  storyBody: { display: 'flex', gap: 48, flexWrap: 'wrap', alignItems: 'flex-start', justifyContent: 'center' },
+const getStyles = (isMobile, isTablet) => ({
+  hero: {
+    padding: isMobile ? '88px 20px 44px' : 'clamp(100px, 20vw, 140px) 24px clamp(56px, 8vw, 80px)',
+    background: 'linear-gradient(160deg, var(--bg) 60%, var(--accent-light) 100%)',
+    textAlign: 'center',
+  },
+  h1: { fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem, 8vw, 4rem)', fontWeight: 800, marginBottom: 18, lineHeight: 1.15 },
+  sub: { color: 'var(--text-muted)', fontSize: isMobile ? '0.98rem' : '1.1rem', maxWidth: 600, margin: '0 auto 36px', lineHeight: 1.7 },
+
+  storySection: { padding: isMobile ? '48px 0px' : '70px 0px', background: 'var(--surface-alt)' },
+  storyContainer: { maxWidth: 1100, margin: '0 auto', padding: isMobile ? '0 20px' : '0 24px' },
+  storyHeader: { textAlign: 'center', maxWidth: 640, margin: isMobile ? '0 auto 32px' : '0 auto 56px' },
+  storyBody: { display: 'flex', gap: isMobile ? 28 : 48, flexWrap: 'wrap', alignItems: 'flex-start', justifyContent: 'center' },
   imageWrapper: {
     flex: '1 1 480px',
     maxWidth: 560,
-    height: 'clamp(340px, 46vw, 480px)',
+    width: '100%',
+    height: isMobile ? undefined : 'clamp(340px, 46vw, 480px)',
+    aspectRatio: isMobile ? '4 / 3' : undefined,
     borderRadius: 'var(--radius-xl)',
     overflow: 'hidden',
     boxShadow: 'var(--shadow-lg)',
   },
-  storyImg: { width: '100%', height: '100%', objectFit: 'cover',objectPosition:"5% 10%", display: 'block' },
+  storyImg: { width: '100%', height: '100%', objectFit: 'cover', objectPosition: '5% 10%', display: 'block' },
   storyLabel: { fontSize: '0.75rem', fontWeight: 700, letterSpacing: 3, textTransform: 'uppercase', color: 'var(--primary)', display: 'block', marginBottom: 14 },
-  storyH2: { fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem, 4vw, 2.2rem)', fontWeight: 800, color: 'var(--text)', lineHeight: 1.15, marginBottom: 24 },
-  storyP: { color: 'var(--text-muted)', fontSize: '1rem', lineHeight: 1.85, marginBottom: 20, textAlign: 'justify' },
-  storyTextWrap: { position: 'relative', flex: '1 1 380px', maxWidth: 480, minWidth: 0, height: 'clamp(340px, 46vw, 480px)' },
+  storyH2: { fontFamily: 'var(--font-display)', fontSize: 'clamp(1.6rem, 6vw, 2.2rem)', fontWeight: 800, color: 'var(--text)', lineHeight: 1.2, marginBottom: 20 },
+  storyP: { color: 'var(--text-muted)', fontSize: isMobile ? '0.95rem' : '1rem', lineHeight: 1.8, marginBottom: 18, textAlign: isMobile ? 'left' : 'justify' },
+  // On mobile: no fixed height, no clipped scroll box — content just flows naturally
+  storyTextWrap: {
+    position: 'relative',
+    flex: '1 1 380px',
+    maxWidth: isMobile ? '100%' : 480,
+    width: '100%',
+    minWidth: 0,
+    height: isMobile ? 'auto' : 'clamp(340px, 46vw, 480px)',
+  },
   storyTextBox: {
-    height: '100%',
-    overflowY: 'auto',
-    paddingRight: 20,
+    height: isMobile ? 'auto' : '100%',
+    overflowY: isMobile ? 'visible' : 'auto',
+    paddingRight: isMobile ? 0 : 20,
     scrollbarWidth: 'thin',
     scrollbarColor: 'var(--primary) transparent',
   },
   scrollFade: {
+    display: isMobile ? 'none' : 'block',
     position: 'absolute',
     bottom: 0,
     left: 0,
@@ -69,44 +95,67 @@ const styles = {
     pointerEvents: 'none',
   },
 
-  sustainSection: { padding: '70px 0', background: 'var(--surface-alt)' },
-  sustainHeaderRow: { maxWidth: 1050, margin: '0 auto', padding: '0 24px 24px', textAlign: 'center' },
-  sustainSub: { color: 'black', fontSize: '1.05rem', fontWeight: 700, lineHeight: 1.8, maxWidth: 1050, margin: '12px auto 0' },
-  sustainBody: { display: 'flex', flexWrap: 'wrap', alignItems: 'stretch', maxWidth: 1300, margin: '40px auto 0', padding: '0 24px' },
-  sustainImageWrapper: { flex: '1 1 480px', maxWidth: 560, aspectRatio: '4 / 3', borderRadius: 'var(--radius-lg)', overflow: 'hidden' },
+  sustainSection: { padding: isMobile ? '48px 0' : '70px 0', background: 'var(--surface-alt)' },
+  sustainHeaderRow: { maxWidth: 1050, margin: '0 auto', padding: isMobile ? '0 20px 20px' : '0 24px 24px', textAlign: 'center' },
+  sustainSub: { color: 'black', fontSize: isMobile ? '0.95rem' : '1.05rem', fontWeight: 700, lineHeight: 1.8, maxWidth: 1050, margin: '12px auto 0' },
+  sustainBody: { display: 'flex', flexWrap: 'wrap', alignItems: 'stretch', maxWidth: 1300, margin: isMobile ? '24px auto 0' : '40px auto 0', padding: isMobile ? '0 20px' : '0 24px', gap: isMobile ? 28 : 0 },
+  sustainImageWrapper: { flex: '1 1 480px', maxWidth: 560, width: '100%', aspectRatio: '4 / 3', borderRadius: 'var(--radius-lg)', overflow: 'hidden' },
   sustainImg: { width: '100%', height: '100%', objectFit: 'cover', display: 'block' },
-  sustainPoliciesWrap: { flex: '1 1 420px', padding: '8px 0 8px clamp(0px, 8vw, 56px)', display: 'flex', flexDirection: 'column', justifyContent: 'center' },
-  sustainPolicyTitle: { fontFamily: 'var(--font-display)', fontSize: '1.6rem', fontWeight: 800, marginBottom: 22, color: 'var(--text)' },
+  sustainPoliciesWrap: { flex: '1 1 420px', padding: isMobile ? '0' : '8px 0 8px clamp(0px, 8vw, 56px)', display: 'flex', flexDirection: 'column', justifyContent: 'center' },
+  sustainPolicyTitle: { fontFamily: 'var(--font-display)', fontSize: isMobile ? '1.3rem' : '1.6rem', fontWeight: 800, marginBottom: 20, color: 'var(--text)' },
   sustainList: { display: 'flex', flexDirection: 'column', gap: 12 },
-  sustainListItem: { display: 'flex', gap: 10, alignItems: 'flex-start', fontSize: '0.95rem', lineHeight: 1.6, color: 'var(--text-muted)' },
+  sustainListItem: { display: 'flex', gap: 10, alignItems: 'flex-start', fontSize: isMobile ? '0.9rem' : '0.95rem', lineHeight: 1.6, color: 'var(--text-muted)' },
   sustainBullet: { width: 5, height: 5, borderRadius: '50%', background: 'var(--primary)', marginTop: 8, flexShrink: 0 },
 
-  carouselOuter: { position: 'relative', marginTop: 48, maxWidth: 1400, margin: '48px auto 0', display: 'flex', alignItems: 'center', gap: 16 },
+  // Carousel: on desktop/tablet buttons OVERLAY the track; on mobile they sit BELOW the cards
+  carouselOuter: {
+    position: 'relative',
+    display: isMobile ? 'flex' : 'block',
+    flexDirection: isMobile ? 'column' : undefined,
+    alignItems: isMobile ? 'stretch' : undefined,
+    gap: isMobile ? 16 : 0,
+    marginTop: isMobile ? 28 : 48,
+    maxWidth: 1400,
+    margin: `${isMobile ? 28 : 48}px auto 0`,
+  },
   carouselMask: {
     overflow: 'hidden',
-    flex: 1,
-    minWidth: 0,
+    width: '100%',
+    padding: isMobile ? '0 20px' : '0 56px',
   },
-  carouselTrack: { display: 'flex', gap: 32, width: 'max-content' },
+  // Row that holds the two arrow buttons under the carousel on mobile
+  carouselNavRow: {
+    display: isMobile ? 'flex' : 'none',
+    justifyContent: 'center',
+    gap: 20,
+  },
+  carouselTrack: { display: 'flex', gap: isMobile ? 16 : 32, width: 'max-content' },
   valCard: {
     background: 'var(--surface)',
     borderRadius: 'var(--radius-lg)',
-    padding: 'clamp(28px, 5vw, 40px) clamp(22px, 4vw, 32px)',
+    padding: isMobile ? '24px 20px' : 'clamp(28px, 5vw, 40px) clamp(22px, 4vw, 32px)',
     boxShadow: 'var(--shadow-xs)',
-    width: 'min(450px, 86vw)',
+    width: isMobile ? 'calc(100vw - 72px)' : isTablet ? '380px' : '450px',
+    maxWidth: 450,
     flexShrink: 0,
   },
   iconBox: { width: 52, height: 52, background: 'var(--primary-glow)', borderRadius: 'var(--radius-md)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--primary)', marginBottom: 20 },
 
-  foundGrid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(320px, 100%), 1fr))', gap: 40, marginTop: 48, maxWidth: 1200, margin: '48px auto 0' },
-  foundCard: { background: 'var(--surface)', borderRadius: 'var(--radius-xl)', padding: 'clamp(32px, 6vw, 48px) clamp(22px, 5vw, 36px)', textAlign: 'center', boxShadow: 'var(--shadow-sm)' },
+  foundGrid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(320px, 100%), 1fr))', gap: isMobile ? 24 : 40, marginTop: isMobile ? 32 : 48, maxWidth: 1200, margin: `${isMobile ? 32 : 48}px auto 0`, padding: isMobile ? '0 4px' : 0 },
+  foundCard: { background: 'var(--surface)', borderRadius: 'var(--radius-xl)', padding: isMobile ? '32px 22px' : 'clamp(32px, 6vw, 48px) clamp(22px, 5vw, 36px)', textAlign: 'center', boxShadow: 'var(--shadow-sm)' },
   avatar: { width: 90, height: 90, borderRadius: '50%', background: 'linear-gradient(135deg, var(--primary-light), var(--primary))', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px', color: '#fff', fontSize: '1.6rem', fontWeight: 800 },
   line: { height: 3, width: 40, background: 'var(--primary)', borderRadius: 4, margin: '12px auto 16px' },
 
-  // NEW: manual nav arrow buttons
-  navBtn: {
-    width: 48,
-    height: 48,
+  // Desktop/tablet: buttons overlay left/right of the track.
+  // Mobile: buttons are static, placed in carouselNavRow below the cards (no absolute positioning).
+  navBtn: (side) => ({
+    position: isMobile ? 'static' : 'absolute',
+    top: isMobile ? undefined : '50%',
+    [side]: isMobile ? undefined : 8,
+    transform: isMobile ? 'none' : 'translateY(-50%)',
+    zIndex: 2,
+    width: isMobile ? 44 : 48,
+    height: isMobile ? 44 : 48,
     borderRadius: '50%',
     background: '#ffffff',
     color: '#222',
@@ -115,20 +164,19 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'center',
     cursor: 'pointer',
-    flexShrink: 0,
-    boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+    boxShadow: '0 4px 12px rgba(0,0,0,0.18)',
     transition: 'all 0.25s ease',
-  },
-};
+  }),
+});
 
-function ValuesCarousel({ items }) {
+function ValuesCarousel({ items, styles, isMobile }) {
   const trackRef = useRef(null);
   const offsetRef = useRef(0);
   const isPausedRef = useRef(false);
   const setWidthRef = useRef(0);
 
   const SPEED = 40; // pixels per second (auto-scroll)
-  const NUDGE = 480; // pixels moved per manual arrow click
+  const NUDGE = isMobile ? 280 : 480; // pixels moved per manual arrow click
 
   useAnimationFrame((time, delta) => {
     const track = trackRef.current;
@@ -160,15 +208,26 @@ function ValuesCarousel({ items }) {
     track.style.transform = `translateX(${-offsetRef.current}px)`;
   };
 
+  const leftBtn = (
+    <button style={styles.navBtn('left')} onClick={() => nudge(-1)} aria-label="Previous">
+      <ChevronLeft size={isMobile ? 20 : 22} />
+    </button>
+  );
+  const rightBtn = (
+    <button style={styles.navBtn('right')} onClick={() => nudge(1)} aria-label="Next">
+      <ChevronRight size={isMobile ? 20 : 22} />
+    </button>
+  );
+
   return (
     <div
       style={styles.carouselOuter}
       onMouseEnter={() => { isPausedRef.current = true; }}
       onMouseLeave={() => { isPausedRef.current = false; }}
+      onTouchStart={() => { isPausedRef.current = true; }}
     >
-      <button style={styles.navBtn} onClick={() => nudge(-1)} aria-label="Previous">
-        <ChevronLeft size={22} />
-      </button>
+      {/* Desktop/tablet: buttons overlay left/right of the track */}
+      {!isMobile && leftBtn}
 
       <div style={styles.carouselMask}>
         <div ref={trackRef} style={styles.carouselTrack}>
@@ -182,14 +241,23 @@ function ValuesCarousel({ items }) {
         </div>
       </div>
 
-      <button style={styles.navBtn} onClick={() => nudge(1)} aria-label="Next">
-        <ChevronRight size={22} />
-      </button>
+      {!isMobile && rightBtn}
+
+      {/* Mobile: buttons sit below the card, side by side */}
+      <div style={styles.carouselNavRow}>
+        {leftBtn}
+        {rightBtn}
+      </div>
     </div>
   );
 }
 
 export default function AboutPage() {
+  const width = useViewport();
+  const isMobile = width < 640;
+  const isTablet = width >= 640 && width < 1024;
+  const styles = getStyles(isMobile, isTablet);
+
   const storyParagraphs = [
     `Every great journey begins with a simple idea. For Live Free Hostel, that idea was born in 2017—to create a space where travelers could find more than just a bed for the night. The founders envisioned a place that was vibrant, welcoming, affordable, and community-driven; a place where strangers could become friends and every traveler could feel at home.`,
     `The story began in Rishikesh, a town nestled in the foothills of the Himalayas and blessed by the sacred Ganga River. Known as the Yoga Capital of the World, Rishikesh attracts seekers, adventurers, backpackers, and explorers from every corner of the globe. Recognizing the growing need for quality backpacker accommodation, Live Free Hostel opened its doors with a mission to combine comfort, culture, adventure, and meaningful human connections.`,
@@ -228,7 +296,7 @@ export default function AboutPage() {
 
             <motion.div
               style={styles.imageWrapper}
-              initial={{ opacity: 0, x: -28 }}
+              initial={{ opacity: 0, x: isMobile ? 0 : -28 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.65, ease: [0.2, 0.9, 0.4, 1] }}
               viewport={{ once: true }}
@@ -242,7 +310,7 @@ export default function AboutPage() {
 
             <motion.div
               style={styles.storyTextWrap}
-              initial={{ opacity: 0, x: 28 }}
+              initial={{ opacity: 0, x: isMobile ? 0 : 28 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.65, ease: [0.2, 0.9, 0.4, 1], delay: 0.1 }}
               viewport={{ once: true }}
@@ -284,7 +352,7 @@ export default function AboutPage() {
         <div style={styles.sustainBody}>
           <motion.div
             style={styles.sustainImageWrapper}
-            initial={{ opacity: 0, x: -28 }}
+            initial={{ opacity: 0, x: isMobile ? 0 : -28 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.65, ease: [0.2, 0.9, 0.4, 1] }}
             viewport={{ once: true }}
@@ -298,7 +366,7 @@ export default function AboutPage() {
 
           <motion.div
             style={styles.sustainPoliciesWrap}
-            initial={{ opacity: 0, x: 28 }}
+            initial={{ opacity: 0, x: isMobile ? 0 : 28 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.65, ease: [0.2, 0.9, 0.4, 1], delay: 0.1 }}
             viewport={{ once: true }}
@@ -316,19 +384,19 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section style={{ padding: '70px 0px' }}>
-        <div className="container" style={{ maxWidth: 1400, margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: 48 }}>
+      <section style={{ padding: isMobile ? '48px 0px' : '70px 0px' }}>
+        <div className="container" style={{ maxWidth: 1400, margin: '0 auto', padding: isMobile ? '0 20px' : 0 }}>
+          <div style={{ textAlign: 'center', marginBottom: isMobile ? 32 : 48 }}>
             <span className="section-label">What We Stand For</span>
             <h2 style={{ ...styles.storyH2, textAlign: 'center' }}>The Live Free Philosophy</h2>
           </div>
-          <ValuesCarousel items={VALUES} />
+          <ValuesCarousel items={VALUES} styles={styles} isMobile={isMobile} />
         </div>
       </section>
 
-      <section id="founders" style={{ padding: '70px 0px', background: 'var(--surface-alt)' }}>
-        <div className="container" style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: 48 }}>
+      <section id="founders" style={{ padding: isMobile ? '48px 0px' : '70px 0px', background: 'var(--surface-alt)' }}>
+        <div className="container" style={{ maxWidth: 1200, margin: '0 auto', padding: isMobile ? '0 20px' : 0 }}>
+          <div style={{ textAlign: 'center', marginBottom: isMobile ? 32 : 48 }}>
             <span className="section-label">The Team</span>
             <h2 style={{ ...styles.storyH2, textAlign: 'center' }}>Meet Our Founders</h2>
           </div>

@@ -8,12 +8,12 @@ import styles from './WhyLiveSection.module.css'
 
 const ICON_MAP = { MapPin, Coffee, Sofa, PartyPopper, Sunset, PawPrint }
 const FEATURE_IMAGES = [
-  'https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=800&q=80',
-  'https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&q=80',
-  'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&q=80',
-  'https://images.unsplash.com/photo-1544716278-e513176f20b5?w=800&q=80',
-  'https://images.unsplash.com/photo-1551632811-561732d1e306?w=800&q=80',
-  'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&q=80',
+  'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/6+scrolls/Prime+Location.png',
+  'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/6+scrolls/Inclusivity.jpg',
+  'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/6+scrolls/Built+for+Digital+Nomads.jpg',
+  'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/6+scrolls/The+Live+Free+Caf%C3%A9.jpg',
+  'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/6+scrolls/Your+Space%2C+Your+Vibe.jpg',
+  'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/6+scrolls/Unforgettable+Hostel+Events.jpg',
 ]
 
 // Keep these breakpoints in sync with WhyLiveSection.module.css
