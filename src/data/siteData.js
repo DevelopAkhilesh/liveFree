@@ -194,14 +194,12 @@ export const AWARDS = [
 ]
 
 export const SOCIAL_IMGS = [
-  'https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=600&h=400&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600&h=400&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1541336032412-2048a6785400?w=600&h=400&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1523239369189-4ed2aefc3a63?w=600&h=400&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1551632811-561732d1e306?w=600&h=400&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=600&h=400&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=600&h=400&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&h=400&fit=crop&q=80',
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/get_social_compressed/get+social/DSC_4235-2.jpg",
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/get_social_compressed/get+social/IMG_20180118_213229_Bokeh.jpg",
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/get_social_compressed/get+social/IMG_20230218_113337.jpg",
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/get_social_compressed/get+social/IMG-20230309-WA0001.jpg",
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/get_social_compressed/get+social/LFD9_18.jpg",
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/get_social_compressed/get+social/Our+Story.jpg"
 ]
 
 // ============================================================

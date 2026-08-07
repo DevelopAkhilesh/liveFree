@@ -11,8 +11,8 @@ const ABOUT_ITEMS = [
 ]
 const PROPERTIES_ITEMS = [
   { label: 'Rishikesh', icon: <MapPin size={15} />, path: '/rishikesh' },
-  { label: 'Dehradun', icon: <MapPin size={15} />, path: '/dehradun' },
   { label: 'Varanasi', icon: <MapPin size={15} />, path: '/varanasi' },
+  { label: 'Dehradun', icon: <MapPin size={15} />, path: '/dehradun' },
 ]
 
 function DropdownMenu({ items, onSelect }) {
