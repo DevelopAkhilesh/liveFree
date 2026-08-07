@@ -161,54 +161,335 @@ Whether you are swapping travel stories with fellow backpackers, or coordinating
 
 const CITY_PHOTOS = {
   varanasi: {
-    'Varanasi Main': ['Main_1_hru0d7', 'Main_2_akh0p1', 'LFV7_kbja74', 'LFV8_ogbg7n', 'LFV4_vmjkuh', 'LFV22_hls0gf', 'LFV2_amyqdp', 'LFV1_c8auvu'],
-    'Property': ['IMG_20231126_175041_vsorfl', 'IMG_20231126_175143_pabnyb', 'GOPR4866-01_cvdl7a', 'IMG_2680_dd2twv', 'DSC09140_vjitra', 'GOPR4897_gqv3az', 'IMG_7282-Edit-01-01_hfzdxi', '1652357644808_image_6483441_t1ncgf'],
-    'Common Area': ['IMG_8959_djblsl', 'IMG_2680_c07en4', '_6__0021_-_Copy_ebjgid', '_6__0053_vtwnvh', 'IMG_20231013_125201_jgit5d', 'Live_Music_vioifo', 'IMG_20230218_113337_1_e4ucvi', 'Valentines_day_ibke4i', 'sandup_comedy_hydrbo', 'communal_dinner_ejkrjq', '1653632535675-01_ql75el', 'Holi_celebration_adpyxz'],
-    'Deluxe Private': ['IMG_7254_cfopvv', '2_kfjrez', 'IMG_7029_xbgwwn', '1_llvmn5', '4_e9icrp', 'GOPR4881_m3csgi', 'GOPR4887_kamabj', 'bathroom_ftf16o', 'main_wfcf2o'],
-    'Reception': ['main_zcjmir', '_6__0135_1_dbnwhs', '_6__0154_zk9pq9', '_6__0198_weykzc'],
-    '10-bed Dorm': ['bathroom_2_lkci6f', '2_vbrtl2', '1_qyrxzf', 'bathroom_3_ls12af', 'main_sehe7c', 'bathroom_1_sihzhb'],
-    '6-bed Dorm': ['main_d279el', '2_z7hkg2', 'GOPR4927_fuimtw', '1_muwyuu', 'bathroom_t4paqi'],
-    '6-bed Female Dorm': ['3_uqieao', 'bathroom_uohqot', 'main_b6t8xi', '1_etla21', '2_hisbqs'],
-    '8-bed Dorm': ['IMG_7251_kggfn6', 'bathroom_2_alk4e3', 'IMG_7250_zjglss', 'main_wmda7j', 'bathroom_1_wujawj'],
+    'Main': ['https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/Main/1.jpg', 
+      'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/Main/3.jpg',
+       'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/Main/5.jpg', 
+       'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/Main/15.jpg', 
+       'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/Main/10.jpg', 
+       ],
+    'Property': ['https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/all_compressed/all/Property/1652357644808_image_6483441_t1ncgf.jpg', 
+      'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/all_compressed/all/Property/DSC09140_vjitra.jpg',
+       'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/all_compressed/all/Property/GOPR4866-01_cvdl7a.jpg', 
+       'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/all_compressed/all/Property/GOPR4897_gqv3az.jpg', 
+       'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/all_compressed/all/Property/IMG_20231126_175041_vsorfl.jpg',
+        'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/all_compressed/all/Property/IMG_20231126_175143_pabnyb.jpg', 
+        'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/all_compressed/all/Property/IMG_2680_dd2twv.jpg', 
+        'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/all_compressed/all/Property/IMG_7282-Edit-01-01_hfzdxi.jpg'],
+    'Common Area': ['https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/all_compressed/all/common+area/_6__0021_-_Copy_ebjgid.jpg',
+       'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/all_compressed/all/common+area/_6__0053_vtwnvh.jpg', 
+       'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/all_compressed/all/common+area/1653632535675-01_ql75el.jpg',
+        'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/all_compressed/all/common+area/communal_dinner_ejkrjq.jpg', 
+        'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/all_compressed/all/common+area/Holi_celebration_adpyxz.jpg',
+         'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/all_compressed/all/common+area/IMG_20230218_113337_1_e4ucvi.jpg',
+          'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/all_compressed/all/common+area/IMG_20231013_125201_jgit5d.jpg',
+           'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/all_compressed/all/common+area/IMG_2680_c07en4.jpg', 
+           'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/all_compressed/all/common+area/IMG_8959_djblsl.jpg',
+            'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/all_compressed/all/common+area/Live_Music_vioifo.jpg', 
+            'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/all_compressed/all/common+area/sandup_comedy_hydrbo.jpg',
+             'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/all_compressed/all/common+area/Valentines_day_ibke4i.jpg'],
+          
+    'Reception': ['https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/all_compressed/all/recept/_6__0135_1_dbnwhs.jpg',
+       'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/all_compressed/all/recept/_6__0154_zk9pq9.jpg',
+        'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/all_compressed/all/recept/_6__0198_weykzc.jpg',
+         'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/all_compressed/all/recept/main_zcjmir.jpg'],
+    'Deluxe Private':["https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/Deluxe+Private+Dorm/Main.jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/Deluxe+Private+Dorm/1.jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/Deluxe+Private+Dorm/2.jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/Deluxe+Private+Dorm/3.jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/Deluxe+Private+Dorm/4.jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/Deluxe+Private+Dorm/5.jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/Deluxe+Private+Dorm/6.jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/Deluxe+Private+Dorm/Bathroom.jpg"
+        
+      ],
+    
+    '10-bed Dorm': ["https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/10-bed+Dorm/Main.jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/10-bed+Dorm/1.jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/10-bed+Dorm/2.jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/10-bed+Dorm/3.jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/10-bed+Dorm/4.jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/10-bed+Dorm/5.jpg",
+      ],
+    '6-bed Dorm': ["https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/6-bed+Dorm/Main.jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/6-bed+Dorm/1.jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/6-bed+Dorm/2.jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/6-bed+Dorm/3.jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/6-bed+Dorm/Bathroom.jpg",
+      ],
+    '6-bed Female Dorm': ["https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/6-bed+Female+Dorm/Main.jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/6-bed+Female+Dorm/1.jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/6-bed+Female+Dorm/2.jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/6-bed+Female+Dorm/3.jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/6-bed+Female+Dorm/4.jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/6-bed+Female+Dorm/Bathroom.jpg",
+      ],
+    '8-bed Dorm': ["https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/8-bed+Dorm/Main.jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/8-bed+Dorm/1.jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/8-bed+Dorm/2.jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/8-bed+Dorm/3.jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/8-bed+Dorm/4.jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Varanasi_compressed/Varanasi/8-bed+Dorm/5.jpg"
+      ],
   },
   dehradun: {
-    '4 Bed Dorm': ['image_9ec3b750_n1jctt', 'IMG_20251128_142909_00_033_jsebve', 'IMG_20251128_143221_00_039_jnvwul', 'IMG_20251128_143107_00_037_x7ko4y', 'IMG_4323_ekaxct'],
-    '6 Bed Dorm': ['LFD9_30_lwqbbg', 'IMG_4180_lk6w4w', 'IMG_4182_gtyk5u', 'IMG_4178_iigosg', 'IMG_4181_ojoohj', 'LFD3_mnqkrj'],
-    '8 Bed Dorm': ['IMG_20251207_125040_00_267_zwlvck', 'IMG_20251207_124703_00_259_2_byt4eb', 'LFD2_aiy5a5', 'IMG_4226_brdugj'],
-    'Building': ['IMG_20251128_173843_00_091_bip88g', 'IMG_20251128_163832_00_084_qff8uu', 'LFD9_1_daulbb', 'LFD9_2_lmsjty'],
-    'Cafe': ['LFD12_pkazl4', 'LFD10_jtfjui', 'LFD9_3_hn6fbk', 'LFD9_5_zi4cfh'],
-    'Deluxe Private': ['IMG_20251128_160103_00_051_stsrhw', 'IMG_20251128_155735_00_046_mbtptk', 'IMG_20251128_160315_00_055_cc6htr'],
-    'Family Private': ['IMG_4355_lntw4e', 'IMG_4365_vyfli1', 'IMG_4364_pcjwqc', 'IMG_4357_injjsn'],
-    'Female Dorm': ['LFD6_cut51z', 'IMG_20251128_141714_00_027_fbblwk', 'LFD9_20_payhsn'],
+    "Main":[
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/Main+Pics/1.jpg",
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/Main+Pics/8.jpg",
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/Main+Pics/3.jpg",
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/Main+Pics/9.jpg",
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/Main+Pics/14.jpg"
+],
+    '4 Bed Dorm': [
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/final+4+bed+dorm+pics/main.jpg",
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/final+4+bed+dorm+pics/1.jpg",
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/final+4+bed+dorm+pics/2.jpg",
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/final+4+bed+dorm+pics/3.jpg",
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/final+4+bed+dorm+pics/4.jpg",
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/final+4+bed+dorm+pics/washroom.jpg"
+],
+    '6 Bed Dorm': [
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/final+6+bed+pics/Main.jpg",
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/final+6+bed+pics/1.jpg",
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/final+6+bed+pics/2.jpg",
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/final+6+bed+pics/3.jpg",
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/final+6+bed+pics/4.jpg",
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/final+6+bed+pics/5.jpg",
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/final+6+bed+pics/Toilet.jpg"
+],
+    '8 Bed Dorm': [
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/final+8+bed+dorm+pics/Main.jpg",
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/final+8+bed+dorm+pics/1.jpg",
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/final+8+bed+dorm+pics/2.jpg",
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/final+8+bed+dorm+pics/3.jpg",
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/final+8+bed+dorm+pics/4.jpg",
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/final+8+bed+dorm+pics/Toilet.jpg"
+],
+'Female Dorm': [
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/Final+female+dorm+pics/Main.jpg",
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/Final+female+dorm+pics/1.jpg",
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/Final+female+dorm+pics/2.jpg",
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/Final+female+dorm+pics/3.jpg",
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/Final+female+dorm+pics/4.jpg",
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/Final+female+dorm+pics/Toilet.jpg"
+],
+'Deluxe Private':[
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/Final+deluxe+room+pics/Main.jpg",
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/Final+deluxe+room+pics/1.jpg",
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/Final+deluxe+room+pics/2.jpg",
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/Final+deluxe+room+pics/3.jpg",
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/Final+deluxe+room+pics/4.jpg",
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/Final+deluxe+room+pics/Balcony.jpg",
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/Final+deluxe+room+pics/Toilet.jpg"
+],
+ 'Family Private':  [
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/Final+family+private+room/Main.jpg",
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/Final+family+private+room/1.jpg",
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/Final+family+private+room/2.jpg",
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/Final+family+private+room/3.jpg",
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/Final+family+private+room/4.jpg",
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/Final+family+private+room/5.jpg",
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/Final+family+private+room/Balcony.jpg",
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/Final+family+private+room/Toilet.jpg"
+],
+    'Property': [
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/LFD9_1.jpg",
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/IMG_20251128_173843_00_091.jpg",
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/Main+Pics/1.jpg",
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/Main+Pics/9.jpg"
+],
+    'Cafe':[
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/Main+Pics/11.jpg",
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/Main+Pics/2.jpg",
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/Main+Pics/17.jpg",
+    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Dehradun_compressed/Dehradun/Main+Pics/16.jpg"
+],
+    
+   
+    
   },
 rishikesh: {
-  'Rishikesh Main': ['LFR6_mhrf26', 'LFR7_q13doj', '7_cufhnw', 'LFR3_qg5knn', 'LFR19_ejwpqo'],
+  'Main': ['https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh_compressed/Rishikesh/6+bed+mixed+dorm/main.jpg',
+     'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh_compressed/Rishikesh/Main+pictures/LFR7.jpg',
+      'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh_compressed/Rishikesh/Main+pictures/7.jpg', 
+      'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh_compressed/Rishikesh/Main+pictures/2.jpg', 
+      'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh_compressed/Rishikesh/Main+pictures/4.jpg'],
+
+  "4 Bed Female Dorm":["https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh_compressed/Rishikesh/4+bed+female+dorm/Main.jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh_compressed/Rishikesh/4+bed+female+dorm/1.jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh_compressed/Rishikesh/4+bed+female+dorm/2.jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh_compressed/Rishikesh/4+bed+female+dorm/3.jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh_compressed/Rishikesh/4+bed+female+dorm/Bathroom.jpg"
+      ],
+  "4 Bed Mix Dorm":["https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh_compressed/Rishikesh/4+bed+mixed+dorm/main.jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh_compressed/Rishikesh/4+bed+mixed+dorm/1.jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh_compressed/Rishikesh/4+bed+mixed+dorm/2.jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh_compressed/Rishikesh/4+bed+mixed+dorm/3.jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh_compressed/Rishikesh/4+bed+mixed+dorm/bathroom.jpg"
+      ],
+  "6 Bed Mix Dorm":["https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh_compressed/Rishikesh/6+bed+mixed+dorm/main.jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh_compressed/Rishikesh/6+bed+mixed+dorm/1.jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh_compressed/Rishikesh/6+bed+mixed+dorm/2.jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh_compressed/Rishikesh/6+bed+mixed+dorm/3.jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh_compressed/Rishikesh/6+bed+mixed+dorm/bathroom.jpg",
+        
+      ],
+  "Deluxe Private":["https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh_compressed/Rishikesh/Deluxe+private+room/main.jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh_compressed/Rishikesh/Deluxe+private+room/1.jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh_compressed/Rishikesh/Deluxe+private+room/2.jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh_compressed/Rishikesh/Deluxe+private+room/3.jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh_compressed/Rishikesh/Deluxe+private+room/4.jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh_compressed/Rishikesh/Deluxe+private+room/bathroom.jpg",
+
+      ],
+  "Deluxe Standard":["https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh_compressed/Rishikesh/Std+Private+Room/Main.jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh_compressed/Rishikesh/Std+Private+Room/1.jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh_compressed/Rishikesh/Std+Private+Room/2.jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh_compressed/Rishikesh/Std+Private+Room/3.jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh_compressed/Rishikesh/Std+Private+Room/4.jpg",
+        "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh_compressed/Rishikesh/Std+Private+Room/bathroom.jpg",
+        
+      ],
   'Property': [
-    'LFR5_uxbuln', 'LFR11_trtsu9', 'IMG_6741_lkdlfy', 'LFR16_dlnq96',
-    'IMG_6796_qbbaka', 'IMG_6793_bvecci', 'LFR15_h63tcu', 'IMG_20200323_171514_snb7um',
-    '4_g9zrac', 'image_1db1cce8_xb4009', '6_avgoyb', '20_ns0r7i',
-    '14_fdxldu', '5_adx5yi', '17_mr56qo', '18_gk2vqa',
-    'IMG_6649_spps9r', '4_depva1', '1_cr4ylv', '1_ngdgdr',
-    '3_e86iss', '2_e0tckf', '2_dmkyax', '1_egabwh',
-    'main_agfaap', '3_dolmuc', '3_u1vxfv', 'Bathroom_nuna6j',
-    '1_oubvvn', '2_koxkk3', 'bathroom_rhjaux',
+    'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh_compressed/Rishikesh/Main+pictures/1.jpg',
+     'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh_compressed/Rishikesh/Main+pictures/3.jpg', 
+     'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh_compressed/Rishikesh/Main+pictures/IMG_20200323_171514.jpg',
+      'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh_compressed/Rishikesh/Main+pictures/18.jpg',
+    'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh_compressed/Rishikesh/Main+pictures/image_4524e300.jpg',
+     'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh_compressed/Rishikesh/Main+pictures/10.jpg',
+      'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh_compressed/Rishikesh/Main+pictures/15.jpg',
+      'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh_compressed/Rishikesh/Main+pictures/14.jpg',
+    'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh_compressed/Rishikesh/Main+pictures/IMG20220728221525.jpg',
+    'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh_compressed/Rishikesh/Main+pictures/6.jpg',
+    'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/Rishikesh_compressed/Rishikesh/Main+pictures/LFR11.jpg'
   ],
 },
 }
 
 // ── SINGLE LightBox — with category tabs ──
-function LightBox({ images, index, onClose, photosByCategory = {}, allPhotos,city }) {
+// function LightBox({ images, index, onClose, photosByCategory = {}, allPhotos,city }) {
+//   const thumbContainerRef = useRef(null)
+//   const [activeCategory, setActiveCategory] = useState('All')
+//   const [localIndex, setLocalIndex] = useState(index)
+
+//   // NEW — if allPhotos isn't passed (room mode), fall back to just `images`
+//   const resolvedAllPhotos = allPhotos || images
+//   const categories = [ "All",...Object.keys(photosByCategory)]
+//   const currentPhotos = activeCategory === 'All' ? resolvedAllPhotos : (photosByCategory[activeCategory] || [])
+//   const showTabs = categories.length > 1   // NEW — only show tab bar when there's more than "All"
+
+//   useEffect(() => { setLocalIndex(index) }, [index])
+//   useEffect(() => { setLocalIndex(0) }, [activeCategory])
+
+//   useEffect(() => {
+//     if (thumbContainerRef.current) {
+//       const activeThumb = thumbContainerRef.current.children[localIndex]
+//       if (activeThumb) activeThumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' })
+//     }
+//   }, [localIndex])
+
+//   const goPrev = () => setLocalIndex(i => (i - 1 + currentPhotos.length) % currentPhotos.length)
+//   const goNext = () => setLocalIndex(i => (i + 1) % currentPhotos.length)
+
+//   useEffect(() => {
+//     document.body.style.overflow = 'hidden'
+//     const onKeyDown = (e) => {
+//       if (e.key === 'Escape') onClose()
+//       if (e.key === 'ArrowLeft') goPrev()
+//       if (e.key === 'ArrowRight') goNext()
+//     }
+//     document.addEventListener('keydown', onKeyDown)
+//     return () => {
+//       document.body.style.overflow = ''
+//       document.removeEventListener('keydown', onKeyDown)
+//     }
+//     // eslint-disable-next-line react-hooks/exhaustive-deps
+//   }, [currentPhotos.length])
+
+//   // NEW — detect whether an image is a local import (full URL) or a Cloudinary ID
+//   const resolveImg = (id) =>
+//     typeof id === 'string' && (id.startsWith('http') || id.startsWith('/') || id.startsWith('data:'))
+//       ? id
+//       : cld(id,city)
+
+//   return (
+//     <motion.div
+//       initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+//       style={{ position: 'fixed', inset: 0, zIndex: 1100, background: 'rgba(0,0,0,0.95)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 20 }}
+//       onClick={onClose}
+//     >
+//       <motion.div
+//         initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.9, opacity: 0 }}
+//         style={{ background: '#111', borderRadius: 16, maxWidth: '90vw', maxHeight: '90vh', width: '100%', height: '100%', display: 'flex', flexDirection: 'column', overflow: 'hidden', position: 'relative', boxShadow: '0 20px 60px rgba(0,0,0,0.8)' }}
+//         onClick={e => e.stopPropagation()}
+//       >
+//         {/* TOP BAR — category tabs (only in gallery mode) + close */}
+//         <div style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '12px 16px', background: '#1a1a1a', overflowX: 'auto', flexShrink: 0, scrollbarWidth: 'none' }}>
+//           {showTabs && categories.map(cat => (
+//             <button key={cat} onClick={() => setActiveCategory(cat)} style={{ padding: '6px 14px', borderRadius: 99, fontSize: '0.75rem', fontWeight: 600, cursor: 'pointer', border: 'none', whiteSpace: 'nowrap', flexShrink: 0, background: activeCategory === cat ? 'var(--primary)' : 'rgba(255,255,255,0.1)', color: activeCategory === cat ? '#fff' : 'rgba(255,255,255,0.6)', transition: 'all 0.2s' }}>
+//               {cat} ({cat === 'All' ? resolvedAllPhotos.length : (photosByCategory[cat] || []).length})
+//             </button>
+//           ))}
+//           <button onClick={onClose} style={{ marginLeft: 'auto', flexShrink: 0, background: 'rgba(255,255,255,0.1)', border: 'none', borderRadius: '50%', width: 36, height: 36, cursor: 'pointer', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+//             <X size={16} />
+//           </button>
+//         </div>
+
+//         {/* MAIN IMAGE */}
+//         <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0 10px', position: 'relative', minHeight: 0 }}>
+//           <button className={styles.lightboxNavBtn} onClick={e => { e.stopPropagation(); goPrev() }} style={{ position: 'absolute', left: 8, background: 'rgba(0,0,0,0.5)', border: 'none', borderRadius: '50%', width: 40, height: 40, cursor: 'pointer', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 10 }}>
+//             <ChevronLeft size={22} />
+//           </button>
+//           <img src={resolveImg(currentPhotos[localIndex])} alt="" style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', borderRadius: 8 }} />
+//           <button className={styles.lightboxNavBtn} onClick={e => { e.stopPropagation(); goNext() }} style={{ position: 'absolute', right: 8, background: 'rgba(0,0,0,0.5)', border: 'none', borderRadius: '50%', width: 40, height: 40, cursor: 'pointer', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 10 }}>
+//             <ChevronRight size={22} />
+//           </button>
+//           <div style={{ position: 'absolute', bottom: 8, left: '50%', transform: 'translateX(-50%)', background: 'rgba(0,0,0,0.6)', padding: '2px 12px', borderRadius: 20, color: 'rgba(255,255,255,0.8)', fontSize: '0.75rem', fontWeight: 500 }}>
+//             {localIndex + 1} / {currentPhotos.length}
+//           </div>
+//         </div>
+
+//         {/* THUMBNAIL STRIP */}
+//         <div ref={thumbContainerRef} style={{ width: '100%', overflowX: 'auto', overflowY: 'hidden', padding: '10px 16px', display: 'flex', gap: 8, scrollbarWidth: 'thin', scrollbarColor: 'rgba(255,255,255,0.3) transparent', flexShrink: 0, height: 100, background: 'rgba(0,0,0,0.3)' }} onClick={e => e.stopPropagation()}>
+//           {currentPhotos.map((id, i) => (
+//             <div key={i} className={styles.lightboxThumb} onClick={() => setLocalIndex(i)} style={{ flex: '0 0 auto', width: 80, height: 80, borderRadius: 6, overflow: 'hidden', border: i === localIndex ? '3px solid var(--primary)' : '3px solid transparent', transition: 'all 0.2s', cursor: 'pointer', transform: i === localIndex ? 'scale(1.05)' : 'scale(1)' }}>
+//               <img src={resolveImg(id)} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+//             </div>
+//           ))}
+//         </div>
+//       </motion.div>
+//     </motion.div>
+//   )
+// }
+function LightBox({ images, index, onClose, photosByCategory = {}, allPhotos, city }) {
   const thumbContainerRef = useRef(null)
-  const [activeCategory, setActiveCategory] = useState('All')
-  const [localIndex, setLocalIndex] = useState(index)
-
-  // NEW — if allPhotos isn't passed (room mode), fall back to just `images`
   const resolvedAllPhotos = allPhotos || images
-  const categories = ['All', ...Object.keys(photosByCategory)]
-  const currentPhotos = activeCategory === 'All' ? resolvedAllPhotos : (photosByCategory[activeCategory] || [])
-  const showTabs = categories.length > 1   // NEW — only show tab bar when there's more than "All"
+  const categories = Object.keys(photosByCategory) // NEW — no more 'All' entry
+  const showTabs = categories.length > 1
 
-  useEffect(() => { setLocalIndex(index) }, [index])
+  // NEW — default to the first real category (or null for room mode, which has no categories)
+  const [activeCategory, setActiveCategory] = useState(categories[0] || null)
+  const [localIndex, setLocalIndex] = useState(0)
+
+  const currentPhotos = (activeCategory && photosByCategory[activeCategory]) || resolvedAllPhotos
+
+  // NEW — when the lightbox opens (or the clicked photo changes), figure out
+  // which category that photo actually belongs to, and select it + its local index
+  useEffect(() => {
+    const clickedPhoto = resolvedAllPhotos[index]
+    if (categories.length > 0 && clickedPhoto != null) {
+      const matchedCategory = categories.find(cat => (photosByCategory[cat] || []).includes(clickedPhoto))
+      if (matchedCategory) {
+        setActiveCategory(matchedCategory)
+        setLocalIndex(photosByCategory[matchedCategory].indexOf(clickedPhoto))
+        return
+      }
+    }
+    // fallback: room mode / no category match — just use the flat list + index as-is
+    setActiveCategory(null)
+    setLocalIndex(index)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [index, allPhotos])
+
   useEffect(() => { setLocalIndex(0) }, [activeCategory])
 
   useEffect(() => {
@@ -236,11 +517,10 @@ function LightBox({ images, index, onClose, photosByCategory = {}, allPhotos,cit
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentPhotos.length])
 
-  // NEW — detect whether an image is a local import (full URL) or a Cloudinary ID
   const resolveImg = (id) =>
     typeof id === 'string' && (id.startsWith('http') || id.startsWith('/') || id.startsWith('data:'))
       ? id
-      : cld(id,city)
+      : cld(id, city)
 
   return (
     <motion.div
@@ -257,7 +537,7 @@ function LightBox({ images, index, onClose, photosByCategory = {}, allPhotos,cit
         <div style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '12px 16px', background: '#1a1a1a', overflowX: 'auto', flexShrink: 0, scrollbarWidth: 'none' }}>
           {showTabs && categories.map(cat => (
             <button key={cat} onClick={() => setActiveCategory(cat)} style={{ padding: '6px 14px', borderRadius: 99, fontSize: '0.75rem', fontWeight: 600, cursor: 'pointer', border: 'none', whiteSpace: 'nowrap', flexShrink: 0, background: activeCategory === cat ? 'var(--primary)' : 'rgba(255,255,255,0.1)', color: activeCategory === cat ? '#fff' : 'rgba(255,255,255,0.6)', transition: 'all 0.2s' }}>
-              {cat} ({cat === 'All' ? resolvedAllPhotos.length : (photosByCategory[cat] || []).length})
+              {cat} ({(photosByCategory[cat] || []).length})
             </button>
           ))}
           <button onClick={onClose} style={{ marginLeft: 'auto', flexShrink: 0, background: 'rgba(255,255,255,0.1)', border: 'none', borderRadius: '50%', width: 36, height: 36, cursor: 'pointer', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -291,28 +571,86 @@ function LightBox({ images, index, onClose, photosByCategory = {}, allPhotos,cit
     </motion.div>
   )
 }
-
 // ── Gallery ──
-function GallerySection({ photosByCategory, allPhotos, onOpenLightbox, city }) {
-  // Only the city’s primary / main gallery category populates the grid — rest is available via "See all photos"
+// function GallerySection({ photosByCategory, allPhotos, onOpenLightbox, city }) {
+//   // Only the city’s primary / main gallery category populates the grid — rest is available via "See all photos"
+//   const mainCategoryKey = Object.keys(photosByCategory).find((key) => key.toLowerCase().includes('main'))
+//   const mainPhotos = (mainCategoryKey && photosByCategory[mainCategoryKey]) || allPhotos.slice(0, 5)
+//   const hasPhotos = allPhotos.length > 0
+//   return (
+//     <div className={styles.galleryWrap}>
+//       {hasPhotos ? (
+//         <div style={{ position: 'relative' }}>
+//           <div className={styles.galleryGrid}>
+//             <div className={styles.galleryMainBox} onClick={() => onOpenLightbox(allPhotos, allPhotos.indexOf(mainPhotos[0]))}>
+//               <img src={cld(mainPhotos[0], city)} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+//             </div>
+//             <div className={styles.gallerySub}>
+//               {[1, 2, 3, 4].map(i => {
+//                 const photo = mainPhotos[i]
+//                 const imgSrc = photo ? cld(photo, city) : GALLERY_FALLBACKS[i - 1]
+//                 return (
+//                   <div key={i} className={styles.galleryImgBox} onClick={() => onOpenLightbox(allPhotos, photo ? allPhotos.indexOf(photo) : 0)}>
+//                     <img src={imgSrc} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+//                       onError={e => { e.currentTarget.src = GALLERY_FALLBACKS[i - 1] }}
+//                     />
+//                   </div>
+//                 )
+//               })}
+//             </div>
+//           </div>
+//           <button
+//             className={styles.seeAllBtn}
+//             onClick={() => onOpenLightbox(allPhotos, 0)}
+//             style={{ background: 'rgba(255,255,255,0.95)', backdropFilter: 'blur(8px)', border: '1.5px solid rgba(0, 0, 0, 0)', borderRadius: 8, padding: '10px 22px', cursor: 'pointer', color: '#1a1a1a', fontWeight: 700, fontSize: '0.82rem', letterSpacing: '0.08em', display: 'flex', alignItems: 'center', gap: 8, boxShadow: '0 4px 16px rgba(0, 0, 0, 0)' }}
+//           >
+//             <span>📷</span> See all photos ({allPhotos.length})
+//           </button>
+//         </div>
+//       ) : (
+//         <div className={styles.galleryEmpty}>
+//           <ImageOff size={36} style={{ color: 'var(--primary)' }} />
+//           <p style={{ fontFamily: 'var(--font-display)', fontSize: '1.4rem', fontWeight: 700, color: 'var(--text)' }}>Photos Coming Soon</p>
+//         </div>
+//       )}
+//     </div>
+//   )
+// }
+function GallerySection({ photosByCategory, allPhotos, onOpenLightbox }) {
+  // Only the city's primary / main gallery category populates the grid — rest is available via "See all photos"
   const mainCategoryKey = Object.keys(photosByCategory).find((key) => key.toLowerCase().includes('main'))
   const mainPhotos = (mainCategoryKey && photosByCategory[mainCategoryKey]) || allPhotos.slice(0, 5)
   const hasPhotos = allPhotos.length > 0
+
   return (
     <div className={styles.galleryWrap}>
       {hasPhotos ? (
         <div style={{ position: 'relative' }}>
           <div className={styles.galleryGrid}>
-            <div className={styles.galleryMainBox} onClick={() => onOpenLightbox(allPhotos, allPhotos.indexOf(mainPhotos[0]))}>
-              <img src={cld(mainPhotos[0], city)} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+            <div
+              className={styles.galleryMainBox}
+              onClick={() => onOpenLightbox(allPhotos, allPhotos.indexOf(mainPhotos[0]))}
+            >
+              <img
+                src={encodeURI(mainPhotos[0])}
+                alt=""
+                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+              />
             </div>
             <div className={styles.gallerySub}>
               {[1, 2, 3, 4].map(i => {
                 const photo = mainPhotos[i]
-                const imgSrc = photo ? cld(photo, city) : GALLERY_FALLBACKS[i - 1]
+                const imgSrc = photo ? encodeURI(photo) : GALLERY_FALLBACKS[i - 1]
                 return (
-                  <div key={i} className={styles.galleryImgBox} onClick={() => onOpenLightbox(allPhotos, photo ? allPhotos.indexOf(photo) : 0)}>
-                    <img src={imgSrc} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                  <div
+                    key={i}
+                    className={styles.galleryImgBox}
+                    onClick={() => onOpenLightbox(allPhotos, photo ? allPhotos.indexOf(photo) : 0)}
+                  >
+                    <img
+                      src={imgSrc}
+                      alt=""
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                       onError={e => { e.currentTarget.src = GALLERY_FALLBACKS[i - 1] }}
                     />
                   </div>
@@ -323,7 +661,13 @@ function GallerySection({ photosByCategory, allPhotos, onOpenLightbox, city }) {
           <button
             className={styles.seeAllBtn}
             onClick={() => onOpenLightbox(allPhotos, 0)}
-            style={{ background: 'rgba(255,255,255,0.95)', backdropFilter: 'blur(8px)', border: '1.5px solid rgba(0, 0, 0, 0)', borderRadius: 8, padding: '10px 22px', cursor: 'pointer', color: '#1a1a1a', fontWeight: 700, fontSize: '0.82rem', letterSpacing: '0.08em', display: 'flex', alignItems: 'center', gap: 8, boxShadow: '0 4px 16px rgba(0, 0, 0, 0)' }}
+            style={{
+              background: 'rgba(255,255,255,0.95)', backdropFilter: 'blur(8px)',
+              border: '1.5px solid rgba(0, 0, 0, 0)', borderRadius: 8, padding: '10px 22px',
+              cursor: 'pointer', color: '#1a1a1a', fontWeight: 700, fontSize: '0.82rem',
+              letterSpacing: '0.08em', display: 'flex', alignItems: 'center', gap: 8,
+              boxShadow: '0 4px 16px rgba(0, 0, 0, 0)'
+            }}
           >
             <span>📷</span> See all photos ({allPhotos.length})
           </button>
@@ -331,7 +675,9 @@ function GallerySection({ photosByCategory, allPhotos, onOpenLightbox, city }) {
       ) : (
         <div className={styles.galleryEmpty}>
           <ImageOff size={36} style={{ color: 'var(--primary)' }} />
-          <p style={{ fontFamily: 'var(--font-display)', fontSize: '1.4rem', fontWeight: 700, color: 'var(--text)' }}>Photos Coming Soon</p>
+          <p style={{ fontFamily: 'var(--font-display)', fontSize: '1.4rem', fontWeight: 700, color: 'var(--text)' }}>
+            Photos Coming Soon
+          </p>
         </div>
       )}
     </div>

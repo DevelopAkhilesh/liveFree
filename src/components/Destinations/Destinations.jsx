@@ -35,10 +35,13 @@ export default function Destinations() {
                   if (e.key === 'Enter' || e.key === ' ') navigate(dest.path)
                 }}
               >
+                <div className={styles.imgFiltered}>
                 <div
                   className={styles.img}
                   style={{ backgroundImage: `url('${dest.img}')` }}
                 />
+                </div>
+                <div className={styles.shadowLayer} />
                 <div className={styles.overlay} />
 
                 <div className={styles.btnRow}>
