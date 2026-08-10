@@ -39,10 +39,10 @@ export default function Social() {
     })
   }
 
-  const visibleImages = Array.from({ length: renderCount }, (_, offset) => {
-    const index = (currentIndex + offset) % total
-    return { index, src: SOCIAL_IMGS[index] }
-  })
+const visibleImages = Array.from({ length: renderCount }, (_, offset) => {
+  const index = (currentIndex + offset) % total
+  return { index, data: SOCIAL_IMGS[index] }
+})
 
   const openImage = (index) => {
     setCurrentIndex(index)
@@ -91,21 +91,23 @@ export default function Social() {
 
           <div className={styles.previewViewport}>
             <div className={`${styles.previewGrid} ${styles[`slide-${slideDirection}`]}`}>
-              {visibleImages.map(({ index, src }) => (
-                <button
-                  key={`${index}-${currentIndex}`}
-                  className={styles.previewBox}
-                  onClick={() => openImage(index)}
-                  aria-label={`Open social image ${index + 1}`}
-                >
-                  <img
-                    src={src}
-                    alt={`Social preview ${index + 1}`}
-                    loading="lazy"
-                    onError={handleImageError}
-                  />
-                </button>
-              ))}
+              {visibleImages.map(({ index, data }) => (
+              <a
+                key={`${index}-${currentIndex}`}
+                className={styles.previewBox}
+                href={data.postUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Open Instagram post ${index + 1}`}
+              >
+                <img
+                  src={data.src}
+                  alt={`Social preview ${index + 1}`}
+                  loading="lazy"
+                  onError={handleImageError}
+                />
+              </a>
+            ))}
             </div>
           </div>
 

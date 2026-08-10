@@ -15,7 +15,7 @@ export default function Footer() {
           <div className={styles.block}>
             <h4>Contact</h4>
             <ul>
-              <li><a href="mailto:reservation@livefreehostel.com"><Mail size={14} /> reservation@livefreehostel.com</a></li>
+              <li><a href="mailto:reservation@livefreehostels.com"><Mail size={14} /> reservation@livefreehostels.com</a></li>
               <li><a href="tel:+919999020248"><Phone size={14} /> 9999020248</a></li>
             </ul>
           </div>

@@ -1,7 +1,7 @@
-/* TermsConditions.module.css - Fully Responsive */
+/* TermsConditions.module.css - Fully Responsive
 
 .page {
-  /* background: #fff; */
+  
   color: #1e1b16;
   padding: 0 16px 60px 16px;
   max-width: 900px;
@@ -9,7 +9,7 @@
   width: 100%;
 }
 
-/* ---------- Hero ---------- */
+
 
 .heroBand {
   padding: 60px 0 28px;
@@ -40,13 +40,13 @@
   line-height: 1.6;
 }
 
-/* ---------- Intro Box ---------- */
+
 
 .introBox {
   border: 2px solid #000000;
   border-radius: 12px;
   padding: 24px;
-  /* background: #fff; */
+  
   margin: 24px 0;
 }
 
@@ -57,7 +57,7 @@
   font-weight: 500;
 }
 
-/* ---------- Layout ---------- */
+
 
 .layout {
   display: grid;
@@ -68,7 +68,7 @@
   width: 100%;
 }
 
-/* ---------- Navigation (Hidden) ---------- */
+
 
 .nav {
   display: none !important;
@@ -78,7 +78,6 @@
   display: none !important;
 }
 
-/* ---------- Content ---------- */
 
 .content {
   min-width: 0;
@@ -134,7 +133,7 @@
   margin-bottom: 0;
 }
 
-/* ---------- Lists ---------- */
+
 
 .list {
   list-style: disc;
@@ -151,7 +150,7 @@
   color: #333;
 }
 
-/* ---------- Footer note ---------- */
+
 
 .footerNote {
   margin-top: 24px;
@@ -181,9 +180,7 @@
   opacity: 0.7;
 }
 
-/* ============================================================
-   TABLET (768px and above)
-   ============================================================ */
+
 
 @media (min-width: 768px) {
   .page {
@@ -192,5 +189,216 @@
 
   .heroBand {
     padding: 80px 0 32px;
+  }
+} */
+
+/* ============================================================
+   TermsConditions - same design as DataProtectionGuidelines
+   ============================================================ */
+
+.page {
+  padding: 0 0 60px 0;
+  background: #fff;
+}
+
+/* HERO */
+.heroBand {
+  padding: 90px 0 28px;
+}
+
+.introBox {
+  border: 2px solid #000000;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 0;
+  max-width: 100%;
+}
+
+.eyebrow {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--primary, #a8562e);
+  margin-bottom: 8px;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #111;
+  margin: 0 0 6px;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  color: #444;
+  max-width: 42ch;
+  margin: 0;
+}
+
+/* MAIN LAYOUT */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: start;
+  padding-top: 32px;
+}
+
+/* SIDEBAR NAV */
+.nav {
+  display: none !important;
+}
+
+.nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navLink {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.navLink:hover {
+  color: var(--primary, #a8562e);
+}
+
+.navLinkActive {
+  color: var(--primary, #a8562e);
+  font-weight: 700;
+}
+
+/* MOBILE NAV */
+.navMobile {
+  display: none;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+  scrollbar-width: none;
+}
+
+.navMobile::-webkit-scrollbar {
+  display: none;
+}
+
+.navPill {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  background: #fff;
+  color: #555;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.navPillActive {
+  background: var(--primary, #a8562e);
+  border-color: var(--primary, #a8562e);
+  color: #fff;
+}
+
+/* CONTENT */
+.content {
+  padding: 0;
+}
+
+.section {
+  padding: 20px 0;
+}
+
+.section:first-child {
+  padding-top: 0;
+}
+
+.sectionHead {
+  margin-bottom: 10px;
+}
+
+.sectionNumber {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #111;
+  margin-right: 4px;
+}
+
+.sectionHead h2 {
+  display: inline;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+}
+
+.sectionBody {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sectionBody p {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: #333;
+  margin: 0;
+}
+
+/* FOOTER NOTE */
+.footerNote {
+  margin-top: 24px;
+  padding: 20px;
+}
+
+.footerNote p {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.footerBtn {
+  display: inline-block;
+  color: var(--primary, #a8562e);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 860px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .navMobile {
+    display: flex;
+  }
+}
+
+@media (max-width: 600px) {
+  .heroBand {
+    padding: 80px 0 24px;
+  }
+
+  .title {
+    font-size: 1.7rem;
+  }
+
+  .introBox {
+    padding: 16px;
+    border-radius: 8px;
   }
 }

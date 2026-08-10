@@ -61,9 +61,9 @@ export default function ContactPage() {
                 <Phone size={18} />
                 <span>+91 9999020248</span>
               </a>
-              <a href="mailto:reservation@livefreehostel.com" className={styles.infoRow}>
+              <a href="mailto:reservation@livefreehostels.com" className={styles.infoRow}>
                 <Mail size={18} />
-                <span>reservation@livefreehostel.com</span>
+                <span>reservation@livefreehostels.com</span>
               </a>
             </div>
             <div className={styles.imageWrap}>
@@ -147,16 +147,16 @@ export default function ContactPage() {
           <div className={styles.followRow}>
             <span>Follow us on</span>
             <div className={styles.followIcons}>
-              <a href="https://instagram.com/livefreehostel" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <a href="https://www.instagram.com/livefreehostels/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                 <Instagram size={28} />
               </a>
-              <a href="https://youtube.com/@livefreehostel" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+              <a href="https://www.youtube.com/@livefreehostels" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
                 <Youtube size={28} />
               </a>
-              <a href="https://linkedin.com/company/livefreehostel" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/company/livefreehostels/home/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                 <Linkedin size={28} />
               </a>
-              <a href="https://facebook.com/livefreehostel" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <a href="https://www.facebook.com/LiveFreeHostelRishikesh/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                 <Facebook size={28} />
               </a>
             </div>

@@ -12,7 +12,7 @@ const fadeUp = (delay = 0) => ({
   transition: { duration: 0.6, delay, ease: [0.2, 0.9, 0.4, 1] },
 })
 
-const LOCATIONS = ['Rishikesh', 'Dehradun', 'Both']
+const LOCATIONS = ['Rishikesh', 'Varanasi','Dehradun',]
 const TRIP_PURPOSES = ['Trekking Group', 'Student Group', 'Corporate', 'Leisure & Friends']
 const ADD_ONS = ['Custom Buffet Meals 🥞', 'Private Bonfire 🔥', 'White-Water Rafting 🛶']
 const ORG_NAME_SUGGESTIONS = ['Indiahikes Group Leader', 'ABC Corporates', 'XYZ Trekking Club', 'College Student Group']
@@ -57,7 +57,7 @@ export default function GroupsPage() {
   return (
     <>
       {/* 1. HERO BANNER */}
-      <section style={{ position: 'relative', minHeight: 'calc(75vh + 90px)', paddingTop: 90, display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
+      <section style={{ position: 'relative', minHeight: 'calc(75vh + 300px)', paddingTop: "10px", display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0 }}>
           <img src={Cover} alt="Groups" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, rgba(0,80,60,0.5) 0%, rgba(0,80,60,0.25) 100%)' }} />

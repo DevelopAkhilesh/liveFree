@@ -23,7 +23,7 @@ const badges = [
 const getToday = () => new Date().toISOString().split('T')[0]
 const getTomorrow = () => {
   const d = new Date()
-  d.setDate(d.getDate() + 1)
+  d.setDate(d.getDate() + 7)
   return d.toISOString().split('T')[0]
 }
 

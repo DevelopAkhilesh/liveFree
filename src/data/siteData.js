@@ -1,11 +1,11 @@
 // ============================================================
 //  LIVE FREE — SITE DATA
 // ============================================================
-import RishikeshFemaleDorm from '../assets/Rishikesh_Female_Dorm.jpeg'
-import RishikeshMixDorm4 from"../assets/Rishikesh_4_Bed_Mix.jpeg";
-import RishikeshMixDorm6 from"../assets/Rishikesh_6_Bed_Mix.jpeg";
-import RishikeshDeluxe from "../assets/Rishikesh_Deluxe_Bed.jpeg";
-import RishikeshPrivate from "../assets/Rishikesh_Private_Bed.jpeg";
+import social1 from "../assets/social1.png"
+import social2 from "../assets/social2.png"
+import social3 from "../assets/social3.png"
+import social4 from "../assets/social4.png"
+import social5 from "../assets/social5.png"
 
 export const FEATURES = [
   {
@@ -52,6 +52,7 @@ export const STATS = [
   { value: 100, suffix: '+', label: 'Nationalities', prefix: '' },
   { value: 8.5, suffix: '+', label: 'Average Rating', prefix: '' },
 ]
+import { ImOpt } from 'react-icons/im'
 import rishikeshImg from '../assets/Live_Free-23(1).png'
 
 export const DESTINATIONS = [
@@ -194,13 +195,12 @@ export const AWARDS = [
 ]
 
 export const SOCIAL_IMGS = [
-    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/get_social_compressed/get+social/DSC_4235-2.jpg",
-    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/get_social_compressed/get+social/IMG_20180118_213229_Bokeh.jpg",
-    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/get_social_compressed/get+social/IMG_20230218_113337.jpg",
-    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/get_social_compressed/get+social/IMG-20230309-WA0001.jpg",
-    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/get_social_compressed/get+social/LFD9_18.jpg",
-    "https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/get_social_compressed/get+social/Our+Story.jpg"
-]
+  { src: social1, postUrl: 'https://www.instagram.com/p/Dbx1nGNGYMN' },
+  { src: social2, postUrl: 'https://www.instagram.com/p/Dbf2nnGmBUj' },
+  { src: social3, postUrl: 'https://www.instagram.com/p/DRUZsPWjTfX' },
+  { src: social4, postUrl: 'https://www.instagram.com/p/DRM_UqYEmNa' },
+  { src: social5, postUrl: 'https://www.instagram.com/p/DTffX2NDUur' },
+];
 
 // ============================================================
 //  CITY ROOM TYPES — Update prices & booking links below

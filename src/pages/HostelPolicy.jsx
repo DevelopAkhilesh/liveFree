@@ -83,6 +83,118 @@ const SECTIONS = [
   },
 ]
 
+// export default function HostelPolicy() {
+//   const [activeId, setActiveId] = useState(SECTIONS[0].id)
+//   const sectionRefs = useRef({})
+
+//   useEffect(() => {
+//     const observer = new IntersectionObserver(
+//       (entries) => {
+//         entries.forEach((entry) => {
+//           if (entry.isIntersecting) {
+//             setActiveId(entry.target.id)
+//           }
+//         })
+//       },
+//       { rootMargin: '-20% 0px -70% 0px', threshold: 0 }
+//     )
+
+//     Object.values(sectionRefs.current).forEach((el) => {
+//       if (el) observer.observe(el)
+//     })
+
+//     return () => observer.disconnect()
+//   }, [])
+
+//   const scrollToSection = (id) => {
+//     const el = sectionRefs.current[id]
+//     if (el) {
+//       const offset = 100
+//       const top = el.getBoundingClientRect().top + window.scrollY - offset
+//       window.scrollTo({ top, behavior: 'smooth' })
+//     }
+//   }
+
+//   return (
+//     <section className={styles.page}>
+//       <div className={styles.heroBand}>
+//         <div className="container">
+//           <span className="section-label">Know before you go</span>
+//           <h1 className={styles.title}>Hostel Policies</h1>
+//           <p className={styles.subtitle}>
+//             The house rules that keep Live Free comfortable, fair, and safe for every guest — please read
+//             through before your stay.
+//           </p>
+//         </div>
+//       </div>
+
+//       <div className={`container ${styles.layout}`}>
+//         <nav className={styles.nav} aria-label="Policy sections">
+//           <ul>
+//             {SECTIONS.map((section) => (
+//               <li key={section.id}>
+//                 <button
+//                   className={`${styles.navLink} ${activeId === section.id ? styles.navLinkActive : ''}`}
+//                   onClick={() => scrollToSection(section.id)}
+//                 >
+//                   {section.label}
+//                 </button>
+//               </li>
+//             ))}
+//           </ul>
+//         </nav>
+
+//         <div className={styles.navMobile}>
+//           {SECTIONS.map((section) => (
+//             <button
+//               key={section.id}
+//               className={`${styles.navPill} ${activeId === section.id ? styles.navPillActive : ''}`}
+//               onClick={() => scrollToSection(section.id)}
+//             >
+//               {section.label}
+//             </button>
+//           ))}
+//         </div>
+
+//         <div className={styles.content}>
+//           {SECTIONS.map((section, i) => (
+//             <motion.article
+//               key={section.id}
+//               id={section.id}
+//               ref={(el) => (sectionRefs.current[section.id] = el)}
+//               className={styles.section}
+//               initial={{ opacity: 0, y: 20 }}
+//               whileInView={{ opacity: 1, y: 0 }}
+//               transition={{ duration: 0.5 }}
+//               viewport={{ once: true, margin: '-80px' }}
+//             >
+//               <div className={styles.sectionHead}>
+//                 <span className={styles.sectionNumber}>{String(i + 1).padStart(2, '0')}</span>
+//                 <h2>{section.label}</h2>
+//               </div>
+//               <div className={styles.sectionBody}>
+//                 {section.blocks.map((block, j) => (
+//                   <p key={j}>{block.text}</p>
+//                 ))}
+//               </div>
+//             </motion.article>
+//           ))}
+
+//           <div className={styles.footerNote}>
+//             <p>
+//               Have a question we haven't covered here? Reach out to our team any time — we're happy to help
+//               before you book.
+//             </p>
+//             <a href="/contact" className={styles.footerBtn}>
+//               Contact us
+//             </a>
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+//   )
+// }
+
 export default function HostelPolicy() {
   const [activeId, setActiveId] = useState(SECTIONS[0].id)
   const sectionRefs = useRef({})
@@ -117,17 +229,21 @@ export default function HostelPolicy() {
 
   return (
     <section className={styles.page}>
+      {/* HERO with bordered intro box */}
       <div className={styles.heroBand}>
         <div className="container">
-          <span className="section-label">Know before you go</span>
-          <h1 className={styles.title}>Hostel Policies</h1>
-          <p className={styles.subtitle}>
-            The house rules that keep Live Free comfortable, fair, and safe for every guest — please read
-            through before your stay.
-          </p>
+          <div className={styles.introBox}>
+            <span className={styles.eyebrow}>Know before you go</span>
+            <h1 className={styles.title}>Hostel Policies</h1>
+            <p className={styles.subtitle}>
+              The house rules that keep Live Free comfortable, fair, and safe for every guest — please read
+              through before your stay.
+            </p>
+          </div>
         </div>
       </div>
 
+      {/* LAYOUT: sidebar + content */}
       <div className={`container ${styles.layout}`}>
         <nav className={styles.nav} aria-label="Policy sections">
           <ul>
@@ -144,6 +260,7 @@ export default function HostelPolicy() {
           </ul>
         </nav>
 
+        {/* Mobile pill navigation */}
         <div className={styles.navMobile}>
           {SECTIONS.map((section) => (
             <button
