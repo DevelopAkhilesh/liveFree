@@ -1,60 +1,114 @@
+/* ─── Section ─── */
 .section {
   background: var(--bg);
-  overflow: hidden; /* animation ke bahar ka content chhupane ke liye */
+  overflow: hidden;
 }
 
+/* ─── Marquee Wrapper ─── */
 .marqueeWrap {
   width: 100%;
   overflow: hidden;
-  /* -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
-  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent); */
+  /* optional fade‑out edges – uncomment if needed */
+  /* -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent); */
+  /* mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent); */
 }
 
-.grid {
+/* ─── Moving Track ─── */
+.marqueeTrack {
   display: flex;
   width: max-content;
   gap: 20px;
-  animation: scrollTrail 25s linear infinite;
+  animation: scrollTrail 28s linear infinite;
+  will-change: transform;
 }
 
-.grid:hover {
-  animation-play-state: paused; /* hover pe rukega, optional */
+/* Pause on hover */
+.marqueeWrap:hover .marqueeTrack {
+  animation-play-state: paused;
 }
 
+/* ─── Individual Card ─── */
 .card {
   flex: 0 0 auto;
-  width: 220px; /* fixed width zaroori hai flex row mein */
+  width: 220px;
   border-radius: var(--radius-lg);
   padding: 36px 24px;
   text-align: center;
   transition: var(--transition);
 }
-.card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
 
-.light { background: #f5f0eb; color: var(--text); }
-.blue { background: linear-gradient(135deg, #0d2137, #163352); color: #fff; }
-.dark { background: linear-gradient(135deg, #1e1b1a, #2c2826); color: var(--gold); }
+/* Card colour variants */
+.light {
+  background: #f5f0eb;
+  color: var(--text);
+}
+.blue {
+  background: linear-gradient(135deg, #0d2137, #163352);
+  color: #fff;
+}
+.dark {
+  background: linear-gradient(135deg, #1e1b1a, #2c2826);
+  color: var(--gold);
+}
 
-.emoji { font-size: 2rem; margin-bottom: 14px; display: block; }
+/* Card contents */
+.emoji {
+  font-size: 2rem;
+  margin-bottom: 14px;
+  display: block;
+}
 .platform {
   font-weight: 700;
   font-size: 0.9rem;
   line-height: 1.4;
   margin-bottom: 6px;
 }
-.year { font-size: 0.78rem; opacity: 0.6; margin-bottom: 10px; }
-.property { font-size: 0.78rem; font-weight: 600; opacity: 0.75; }
-.light .property { color: var(--primary); }
-.blue .property, .dark .property { color: rgba(255,255,255,0.6); }
-
-@keyframes scrollTrail {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); } /* 50% isliye kyunki cards duplicate honge */
+.year {
+  font-size: 0.78rem;
+  opacity: 0.6;
+  margin-bottom: 10px;
+}
+.property {
+  font-size: 0.78rem;
+  font-weight: 600;
+  opacity: 0.75;
+}
+.light .property {
+  color: var(--primary);
+}
+.blue .property,
+.dark .property {
+  color: rgba(255, 255, 255, 0.6);
 }
 
+/* ─── Keyframes ─── */
+/* With 3 copies, move by 1/3 of total width */
+@keyframes scrollTrail {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-33.333%);
+  }
+}
+
+/* ─── Responsive ─── */
 @media (max-width: 900px) {
-  .card { width: 180px; padding: 28px 18px; }
+  .card {
+    width: 180px;
+    padding: 28px 18px;
+  }
 }
 @media (max-width: 500px) {
-  .card { width: 160px; padding: 24px 16px; gap: 12px; }
+  .card {
+    width: 160px;
+    padding: 24px 16px;
+  }
+  .marqueeTrack {
+    gap: 12px;
+  }
 }

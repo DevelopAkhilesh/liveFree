@@ -34,6 +34,7 @@
   overflow: hidden;
   cursor: pointer;
   height: 100%;
+  position: relative; /* add this */
 }
 .gallerySub {
   display: grid;
@@ -49,6 +50,8 @@
 }
 .galleryImgBox img,
 .galleryMainBox img {
+   position: absolute;   /* add this */
+  inset: 0;
   transition: transform 0.4s ease;
 }
 .galleryImgBox:hover img,
