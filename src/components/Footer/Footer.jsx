@@ -1,10 +1,24 @@
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { Mail, Phone, MapPin, Instagram, Facebook, Linkedin, Youtube } from 'lucide-react'
 import styles from './Footer.module.css'
 import logoImg from '../../assets/l1.png'
 
 export default function Footer() {
   const navigate = useNavigate()
+  const location = useLocation()
+
+  // Reusable: scroll to a section if already on home, otherwise
+  // navigate home first and scroll once it mounts.
+  const handleSectionLink = (sectionId) => (e) => {
+    e.preventDefault()
+
+    if (location.pathname === '/') {
+      const el = document.getElementById(sectionId)
+      el?.scrollIntoView({ behavior: 'smooth' })
+    } else {
+      navigate('/', { state: { scrollTo: sectionId } })
+    }
+  }
 
   return (
     <footer className={styles.footer} id="contact">
@@ -48,10 +62,10 @@ export default function Footer() {
             <ul>
               <li><a href="#" onClick={e => { e.preventDefault(); navigate('/about') }}>About Us</a></li>
               <li><a href="#" onClick={e => { e.preventDefault(); navigate('/groups') }}>Groups</a></li>
-              <li><a href="#" onClick={e => { e.preventDefault(); navigate('/awards') }}>Awards</a></li>
-              <li><a href="#workation">Workations</a></li>
+              <li><a href="#awards" onClick={handleSectionLink('awards')}>Awards</a></li>
+              <li><a href="#workation" onClick={handleSectionLink('workation')}>Workations</a></li>
               <li><a href="#" onClick={e => { e.preventDefault(); navigate('/contact') }}>Contact Us</a></li>
-              <li> <a href="#" onClick={e=>{e.preventDefault(); navigate("/blog-page")}}>Blogs</a></li> 
+              <li><a href="#" onClick={e => { e.preventDefault(); navigate('/blog-page') }}>Blogs</a></li>
             </ul>
           </div>
 

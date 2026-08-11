@@ -1,7 +1,9 @@
 /* ─── Section ─── */
+
 .section {
   background: var(--bg);
   overflow: hidden;
+  
 }
 
 /* ─── Marquee Wrapper ─── */

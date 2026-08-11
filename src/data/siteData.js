@@ -701,16 +701,16 @@ export const CITY_MUST_READS = {
       // TODO: Replace with real description
       desc: 'From sunrise yoga to river rafting — here is your complete guide to experiencing the best of Rishikesh.',
       tag: 'Guide',                         // TODO: Update tag (e.g. 'Tips', 'Guide', 'Food', 'Adventure')
-      img: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=600&q=80', // TODO: Replace with real image
+      img: 'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/organized_by_city/Rishikesh/one-of-the-thrilling-experiences-in-rishikesh-white-water-ra/one-of-the-thrilling-experiences-in-rishikesh-white-water-ra-1.webp', // TODO: Replace with real image
       link: '#',                            // TODO: Replace with real article link
     },
     {
       // TODO: Replace with real article title
-      title: 'Best Cafes Near Laxman Jhula',
+      title: 'Yoga in Rishikesh',
       // TODO: Replace with real description
-      desc: 'A curated list of cozy cafes with river views, great chai, and the perfect backpacker vibe.',
-      tag: 'Food',                          // TODO: Update tag
-      img: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=600&q=80', // TODO: Replace with real image
+      desc: 'There is a reason why Rishikesh is called the yoga capital of India. With like a bazillion courses and styles and ashrams to choose from, it can be quite...',
+      tag: 'Yoga',                          // TODO: Update tag
+      img: 'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/organized_by_city/Rishikesh/yoga-in-rishikesh/yoga-in-rishikesh-260.webp', // TODO: Replace with real image
       link: '#',                            // TODO: Replace with real article link
     },
     {
@@ -719,7 +719,7 @@ export const CITY_MUST_READS = {
       // TODO: Replace with real description
       desc: 'Safety tips, best operators, ideal season, and what to expect on the rapids.',
       tag: 'Adventure',                     // TODO: Update tag
-      img: 'https://images.unsplash.com/photo-1551632811-561732d1e306?w=600&q=80', // TODO: Replace with real image
+      img: 'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/organized_by_city/Rishikesh/have-you-indulged-in-these-adventures-of-rishikesh/have-you-indulged-in-these-adventures-of-rishikesh-111.webp', // TODO: Replace with real image
       link: '#',                            // TODO: Replace with real article link
     },
   ],
@@ -768,16 +768,16 @@ export const CITY_MUST_READS = {
       // TODO: Replace with real description
       desc: 'Kachori sabzi, banarasi paan, lassi, and more — the ultimate food walk guide.',
       tag: 'Food',                          // TODO: Update tag
-      img: 'https://images.unsplash.com/photo-1523239369189-4ed2aefc3a63?w=600&q=80', // TODO: Replace with real image
+      img: 'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/organized_by_city/Banaras+(Varanasi)/a-culinary-expedition-through-banaras-unveiling-the-street-f/a-culinary-expedition-through-banaras-unveiling-the-street-f-157.webp', // TODO: Replace with real image
       link: '#',                            // TODO: Replace with real article link
     },
     {
       // TODO: Replace with real article title
-      title: 'Sarnath Day Trip: Buddhism\'s Birthplace Near Varanasi',
+      title: 'A perfect stay by the Assi Ghat – Live Free Banaras',
       // TODO: Replace with real description
-      desc: 'A peaceful half-day escape to where the Buddha gave his first sermon after enlightenment.',
+      desc: 'The sacred city of Banaras, known as Varanasi, is a place that beckons pilgrims and travelers from across the globe. It’s a city of spiritual awakening,...',
       tag: 'History',                       // TODO: Update tag
-      img: 'https://images.unsplash.com/photo-1541336032412-2048a6785400?w=600&q=80', // TODO: Replace with real image
+      img: 'https://livefreewebsite-surbhi-2026.s3.eu-north-1.amazonaws.com/organized_by_city/Banaras+(Varanasi)/a-perfect-stay-by-the-assi-ghat-live-free-banaras/a-perfect-stay-by-the-assi-ghat-live-free-banaras-151.webp', // TODO: Replace with real image
       link: '#',                            // TODO: Replace with real article link
     },
   ],

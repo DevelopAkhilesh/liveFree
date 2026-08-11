@@ -10,7 +10,7 @@ import {
 } from 'lucide-react'
 import { DESTINATIONS, CITY_ROOMS, CITY_ITINERARY, CITY_PROPERTY_POLICY, CITY_MUST_READS } from '../data/siteData'
 import styles from './DestinationPage.module.css'
-import {useNavigate} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 
 const GALLERY_FALLBACKS = [
   'https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=600&q=80',
@@ -62,7 +62,7 @@ As a preferred launchpad and trusted base camp for massive “India Hikes” tre
     highlights: ['Laxman Jhula – 400 mtrs', 'Sai Ghat – 600 mtrs', 'Ram Jhula – 2 Kms', 'Parmarth Niketan – 3 Kms', 'Beatles Aashram – 3.5 Kms', 'Triveni Ghat – 4.5 Kms','Kunjapuri Temple – 25 Kms','Neem Beach – 1.8 Kms','Neer Garh Waterfall – 4.5 Kms','Neelkanth Mahadev – 22 Kms','Shivpuri – 12 Kms','Vashisth Cave – 18 Kms'],
     video: 'sPQQLwdT1rQ',
     mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3450.82505972936!2d78.3251937!3d30.127819!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39091644ee11e80d%3A0x9f80ed977d1916c6!2sLive%20Free%20Hostel%20Rishikesh!5e0!3m2!1sen!2sin!4v1779344624890!5m2!1sen!2sin',
-    cancellationPolicy: 'Free cancellation up to 48 hours before check-in. After that, the first night is non-refundable. No-show will be charged the full amount.',
+    cancellationPolicy: 'Free cancellation up to 72 hours before check-in. After that, the first night is non-refundable. No-show will be charged the full amount.',
     directions: {
       air: { label: 'By Air', icon: Plane, content: 'Jolly Grant Airport (DED), then taxi to Live Free Rishikesh (~45 mins).' },
       train: { label: 'By Train', icon: Train, content: 'Yog Nagri Railway Station, then a taxi or Auto to Tapovan (~20 mins).' },
@@ -96,7 +96,7 @@ As a preferred transit launchpad and trusted base camp for massive Indiahikes tr
     highlights: ["Robbers Cave – 3.6 Kms", "Dehradun Zoo – 750 mtrs", "Tapkeshwar Mahadev Temple – 8.2 Kms", "Mindrolling Monastery – 20 Kms", "FRI Dehradun – 10  Kms", "Paltan Bazaar – 9 Kms","Sahastradhara – 11 Kms","Mussoorie – 19 Kms","George Everest– 27 Kms","Clock Tower – 8.8 Kms","Shikhar Falls – 7.6 Kms"],
     video: null,
     mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3441.7862564688057!2d78.07051957618397!3d30.385426802333587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3908d798eee5f1b5%3A0xb57a22052215b674!2sLive%20Free%20Hostel%20Dehradun!5e0!3m2!1sen!2sin!4v1779344677046!5m2!1sen!2sin',
-    cancellationPolicy: 'Free cancellation up to 48 hours before check-in. After that, the first night is non-refundable. No-show will be charged the full amount.',
+    cancellationPolicy: 'Free cancellation up to 72 hours before check-in. After that, the first night is non-refundable. No-show will be charged the full amount.',
     directions: {
       air: { label: 'By Air', icon: Plane, content: 'Jolly Grant Airport (DED), then taxi to Live Free Dehradun (~60 mins).' },
       train: { label: 'By Train', icon: Train, content: 'Dehradun Railway Station, then a taxi or Auto to Live Free Dehradun (~25 mins).' },
@@ -136,7 +136,7 @@ Whether you are swapping travel stories with fellow backpackers, or coordinating
     highlights: ['Assi Ghat – 400 mtrs', 'Ram Nagar Fort – 3.4 Kms', 'Manikarnika Ghat – 3.3 Kms', 'Dashashwamedh Ghat – 2.5 Kms', 'Kashi Vishwanath Temple – 4  Kms', 'Sankat Mochan Temple – 1.5 Kms','Sarnath – 16 Kms','BHU – 2 Kms','Harishchandra Ghat– 2.2 Kms','Bangali Tola – 2.7 Kms','Godowlia – 3.7 Kms'],
     video: 'B7QUA2zZsQ8',
     mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.5776986113897!2d83.00443047605633!3d25.284787728146224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398e33ba110bfd13%3A0x16133790c1ae2c19!2sLive%20Free%20Hostel%20Varanasi!5e0!3m2!1sen!2sin!4v1779344741618!5m2!1sen!2sin',
-    cancellationPolicy: 'Free cancellation up to 48 hours before check-in. After that, the first night is non-refundable. No-show will be charged the full amount.',
+    cancellationPolicy: 'Free cancellation up to 72 hours before check-in. After that, the first night is non-refundable. No-show will be charged the full amount.',
     directions: {
       air: { label: 'By Air', icon: Plane, content: 'Lal Bahadur Shastri Airport (VNS), then taxi to Live Free Hostel Varanasi (~30 mins).' },
       train: { label: 'By Train', icon: Train, content: 'Varanasi Junction, then auto/cab to Live Free Hostel (~20 mins).' },
@@ -1115,6 +1115,7 @@ function PropertyPolicySection({ city }) {
 }
 
 function MustReadsSection({ city }) {
+  const MotionLink = motion(Link);
   const reads = CITY_MUST_READS?.[city] || []
   if (!reads.length) return null
   return (
@@ -1123,7 +1124,7 @@ function MustReadsSection({ city }) {
         <h2 style={{ fontWeight: 800, fontSize: '0.8rem', letterSpacing: '3.5px', textTransform: 'uppercase', marginBottom: 32, color: 'var(--text)' }}>MUST READS</h2>
         <div className={styles.mustReadsGrid}>
           {reads.map((item, i) => (
-            <motion.a key={i} href={item.link} target="_blank" rel="noreferrer"
+            <MotionLink key={i} to="/blog-page"
               initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.09 }} viewport={{ once: true }}
               style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', borderRadius: 14, overflow: 'hidden', background: '#fff', boxShadow: '0 2px 14px rgba(0,0,0,0.07)', border: '1px solid #eee', transition: 'transform 0.25s, box-shadow 0.25s' }}
               onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.boxShadow = '0 10px 28px rgba(0,0,0,0.11)' }}
@@ -1143,7 +1144,7 @@ function MustReadsSection({ city }) {
                   Read more <ExternalLink size={12} />
                 </div>
               </div>
-            </motion.a>
+            </MotionLink>
           ))}
         </div>
       </div>
@@ -1191,7 +1192,7 @@ export default function DestinationPage({ city }) {
       <ReachUsSection meta={meta} dest={dest} />
       {itinerary.length > 0 && <ItinerarySection itinerary={itinerary} dest={dest} meta={meta} />}
       <CancellationSection meta={meta} />
-      <PropertyPolicySection city={city} />
+      {/* <PropertyPolicySection city={city} /> */}
       <MustReadsSection city={city} />
       <AnimatePresence>
         {lightboxIndex !== null && (
