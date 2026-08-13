@@ -12,7 +12,7 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: true  # Changed to true to cancel previous runs
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -37,7 +37,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: './dist'
-          retention-days: 1  # Add: Auto-cleanup after 1 day
+          retention-days: 1
 
   deploy:
     environment:
