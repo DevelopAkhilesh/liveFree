@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://developakhilesh.github.io/liveFree/sitemap.xml
