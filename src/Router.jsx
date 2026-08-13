@@ -53,6 +53,7 @@ export const router = createBrowserRouter(
     },
   ],
   {
+    basename: '/liveFree',
     future: {
       v7_relativeSplatPath: true,
     },
