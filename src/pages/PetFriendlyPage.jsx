@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { PawPrint, ShieldCheck, Heart, AlertCircle, Gift, Ban, icons } from 'lucide-react'
-
+import { Helmet } from 'react-helmet-async'
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 28 },
   whileInView: { opacity: 1, y: 0 },
@@ -29,8 +29,33 @@ const COMPLIMENTARY = [
 ]
 
 export default function PetFriendlyPage() {
+
+   const title = 'Pet-Friendly Stays | LiveFree Hostel'
+  const description = 'Traveling with your dog or cat? See LiveFree Hostel\'s pet policy — room limits, house rules, and complimentary bed, bowls, and waste bags included.'
+  const url = 'https://livefreehostels.com/pet-friendly'
+  const image = 'https://livefreehostels.com/og-images/default.jpg'
   return (
     <div style={{ background: '#fff', overflowX: 'hidden' }}>
+       <Helmet>
+        {/* Standard */}
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <link rel="canonical" href={url} />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={url} />
+        <meta property="og:image" content={image} />
+        <meta property="og:site_name" content="LiveFree Hostel" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={image} />
+      </Helmet>
       {/* 1. Hero - Fixed Center Alignment */}
       <section style={{
         minHeight: '55vh',

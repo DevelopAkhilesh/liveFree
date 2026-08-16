@@ -2,6 +2,7 @@ import { useRef, useEffect, useState } from 'react';
 import { motion, useAnimationFrame } from 'framer-motion';
 import { Heart, Globe, Home, Users, AlertCircle, ChevronLeft, ChevronRight } from 'lucide-react';
 import GroupImage from "../assets/Our_Story.jpg"
+import { Helmet } from 'react-helmet-async';
 
 const VALUES = [
   { icon: Users, title: 'People First, Always', desc: 'Our staff are travelers too. They know what matters — a genuine smile, local tips, and a door that always feels open. At Live Free Hostels, People First, Always is more than a philosophy—it is the heart of everything we do. Because at the end of the day, hostels are not just buildings—they are collections of stories, friendships, and experiences shared by people from around the world.' },
@@ -266,9 +267,34 @@ export default function AboutPage() {
     `What started as one property in Rishikesh grew into a community across three cities. Each hostel carries the same soul: warmth, design, and the belief that the best conversations happen when strangers share a table. From a single vision in 2017 to a recognized hostel brand across India, the journey of Live Free Hostel reflects the spirit of its name itself—to travel freely, live openly, and create connections that transcend borders.`,
   ];
 
+  const title = 'About Us | LiveFree Hostel'
+  const description = 'Since 2017, LiveFree Hostel has grown from one property in Rishikesh to a community across Rishikesh, Varanasi, and Dehradun — built on comfort, culture, and connection. Started as one property in Rishikesh grew into a community across three cities. Each hostel carries the same soul: warmth, design, and the belief that the best conversations happen when strangers share a table'
+  const url = 'https://livefreehostels.com/about'
+  const image = 'https://livefreehostels.com/og-images/about.jpg'
+
+
   return (
     <div style={{ width: '100%', overflowX: 'hidden' }}>
+       <Helmet>
+        {/* Standard */}
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <link rel="canonical" href={url} />
 
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={url} />
+        <meta property="og:image" content={image} />
+        <meta property="og:site_name" content="LiveFree Hostel" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={image} />
+      </Helmet>
       <div style={styles.hero}>
         <div className="container" style={{ maxWidth: 1200, margin: '0 auto' }}>
           <motion.h1 style={styles.h1} initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>

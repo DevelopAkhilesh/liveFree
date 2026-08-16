@@ -141,7 +141,7 @@ export default function Navbar() {
               <li className={styles.navItem}>
                 <button
                   className={`${styles.navLink} ${location.pathname === '/blogs' ? styles.active : ''}`}
-                  onClick={() => goTo('/blog-page')}
+                  onClick={() => goTo('/blogs')}
                 >
                   Blogs
                 </button>
@@ -253,7 +253,7 @@ export default function Navbar() {
 
         <button
           className={`${styles.mobileNavLink} ${location.pathname === '/blog-page' ? styles.active : ''}`}
-          onClick={() => goTo('/blog-page')}
+          onClick={() => goTo('/blogs')}
         >
           <BookOpen size={18} /> Blogs
         </button>

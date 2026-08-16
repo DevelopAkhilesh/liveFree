@@ -3,6 +3,7 @@ import { Link, useSearchParams } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import blogPosts from '../data/blogPosts.json'
 import styles from './BlogPage.module.css'
+import { Helmet } from 'react-helmet-async'
 
 function capitalize(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
@@ -18,7 +19,38 @@ export default function BlogPage({ filterFn, title, subtitle, limit }) {
   const displayTitle = title || (cityParam ? `Stories from ${capitalize(cityParam)}` : 'Stories from the Road')
   const displaySubtitle = subtitle || 'Travel guides, local tips & everything happening around our hostels in Rishikesh, Varanasi & Dehradun.'
 
+    const seoTitle = cityParam
+    ? `${capitalize(cityParam)} Travel Blog | LiveFree Hostel`
+    : 'Travel Blog | LiveFree Hostel'
+  const seoDescription = cityParam
+    ? `Travel guides and local tips for ${capitalize(cityParam)} from LiveFree Hostel.`
+    : 'Travel guides, local tips & stories from around LiveFree Hostel in Rishikesh, Varanasi & Dehradun.'
+  const url = cityParam
+    ? `https://livefreehostels.com/blogs?city=${cityParam}`
+    : 'https://livefreehostels.com/blogs'
+  const image = 'https://livefreehostels.com/og-images/default.jpg'
   return (
+    <>
+    <Helmet>
+        {/* Standard */}
+        <title>{seoTitle}</title>
+        <meta name="description" content={seoDescription} />
+        <link rel="canonical" href={url} />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={seoTitle} />
+        <meta property="og:description" content={seoDescription} />
+        <meta property="og:url" content={url} />
+        <meta property="og:image" content={image} />
+        <meta property="og:site_name" content="LiveFree Hostel" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={seoTitle} />
+        <meta name="twitter:description" content={seoDescription} />
+        <meta name="twitter:image" content={image} />
+      </Helmet>
     <div className={styles.page}>
       <section className="section-head">
         <motion.h2
@@ -66,5 +98,6 @@ export default function BlogPage({ filterFn, title, subtitle, limit }) {
         <p className={styles.empty}>No stories found in this category yet.</p>
       )}
     </div>
+    </>
   )
 }

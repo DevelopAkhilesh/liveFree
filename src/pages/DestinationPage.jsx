@@ -11,6 +11,7 @@ import {
 import { DESTINATIONS, CITY_ROOMS, CITY_ITINERARY, CITY_PROPERTY_POLICY, CITY_MUST_READS } from '../data/siteData'
 import styles from './DestinationPage.module.css'
 import {Link, useNavigate} from "react-router-dom"
+import { Helmet } from 'react-helmet-async'
 
 const GALLERY_FALLBACKS = [
   'https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=600&q=80',
@@ -368,101 +369,7 @@ rishikesh: {
 },
 }
 
-// ── SINGLE LightBox — with category tabs ──
-// function LightBox({ images, index, onClose, photosByCategory = {}, allPhotos,city }) {
-//   const thumbContainerRef = useRef(null)
-//   const [activeCategory, setActiveCategory] = useState('All')
-//   const [localIndex, setLocalIndex] = useState(index)
 
-//   // NEW — if allPhotos isn't passed (room mode), fall back to just `images`
-//   const resolvedAllPhotos = allPhotos || images
-//   const categories = [ "All",...Object.keys(photosByCategory)]
-//   const currentPhotos = activeCategory === 'All' ? resolvedAllPhotos : (photosByCategory[activeCategory] || [])
-//   const showTabs = categories.length > 1   // NEW — only show tab bar when there's more than "All"
-
-//   useEffect(() => { setLocalIndex(index) }, [index])
-//   useEffect(() => { setLocalIndex(0) }, [activeCategory])
-
-//   useEffect(() => {
-//     if (thumbContainerRef.current) {
-//       const activeThumb = thumbContainerRef.current.children[localIndex]
-//       if (activeThumb) activeThumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' })
-//     }
-//   }, [localIndex])
-
-//   const goPrev = () => setLocalIndex(i => (i - 1 + currentPhotos.length) % currentPhotos.length)
-//   const goNext = () => setLocalIndex(i => (i + 1) % currentPhotos.length)
-
-//   useEffect(() => {
-//     document.body.style.overflow = 'hidden'
-//     const onKeyDown = (e) => {
-//       if (e.key === 'Escape') onClose()
-//       if (e.key === 'ArrowLeft') goPrev()
-//       if (e.key === 'ArrowRight') goNext()
-//     }
-//     document.addEventListener('keydown', onKeyDown)
-//     return () => {
-//       document.body.style.overflow = ''
-//       document.removeEventListener('keydown', onKeyDown)
-//     }
-//     // eslint-disable-next-line react-hooks/exhaustive-deps
-//   }, [currentPhotos.length])
-
-//   // NEW — detect whether an image is a local import (full URL) or a Cloudinary ID
-//   const resolveImg = (id) =>
-//     typeof id === 'string' && (id.startsWith('http') || id.startsWith('/') || id.startsWith('data:'))
-//       ? id
-//       : cld(id,city)
-
-//   return (
-//     <motion.div
-//       initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-//       style={{ position: 'fixed', inset: 0, zIndex: 1100, background: 'rgba(0,0,0,0.95)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 20 }}
-//       onClick={onClose}
-//     >
-//       <motion.div
-//         initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.9, opacity: 0 }}
-//         style={{ background: '#111', borderRadius: 16, maxWidth: '90vw', maxHeight: '90vh', width: '100%', height: '100%', display: 'flex', flexDirection: 'column', overflow: 'hidden', position: 'relative', boxShadow: '0 20px 60px rgba(0,0,0,0.8)' }}
-//         onClick={e => e.stopPropagation()}
-//       >
-//         {/* TOP BAR — category tabs (only in gallery mode) + close */}
-//         <div style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '12px 16px', background: '#1a1a1a', overflowX: 'auto', flexShrink: 0, scrollbarWidth: 'none' }}>
-//           {showTabs && categories.map(cat => (
-//             <button key={cat} onClick={() => setActiveCategory(cat)} style={{ padding: '6px 14px', borderRadius: 99, fontSize: '0.75rem', fontWeight: 600, cursor: 'pointer', border: 'none', whiteSpace: 'nowrap', flexShrink: 0, background: activeCategory === cat ? 'var(--primary)' : 'rgba(255,255,255,0.1)', color: activeCategory === cat ? '#fff' : 'rgba(255,255,255,0.6)', transition: 'all 0.2s' }}>
-//               {cat} ({cat === 'All' ? resolvedAllPhotos.length : (photosByCategory[cat] || []).length})
-//             </button>
-//           ))}
-//           <button onClick={onClose} style={{ marginLeft: 'auto', flexShrink: 0, background: 'rgba(255,255,255,0.1)', border: 'none', borderRadius: '50%', width: 36, height: 36, cursor: 'pointer', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-//             <X size={16} />
-//           </button>
-//         </div>
-
-//         {/* MAIN IMAGE */}
-//         <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0 10px', position: 'relative', minHeight: 0 }}>
-//           <button className={styles.lightboxNavBtn} onClick={e => { e.stopPropagation(); goPrev() }} style={{ position: 'absolute', left: 8, background: 'rgba(0,0,0,0.5)', border: 'none', borderRadius: '50%', width: 40, height: 40, cursor: 'pointer', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 10 }}>
-//             <ChevronLeft size={22} />
-//           </button>
-//           <img src={resolveImg(currentPhotos[localIndex])} alt="" style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', borderRadius: 8 }} />
-//           <button className={styles.lightboxNavBtn} onClick={e => { e.stopPropagation(); goNext() }} style={{ position: 'absolute', right: 8, background: 'rgba(0,0,0,0.5)', border: 'none', borderRadius: '50%', width: 40, height: 40, cursor: 'pointer', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 10 }}>
-//             <ChevronRight size={22} />
-//           </button>
-//           <div style={{ position: 'absolute', bottom: 8, left: '50%', transform: 'translateX(-50%)', background: 'rgba(0,0,0,0.6)', padding: '2px 12px', borderRadius: 20, color: 'rgba(255,255,255,0.8)', fontSize: '0.75rem', fontWeight: 500 }}>
-//             {localIndex + 1} / {currentPhotos.length}
-//           </div>
-//         </div>
-
-//         {/* THUMBNAIL STRIP */}
-//         <div ref={thumbContainerRef} style={{ width: '100%', overflowX: 'auto', overflowY: 'hidden', padding: '10px 16px', display: 'flex', gap: 8, scrollbarWidth: 'thin', scrollbarColor: 'rgba(255,255,255,0.3) transparent', flexShrink: 0, height: 100, background: 'rgba(0,0,0,0.3)' }} onClick={e => e.stopPropagation()}>
-//           {currentPhotos.map((id, i) => (
-//             <div key={i} className={styles.lightboxThumb} onClick={() => setLocalIndex(i)} style={{ flex: '0 0 auto', width: 80, height: 80, borderRadius: 6, overflow: 'hidden', border: i === localIndex ? '3px solid var(--primary)' : '3px solid transparent', transition: 'all 0.2s', cursor: 'pointer', transform: i === localIndex ? 'scale(1.05)' : 'scale(1)' }}>
-//               <img src={resolveImg(id)} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-//             </div>
-//           ))}
-//         </div>
-//       </motion.div>
-//     </motion.div>
-//   )
-// }
 function LightBox({ images, index, onClose, photosByCategory = {}, allPhotos, city }) {
   const thumbContainerRef = useRef(null)
   const resolvedAllPhotos = allPhotos || images
@@ -574,51 +481,7 @@ function LightBox({ images, index, onClose, photosByCategory = {}, allPhotos, ci
     </motion.div>
   )
 }
-// ── Gallery ──
-// function GallerySection({ photosByCategory, allPhotos, onOpenLightbox, city }) {
-//   // Only the city’s primary / main gallery category populates the grid — rest is available via "See all photos"
-//   const mainCategoryKey = Object.keys(photosByCategory).find((key) => key.toLowerCase().includes('main'))
-//   const mainPhotos = (mainCategoryKey && photosByCategory[mainCategoryKey]) || allPhotos.slice(0, 5)
-//   const hasPhotos = allPhotos.length > 0
-//   return (
-//     <div className={styles.galleryWrap}>
-//       {hasPhotos ? (
-//         <div style={{ position: 'relative' }}>
-//           <div className={styles.galleryGrid}>
-//             <div className={styles.galleryMainBox} onClick={() => onOpenLightbox(allPhotos, allPhotos.indexOf(mainPhotos[0]))}>
-//               <img src={cld(mainPhotos[0], city)} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-//             </div>
-//             <div className={styles.gallerySub}>
-//               {[1, 2, 3, 4].map(i => {
-//                 const photo = mainPhotos[i]
-//                 const imgSrc = photo ? cld(photo, city) : GALLERY_FALLBACKS[i - 1]
-//                 return (
-//                   <div key={i} className={styles.galleryImgBox} onClick={() => onOpenLightbox(allPhotos, photo ? allPhotos.indexOf(photo) : 0)}>
-//                     <img src={imgSrc} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-//                       onError={e => { e.currentTarget.src = GALLERY_FALLBACKS[i - 1] }}
-//                     />
-//                   </div>
-//                 )
-//               })}
-//             </div>
-//           </div>
-//           <button
-//             className={styles.seeAllBtn}
-//             onClick={() => onOpenLightbox(allPhotos, 0)}
-//             style={{ background: 'rgba(255,255,255,0.95)', backdropFilter: 'blur(8px)', border: '1.5px solid rgba(0, 0, 0, 0)', borderRadius: 8, padding: '10px 22px', cursor: 'pointer', color: '#1a1a1a', fontWeight: 700, fontSize: '0.82rem', letterSpacing: '0.08em', display: 'flex', alignItems: 'center', gap: 8, boxShadow: '0 4px 16px rgba(0, 0, 0, 0)' }}
-//           >
-//             <span>📷</span> See all photos ({allPhotos.length})
-//           </button>
-//         </div>
-//       ) : (
-//         <div className={styles.galleryEmpty}>
-//           <ImageOff size={36} style={{ color: 'var(--primary)' }} />
-//           <p style={{ fontFamily: 'var(--font-display)', fontSize: '1.4rem', fontWeight: 700, color: 'var(--text)' }}>Photos Coming Soon</p>
-//         </div>
-//       )}
-//     </div>
-//   )
-// }
+
 function GallerySection({ photosByCategory, allPhotos, onOpenLightbox }) {
   // Only the city's primary / main gallery category populates the grid — rest is available via "See all photos"
   const mainCategoryKey = Object.keys(photosByCategory).find((key) => key.toLowerCase().includes('main'))
@@ -878,14 +741,6 @@ function SelectRoomSection({ rooms,  onOpenLightbox }) {
                         <h4 style={{ fontWeight: 800, fontSize: '0.95rem', color: 'var(--text)', marginBottom: 4 }}>Room Capacity</h4>
                         <p style={{ fontSize: '0.88rem', color: '#777', marginBottom: 20 }}>{ROOM_CAPACITY[room.type] || ROOM_CAPACITY.Dormitory}</p>
 
-                        {/* <h4 style={{ fontWeight: 800, fontSize: '0.95rem', color: 'var(--text)', marginBottom: 12 }}>Room Amenities</h4>
-                        <div className={styles.roomDetailsGrid} style={{ marginBottom: 24 }}>
-                          {(ROOM_AMENITIES_BY_TYPE[room.type] || ROOM_AMENITIES_BY_TYPE.Dormitory).map(item => (
-                            <span key={item} style={{ display: 'flex', alignItems: 'center', gap: 7, fontSize: '0.86rem', color: '#444' }}>
-                              <Check size={14} style={{ color: '#2d9b5a', flexShrink: 0 }} /> {item}
-                            </span>
-                          ))}
-                        </div> */}
 
                         <h4 style={{ fontWeight: 800, fontSize: '0.95rem', color: 'var(--text)', marginBottom: 12 }}>Hotel Amenities</h4>
                         <div className={styles.roomDetailsGrid}>
@@ -1124,7 +979,7 @@ function MustReadsSection({ city }) {
         <h2 style={{ fontWeight: 800, fontSize: '0.8rem', letterSpacing: '3.5px', textTransform: 'uppercase', marginBottom: 32, color: 'var(--text)' }}>MUST READS</h2>
         <div className={styles.mustReadsGrid}>
           {reads.map((item, i) => (
-            <MotionLink key={i} to="/blog"
+            <MotionLink key={i} to="/blogs"
               initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.09 }} viewport={{ once: true }}
               style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', borderRadius: 14, overflow: 'hidden', background: '#fff', boxShadow: '0 2px 14px rgba(0,0,0,0.07)', border: '1px solid #eee', transition: 'transform 0.25s, box-shadow 0.25s' }}
               onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.boxShadow = '0 10px 28px rgba(0,0,0,0.11)' }}
@@ -1150,6 +1005,21 @@ function MustReadsSection({ city }) {
       </div>
     </section>
   )
+}
+
+ const CITY_SEO = {
+  rishikesh: {
+    title: 'LiveFree Hostel Rishikesh | Near Laxman Jhula',
+    description: 'Stay 400m from Laxman Jhula with Ganga & Himalaya views. Rooftop yoga, in-house cafe, and India Hikes basecamp — dorms and private rooms.',
+  },
+  varanasi: {
+    title: 'LiveFree Hostel Varanasi | Near Ganga Ghats',
+    description: 'A backpacker hostel steps from the ghats of Varanasi — dorms and private rooms, community spaces, and easy access to Ganga Aarti.',
+  },
+  dehradun: {
+    title: 'LiveFree Hostel Dehradun | Gateway to the Hills',
+    description: 'Comfortable dorms and private rooms in Dehradun — a relaxed basecamp for hill travel, with community spaces and local trip support.',
+  },
 }
 
 // ── MAIN PAGE ──
@@ -1180,9 +1050,32 @@ export default function DestinationPage({ city }) {
   const closeLightbox = () => setLightboxIndex(null)
 
   if (!dest || !meta) return null
-
+  const seo = CITY_SEO[city]
+  const url = `https://livefreehostels.com/${city}`
+  const image = 'https://livefreehostels.com/og-images/default.jpg' // swap per-city once you have property photos
   return (
     <>
+    <Helmet>
+        {/* Standard */}
+        <title>{seo.title}</title>
+        <meta name="description" content={seo.description} />
+        <link rel="canonical" href={url} />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={seo.title} />
+        <meta property="og:description" content={seo.description} />
+        <meta property="og:url" content={url} />
+        <meta property="og:image" content={image} />
+        <meta property="og:site_name" content="LiveFree Hostel" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={seo.title} />
+        <meta name="twitter:description" content={seo.description} />
+        <meta name="twitter:image" content={image} />
+      </Helmet>
+
       <GallerySection photosByCategory={photosByCategory} allPhotos={allPhotos} onOpenLightbox={openLightbox}  city={city} />
       <HeroInfoSection dest={dest} meta={meta} />
       <GoodToKnowSection meta={meta} />

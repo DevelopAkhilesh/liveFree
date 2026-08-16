@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import styles from './DataProtectionGuidelines.module.css'
+import { Helmet } from 'react-helmet-async'
 
 const SECTIONS = [
   {
@@ -176,8 +177,33 @@ export default function DataProtectionGuidelines() {
       window.scrollTo({ top, behavior: 'smooth' })
     }
   }
+   const title = 'Data Protection Guidelines | LiveFree Hostel'
+  const description = 'How to spot fraudulent calls, emails, or payment requests claiming to be from LiveFree Hostel — and what our official communication channels actually look like.'
+  const url = 'https://livefreehostels.com/data-protection-guidelines'
+  const image = 'https://livefreehostels.com/og-images/default.jpg'
 
   return (
+    <>
+    <Helmet>
+        {/* Standard */}
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <link rel="canonical" href={url} />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={url} />
+        <meta property="og:image" content={image} />
+        <meta property="og:site_name" content="LiveFree Hostel" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={image} />
+      </Helmet>
     <section className={styles.page}>
       <div className={styles.heroBand}>
         <div className="container">
@@ -261,5 +287,6 @@ export default function DataProtectionGuidelines() {
         </div>
       </div>
     </section>
+    </>
   )
 }

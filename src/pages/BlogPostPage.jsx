@@ -3,6 +3,7 @@ import { useParams, useSearchParams, Link, Navigate } from 'react-router-dom'
 import { ArrowLeft } from 'lucide-react'
 import blogPosts from '../data/blogPosts.json'
 import styles from './BlogPostPage.module.css'
+import { Helmet } from 'react-helmet-async'
 
 // Add this helper near the top of the file, outside the component
 function getRandomPosts(posts, count) {
@@ -16,13 +17,7 @@ export default function BlogPostPage() {
   const city = searchParams.get('city')
   const post = blogPosts.find((p) => p.slug === slug)
 
-  
-
-  useEffect(() => {
-    if (post) document.title = `${post.title} | Live Free Hostels Blog`
-  }, [post])
-
-  const backTo = city ? `/blog-page?city=${city}` : '/blog-page'
+  const backTo = city ? `/blogs?city=${city}` : '/blogs'
 
   if (!post) return <Navigate to={backTo} replace />
 
@@ -34,8 +29,34 @@ const relatedSlugs = new Set(related.map((r) => r.slug))
 
 const moreStoriesPool = blogPosts.filter((p) => p.slug !== slug && !relatedSlugs.has(p.slug))
 const moreStories = useMemo(() => getRandomPosts(moreStoriesPool, 3), [slug, city, related])
+// helmet data
+ const title = `${post.title} | LiveFree Hostel Blog`
+  const description = post.excerpt?.slice(0, 155) || `Read ${post.title} on the LiveFree Hostel blog.`
+  const url = `https://livefreehostels.com/blogs/${post.slug}`
+  const image = post.cover || 'https://livefreehostels.com/og-images/default.jpg'
 
   return (
+    <>
+    <Helmet>
+        {/* Standard */}
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <link rel="canonical" href={url} />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={url} />
+        <meta property="og:image" content={image} />
+        <meta property="og:site_name" content="LiveFree Hostel" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={image} />
+      </Helmet>
     <div className={styles.page}>
       <div className={styles.container}>
         <Link to={backTo} className={styles.back}>
@@ -91,5 +112,6 @@ const moreStories = useMemo(() => getRandomPosts(moreStoriesPool, 3), [slug, cit
         )}
       </div>
     </div>
+    </>
   )
 }

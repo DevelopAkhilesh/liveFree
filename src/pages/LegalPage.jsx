@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import styles from './LegalPage.module.css'
+import { Helmet } from 'react-helmet-async'
 
 const SECTIONS = [
   {
@@ -90,118 +91,6 @@ const SECTIONS = [
   },
 ]
 
-// export default function LegalPage() {
-//   const [activeId, setActiveId] = useState(SECTIONS[0].id)
-//   const sectionRefs = useRef({})
-
-//   useEffect(() => {
-//     const observer = new IntersectionObserver(
-//       (entries) => {
-//         entries.forEach((entry) => {
-//           if (entry.isIntersecting) {
-//             setActiveId(entry.target.id)
-//           }
-//         })
-//       },
-//       { rootMargin: '-20% 0px -70% 0px', threshold: 0 }
-//     )
-
-//     Object.values(sectionRefs.current).forEach((el) => {
-//       if (el) observer.observe(el)
-//     })
-
-//     return () => observer.disconnect()
-//   }, [])
-
-//   const scrollToSection = (id) => {
-//     const el = sectionRefs.current[id]
-//     if (el) {
-//       const offset = 100
-//       const top = el.getBoundingClientRect().top + window.scrollY - offset
-//       window.scrollTo({ top, behavior: 'smooth' })
-//     }
-//   }
-
-//   return (
-//     <section className={styles.page}>
-//       <div className={styles.heroBand}>
-//         {/* title moved into introBox below */}
-//       </div>
-
-//       <div className={styles.layout}>
-//         {/* INTRO BOX */}
-//         <div className={styles.introBox}>
-//           <h1 className={styles.title}>Privacy Policy</h1>
-//           <p className={styles.subtitle}>Last updated: 23 March 2026</p>
-//           <div className={styles.introContent}>
-//             <h3 className={styles.introTitle}>Your data, handled responsibly</h3>
-//             <p className={styles.introDesc}>
-//               What we collect, why we collect it, and how we look after it — for every guest and every visitor to our website.
-//             </p>
-//           </div>
-//         </div>
-
-//         <nav className={styles.nav} aria-label="Policy sections">
-//           <ul>
-//             {SECTIONS.map((section) => (
-//               <li key={section.id}>
-//                 <button
-//                   className={`${styles.navLink} ${activeId === section.id ? styles.navLinkActive : ''}`}
-//                   onClick={() => scrollToSection(section.id)}
-//                 >
-//                   {section.label}
-//                 </button>
-//               </li>
-//             ))}
-//           </ul>
-//         </nav>
-
-
-
-//         <div className={styles.content}>
-//           {SECTIONS.map((section, i) => (
-//             <motion.article
-//               key={section.id}
-//               id={section.id}
-//               ref={(el) => (sectionRefs.current[section.id] = el)}
-//               className={styles.section}
-//               initial={{ opacity: 0, y: 20 }}
-//               whileInView={{ opacity: 1, y: 0 }}
-//               transition={{ duration: 0.5 }}
-//               viewport={{ once: true, margin: '-80px' }}
-//             >
-//               <div className={styles.sectionHead}>
-//                 <span className={styles.sectionNumber}>{i + 1}.</span>
-//                 <h2>{section.label}</h2>
-//               </div>
-//               <div className={styles.sectionBody}>
-//                 {section.blocks.map((block, j) =>
-//                   block.type === 'ul' ? (
-//                     <ul key={j} className={styles.list}>
-//                       {block.items.map((item, k) => (
-//                         <li key={k}>{item}</li>
-//                       ))}
-//                     </ul>
-//                   ) : (
-//                     <p key={j}>{block.text}</p>
-//                   )
-//                 )}
-//               </div>
-//             </motion.article>
-//           ))}
-
-//           <div className={styles.footerNote}>
-//             <p>Have a question about how we handle your data? We're happy to walk you through it.</p>
-//             <a href="/contact" className={styles.footerBtn}>
-//               Contact us
-//             </a>
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   )
-// }
-
 export default function LegalPage() {
   const [activeId, setActiveId] = useState(SECTIONS[0].id)
   const sectionRefs = useRef({})
@@ -233,8 +122,33 @@ export default function LegalPage() {
       window.scrollTo({ top, behavior: 'smooth' })
     }
   }
+  const title = 'Privacy Policy | LiveFree Hostel'
+  const description = 'How LiveFree Hostel collects, uses, and protects your personal data when you book or visit our website.'
+  const url = 'https://livefreehostels.com/privacy-policy'
+  const image = 'https://livefreehostels.com/og-images/default.jpg'
 
   return (
+    <>
+    <Helmet>
+        {/* Standard */}
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <link rel="canonical" href={url} />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={url} />
+        <meta property="og:image" content={image} />
+        <meta property="og:site_name" content="LiveFree Hostel" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={image} />
+      </Helmet>
     <section className={styles.page}>
       <div className={styles.heroBand}>
         <div className="container">
@@ -317,5 +231,6 @@ export default function LegalPage() {
         </div>
       </div>
     </section>
+    </>
   )
 }

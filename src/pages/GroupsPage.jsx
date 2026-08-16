@@ -4,6 +4,7 @@ import { Users, Send, Phone, Mail } from 'lucide-react'
 import styles from './GroupsPage.module.css'
 import IndianHikesImg from '../assets/IndianHikes.png'
 import Cover from "../assets/cover_photo.jpg"
+import { Helmet } from 'react-helmet-async'
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 28 },
@@ -53,9 +54,33 @@ export default function GroupsPage() {
   }
 
   const labelStyle = { fontSize: '0.85rem', fontWeight: 700, color: 'var(--text)' }
-
+  // helmet description
+  const title = 'Group & Trekking Bookings | LiveFree Hostel'
+  const description = 'Book group stays at LiveFree Hostel – official Indiahikes partner. Hostel for 50+ guests in Rishikesh, Varanasi & Dehradun. Custom meals, bonfire, rafting.'
+  const url = 'https://livefreehostels.com/groups'
+  const image = 'https://livefreehostels.com/og-images/default.jpg'
   return (
     <>
+    <Helmet>
+        {/* Standard */}
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <link rel="canonical" href={url} />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={url} />
+        <meta property="og:image" content={image} />
+        <meta property="og:site_name" content="LiveFree Hostel" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={image} />
+      </Helmet>
       {/* 1. HERO BANNER */}
       <section style={{ position: 'relative', minHeight: 'calc(75vh + 300px)', paddingTop: "10px", display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0 }}>
