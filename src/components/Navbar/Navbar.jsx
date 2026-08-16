@@ -140,7 +140,7 @@ export default function Navbar() {
 
               <li className={styles.navItem}>
                 <button
-                  className={`${styles.navLink} ${location.pathname === '/blog-page' ? styles.active : ''}`}
+                  className={`${styles.navLink} ${location.pathname === '/blogs' ? styles.active : ''}`}
                   onClick={() => goTo('/blog-page')}
                 >
                   Blogs

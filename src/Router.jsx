@@ -46,14 +46,14 @@ export const router = createBrowserRouter(
         { path: 'privacy-policy', element: withSuspense(LegalPage) },
         { path: 'terms-conditions', element: withSuspense(TermsConditions) },
         { path: 'data-protection-guidelines', element: withSuspense(DataProtectionGuidelines) },
-        { path: 'blog-page', element: withSuspense(BlogPage) },
+        { path: 'blogs', element: withSuspense(BlogPage) },
         { path: 'blog/:slug', element: withSuspense(BlogPostPage) },
         { path: '*', element: withSuspense(NotFoundPage) },
       ],
     },
   ],
   {
-    basename: '/liveFree',
+    
     future: {
       v7_relativeSplatPath: true,
     },

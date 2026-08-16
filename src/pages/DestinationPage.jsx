@@ -1124,7 +1124,7 @@ function MustReadsSection({ city }) {
         <h2 style={{ fontWeight: 800, fontSize: '0.8rem', letterSpacing: '3.5px', textTransform: 'uppercase', marginBottom: 32, color: 'var(--text)' }}>MUST READS</h2>
         <div className={styles.mustReadsGrid}>
           {reads.map((item, i) => (
-            <MotionLink key={i} to="/blog-page"
+            <MotionLink key={i} to="/blog"
               initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.09 }} viewport={{ once: true }}
               style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', borderRadius: 14, overflow: 'hidden', background: '#fff', boxShadow: '0 2px 14px rgba(0,0,0,0.07)', border: '1px solid #eee', transition: 'transform 0.25s, box-shadow 0.25s' }}
               onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.boxShadow = '0 10px 28px rgba(0,0,0,0.11)' }}
