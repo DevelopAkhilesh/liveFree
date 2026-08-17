@@ -1,7 +1,8 @@
+import SEO from '../components/Seo/Seo'
 import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import styles from './TermsConditions.module.css'
-import { Helmet } from 'react-helmet-async'
+
 
 const SECTIONS = [
   {
@@ -175,31 +176,15 @@ export default function TermsConditions() {
   }
   const title = 'Terms & Conditions | LiveFree Hostel'
   const description = 	"Read the terms and conditions governing bookings, stays, and website usage at LiveFree Hostel. Understand guest policies, liability, and legal information."
-  const url = 'https://livefreehostels.com/terms-conditions'
-  const image = 'https://livefreehostels.com/og-images/default.jpg'
+  
 
   return (
     <>
-     <Helmet>
-        {/* Standard */}
-        <title>{title}</title>
-        <meta name="description" content={description} />
-        <link rel="canonical" href={url} />
-
-        {/* Open Graph */}
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        <meta property="og:url" content={url} />
-        <meta property="og:image" content={image} />
-        <meta property="og:site_name" content="LiveFree Hostel" />
-
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={image} />
-      </Helmet>
+     <SEO
+     title={title}
+     description={description}
+     path='/terms-conditions'
+     />
     <section className={styles.page}>
       <div className={styles.heroBand}>
         <div className="container">

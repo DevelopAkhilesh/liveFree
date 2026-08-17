@@ -4,6 +4,7 @@ import { ChevronDown, MapPin, Heart, Home, Info, BookOpen, Users, ArrowLeft } fr
 import { AnimatePresence, motion } from 'framer-motion'
 import styles from './Navbar.module.css'
 import logoImg from '../../assets/l1.png'
+import { Link } from 'react-router-dom'
 
 const ABOUT_ITEMS = [
   { label: 'About Us', icon: <Info size={15} />, path: '/about' },
@@ -21,12 +22,12 @@ function DropdownMenu({ items, onSelect }) {
       {items.map((item, i) => (
         <div key={item.path}>
           {i > 0 && i < items.length && <div className={styles.dropdownDivider} />}
-          <button className={styles.dropdownItem} onClick={() => onSelect(item.path)}>
+          <Link className={styles.dropdownItem} to={item.path} onClick={onSelect}>
             {item.icon}
             <div className={styles.dropdownItemText}>
               <div className={styles.dropdownItemName}>{item.label}</div>
             </div>
-          </button>
+          </Link>
         </div>
       ))}
     </div>
@@ -79,7 +80,7 @@ export default function Navbar() {
     return () => document.removeEventListener('keydown', onKeyDown)
   }, [])
 
-  const goTo = (path) => { navigate(path); setOpenMenu(null); setMobileOpen(false) }
+  const closeMenus = () => { setOpenMenu(null); setMobileOpen(false) }
   const toggleMenu = (name) => setOpenMenu(prev => prev === name ? null : name)
   const isActive = (paths) => paths.some(p => location.pathname === p)
 
@@ -91,21 +92,22 @@ export default function Navbar() {
         <div className={`container ${styles.topbar}`}>
 
           {/* Logo */}
-          <div className={styles.logo} onClick={() => goTo('/')}>
+          <Link className={styles.logo} to="/" onClick={closeMenus}>
             <img src={logoImg} alt="LiveFree Hostel" className={styles.logoImg} />
-          </div>
-
+          </Link>
           {/* Desktop nav */}
           <nav className={styles.desktopNav} aria-label="Primary navigation">
             <ul className={styles.navList}>
 
               <li className={styles.navItem}>
-                <button
+
+                <Link
                   className={`${styles.navLink} ${location.pathname === '/' ? styles.active : ''}`}
-                  onClick={() => goTo('/')}
+                  to="/"
+                  onClick={closeMenus}
                 >
                   Home
-                </button>
+                </Link>
               </li>
 
               {/* About dropdown */}
@@ -119,7 +121,7 @@ export default function Navbar() {
                   <ChevronDown size={14} />
                 </button>
                 <div className={`${styles.dropdown} ${openMenu === 'about' ? styles.open : ''}`}>
-                  <DropdownMenu items={ABOUT_ITEMS} onSelect={goTo} />
+                  <DropdownMenu items={ABOUT_ITEMS} onSelect={closeMenus}  />
                 </div>
               </li>
 
@@ -134,26 +136,28 @@ export default function Navbar() {
                   <ChevronDown size={14} />
                 </button>
                 <div className={`${styles.dropdown} ${openMenu === 'properties' ? styles.open : ''}`}>
-                  <DropdownMenu items={PROPERTIES_ITEMS} onSelect={goTo} />
+                  <DropdownMenu items={PROPERTIES_ITEMS} onSelect={closeMenus} />
                 </div>
               </li>
 
               <li className={styles.navItem}>
-                <button
+               <Link
                   className={`${styles.navLink} ${location.pathname === '/blogs' ? styles.active : ''}`}
-                  onClick={() => goTo('/blogs')}
+                  to="/blogs"
+                  onClick={closeMenus}
                 >
                   Blogs
-                </button>
+                </Link>
               </li>
 
               <li className={styles.navItem}>
-                <button
+               <Link
                   className={`${styles.navLink} ${location.pathname === '/groups' ? styles.active : ''}`}
-                  onClick={() => goTo('/groups')}
+                  to="/groups"
+                  onClick={closeMenus}
                 >
                   Groups
-                </button>
+                </Link>
               </li>
 
             </ul>
@@ -190,9 +194,9 @@ export default function Navbar() {
           <ArrowLeft size={18} /> Back
         </button>
 
-        <button className={`${styles.mobileNavLink} ${location.pathname === '/' ? styles.active : ''}`} onClick={() => goTo('/')}>
+        <Link className={`${styles.mobileNavLink} ${location.pathname === '/' ? styles.active : ''}`} to="/" onClick={closeMenus}>
           <Home size={18} /> Home
-        </button>
+        </Link>
 
         {/* About accordion */}
         <button
@@ -211,9 +215,9 @@ export default function Navbar() {
               transition={{ duration: 0.22 }}
             >
               {ABOUT_ITEMS.map(item => (
-                <button key={item.path} className={`${styles.mobileSubItem} ${location.pathname === item.path ? styles.active : ''}`} onClick={() => goTo(item.path)}>
+                <Link key={item.path} className={`${styles.mobileSubItem} ${location.pathname === item.path ? styles.active : ''}`} to={item.path} onClick={closeMenus}>
                   {item.icon} {item.label}
-                </button>
+                </Link>
               ))}
             </motion.div>
           )}
@@ -236,32 +240,34 @@ export default function Navbar() {
               transition={{ duration: 0.22 }}
             >
               {PROPERTIES_ITEMS.map(item => (
-                <button key={item.path} className={`${styles.mobileSubItem} ${location.pathname === item.path ? styles.active : ''}`} onClick={() => goTo(item.path)}>
+               <Link key={item.path} className={`${styles.mobileSubItem} ${location.pathname === item.path ? styles.active : ''}`} to={item.path} onClick={closeMenus}>
                   {item.icon} {item.label}
-                </button>
+                </Link>
               ))}
             </motion.div>
           )}
         </AnimatePresence>
 
-        <button
+        <Link
           className={`${styles.mobileNavLink} ${location.pathname === '/groups' ? styles.active : ''}`}
-          onClick={() => goTo('/groups')}
+          to="/groups"
+          onClick={closeMenus}
         >
           <Users size={18} /> Groups
-        </button>
+        </Link>
 
-        <button
-          className={`${styles.mobileNavLink} ${location.pathname === '/blog-page' ? styles.active : ''}`}
-          onClick={() => goTo('/blogs')}
+        <Link
+          className={`${styles.mobileNavLink} ${location.pathname === '/blogs' ? styles.active : ''}`}
+          to="/blogs"
+          onClick={closeMenus}
         >
           <BookOpen size={18} /> Blogs
-        </button>
+        </Link>
 
         <div className={styles.mobileDivider} />
-        <button className={`btn btn-primary ${styles.mobileCtaBtn}`} onClick={() => goTo('/')}>
+       <Link className={`btn btn-primary ${styles.mobileCtaBtn}`} to="/" onClick={closeMenus}>
           Book Stay →
-        </button>
+        </Link>
       </nav>
     </>
   )

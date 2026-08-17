@@ -1,9 +1,10 @@
+import SEO from '../components/Seo/Seo'
 import { useEffect, useMemo } from 'react'
 import { useParams, useSearchParams, Link, Navigate } from 'react-router-dom'
 import { ArrowLeft } from 'lucide-react'
 import blogPosts from '../data/blogPosts.json'
 import styles from './BlogPostPage.module.css'
-import { Helmet } from 'react-helmet-async'
+
 
 // Add this helper near the top of the file, outside the component
 function getRandomPosts(posts, count) {
@@ -30,33 +31,16 @@ const relatedSlugs = new Set(related.map((r) => r.slug))
 const moreStoriesPool = blogPosts.filter((p) => p.slug !== slug && !relatedSlugs.has(p.slug))
 const moreStories = useMemo(() => getRandomPosts(moreStoriesPool, 3), [slug, city, related])
 // helmet data
- const title = `${post.title} | LiveFree Hostel Blog`
-  const description = post.excerpt?.slice(0, 155) || `Read ${post.title} on the LiveFree Hostel blog.`
-  const url = `https://livefreehostels.com/blogs/${post.slug}`
-  const image = post.cover || 'https://livefreehostels.com/og-images/default.jpg'
-
+ 
   return (
     <>
-    <Helmet>
-        {/* Standard */}
-        <title>{title}</title>
-        <meta name="description" content={description} />
-        <link rel="canonical" href={url} />
-
-        {/* Open Graph */}
-        <meta property="og:type" content="article" />
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        <meta property="og:url" content={url} />
-        <meta property="og:image" content={image} />
-        <meta property="og:site_name" content="LiveFree Hostel" />
-
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={image} />
-      </Helmet>
+    <SEO
+        title={`${post.title} | LiveFree Hostel Blog`}
+        description={post.excerpt?.slice(0, 155) || `Read ${post.title} on the LiveFree Hostel blog.`}
+        path={`/blog/${post.slug}`}
+        image={post.cover}
+        type="article"
+      />
     <div className={styles.page}>
       <div className={styles.container}>
         <Link to={backTo} className={styles.back}>

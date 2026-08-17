@@ -4,7 +4,7 @@ import { fileURLToPath } from 'url'
 import { dirname, join } from 'path'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
-const SITE_URL = 'https://developakhilesh.github.io/liveFree'
+const SITE_URL = 'https://livefreehostels.com'
 
 const blogPosts = JSON.parse(
   readFileSync(join(__dirname, '../src/data/blogPosts.json'), 'utf-8')
@@ -25,7 +25,7 @@ const staticRoutes = [
   'privacy-policy',
   'terms-conditions',
   'data-protection-guidelines',
-  'blog-page',
+  'blogs',
 ]
 
 const blogRoutes = blogPosts.map((post) => `blog/${post.slug}`)

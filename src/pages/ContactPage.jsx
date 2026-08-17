@@ -1,9 +1,10 @@
+import SEO from '../components/Seo/Seo'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Mail, Phone, Send, Instagram, Youtube, Linkedin, Facebook } from 'lucide-react'
 import lfdImage from '../assets/LFD.png'
 import styles from './ContactPage.module.css'
-import { Helmet } from 'react-helmet-async'
+
 
 export default function ContactPage() {
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' })
@@ -23,30 +24,14 @@ export default function ContactPage() {
 
   const title = 'Contact Us | LiveFree Hostel'
   const description = 'Get in touch with LiveFree Hostel for bookings, group stays, or questions about Rishikesh, Varanasi, and Dehradun properties.'
-  const url = 'https://livefreehostels.com/contact'
-  const image = 'https://livefreehostels.com/og-images/default.jpg'
+ 
   return (
     <>
-    <Helmet>
-        {/* Standard */}
-        <title>{title}</title>
-        <meta name="description" content={description} />
-        <link rel="canonical" href={url} />
-
-        {/* Open Graph */}
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        <meta property="og:url" content={url} />
-        <meta property="og:image" content={image} />
-        <meta property="og:site_name" content="LiveFree Hostel" />
-
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={image} />
-      </Helmet>
+    <SEO
+    title={title}
+    description={description}
+    path="/contact"
+    />
     <section className={styles.page}>
       <div className={styles.heroBanner}>
         <div className={styles.heroRight}>

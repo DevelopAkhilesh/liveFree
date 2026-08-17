@@ -1,3 +1,4 @@
+import SEO from '../components/Seo/Seo'
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
@@ -11,7 +12,7 @@ import {
 import { DESTINATIONS, CITY_ROOMS, CITY_ITINERARY, CITY_PROPERTY_POLICY, CITY_MUST_READS } from '../data/siteData'
 import styles from './DestinationPage.module.css'
 import {Link, useNavigate} from "react-router-dom"
-import { Helmet } from 'react-helmet-async'
+
 
 const GALLERY_FALLBACKS = [
   'https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=600&q=80',
@@ -1007,20 +1008,7 @@ function MustReadsSection({ city }) {
   )
 }
 
- const CITY_SEO = {
-  rishikesh: {
-    title: 'LiveFree Hostel Rishikesh | Near Laxman Jhula',
-    description: 'Stay 400m from Laxman Jhula with Ganga & Himalaya views. Rooftop yoga, in-house cafe, and India Hikes basecamp — dorms and private rooms.',
-  },
-  varanasi: {
-    title: 'LiveFree Hostel Varanasi | Near Ganga Ghats',
-    description: 'A backpacker hostel steps from the ghats of Varanasi — dorms and private rooms, community spaces, and easy access to Ganga Aarti.',
-  },
-  dehradun: {
-    title: 'LiveFree Hostel Dehradun | Gateway to the Hills',
-    description: 'Comfortable dorms and private rooms in Dehradun — a relaxed basecamp for hill travel, with community spaces and local trip support.',
-  },
-}
+ 
 
 // ── MAIN PAGE ──
 export default function DestinationPage({ city }) {
@@ -1050,31 +1038,29 @@ export default function DestinationPage({ city }) {
   const closeLightbox = () => setLightboxIndex(null)
 
   if (!dest || !meta) return null
-  const seo = CITY_SEO[city]
-  const url = `https://livefreehostels.com/${city}`
-  const image = 'https://livefreehostels.com/og-images/default.jpg' // swap per-city once you have property photos
+  
+  const seoContent = {
+  rishikesh: {
+    title: 'LiveFree Hostel Rishikesh | Near Laxman Jhula',
+    description: 'Stay 400m from Laxman Jhula with Ganga & Himalaya views. Rooftop yoga, in-house cafe, and India Hikes basecamp — dorms and private rooms.',
+  },
+  varanasi: {
+    title: 'LiveFree Hostel Varanasi | Near Ganga Ghats',
+    description: 'A backpacker hostel steps from the ghats of Varanasi — dorms and private rooms, community spaces, and easy access to Ganga Aarti.',
+  },
+  dehradun: {
+    title: 'LiveFree Hostel Dehradun | Gateway to the Hills',
+    description: 'Comfortable dorms and private rooms in Dehradun — a relaxed basecamp for hill travel, with community spaces and local trip support.',
+  },
+}[city]
+
+
   return (
     <>
-    <Helmet>
-        {/* Standard */}
-        <title>{seo.title}</title>
-        <meta name="description" content={seo.description} />
-        <link rel="canonical" href={url} />
-
-        {/* Open Graph */}
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content={seo.title} />
-        <meta property="og:description" content={seo.description} />
-        <meta property="og:url" content={url} />
-        <meta property="og:image" content={image} />
-        <meta property="og:site_name" content="LiveFree Hostel" />
-
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={seo.title} />
-        <meta name="twitter:description" content={seo.description} />
-        <meta name="twitter:image" content={image} />
-      </Helmet>
+    <SEO title={seoContent.title}
+        description={seoContent.description}
+        path={`/${city}`} 
+    />
 
       <GallerySection photosByCategory={photosByCategory} allPhotos={allPhotos} onOpenLightbox={openLightbox}  city={city} />
       <HeroInfoSection dest={dest} meta={meta} />

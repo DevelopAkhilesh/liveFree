@@ -1,7 +1,8 @@
+import SEO from '../components/Seo/Seo'
 import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import styles from './HostelPolicy.module.css'
-import { Helmet } from 'react-helmet-async'
+
 
 const SECTIONS = [
   {
@@ -124,27 +125,7 @@ export default function HostelPolicy() {
 
   return (
     <>
-    <Helmet>
-        {/* Standard */}
-        <title>{title}</title>
-        <meta name="description" content={description} />
-        <link rel="canonical" href={url} />
-
-        {/* Open Graph */}
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        <meta property="og:url" content={url} />
-        <meta property="og:image" content={image} />
-        <meta property="og:site_name" content="LiveFree Hostel" />
-
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={image} />
-      </Helmet>
-
+    <SEO title={title} description={description} path='/hostel-policy'/>
     <section className={styles.page}>
       {/* HERO with bordered intro box */}
       <div className={styles.heroBand}>
