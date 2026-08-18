@@ -571,11 +571,11 @@ function HeroInfoSection({ dest, meta }) {
             onMouseEnter={e => e.currentTarget.style.opacity = '0.88'}
             onMouseLeave={e => e.currentTarget.style.opacity = '1'}
           >View Travel Itinerary →</a>
-          <a onClick={() => navigate(`/blog-page?city=${dest.id}`)}
+           <Link to={`/blogs?city=${dest.id}`}
             style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '12px 24px', borderRadius: 8, border: '1.5px solid rgba(0,0,0,0.15)', color: 'var(--text)', fontWeight: 700, fontSize: '0.85rem', textDecoration: 'none', background: '#fff', transition: 'border-color 0.2s' }}
             onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--primary)'}
             onMouseLeave={e => e.currentTarget.style.borderColor = 'rgba(0,0,0,0.15)'}
-          >Read Our Blogs →</a>
+          >Read Our Blogs →</Link>
         </div>
       </div>
     </section>
