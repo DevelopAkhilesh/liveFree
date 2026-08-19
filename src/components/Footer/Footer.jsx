@@ -39,8 +39,8 @@ export default function Footer() {
             <h4>Locations</h4>
             <ul>
               <li><a href="#" onClick={e => { e.preventDefault(); navigate('/rishikesh') }}><MapPin size={14} /> Rishikesh</a></li>
-              <li><a href="#" onClick={e => { e.preventDefault(); navigate('/dehradun') }}><MapPin size={14} /> Varanasi</a></li>
-              <li><a href="#" onClick={e => { e.preventDefault(); navigate('/varanasi') }}><MapPin size={14} />Dehradun</a></li>
+              <li><a href="#" onClick={e => { e.preventDefault(); navigate('/varanasi') }}><MapPin size={14} /> Varanasi</a></li>
+              <li><a href="#" onClick={e => { e.preventDefault(); navigate('/dehradun') }}><MapPin size={14} />Dehradun</a></li>
             </ul>
           </div>
 

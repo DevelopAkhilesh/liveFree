@@ -58,7 +58,7 @@ import rishikeshImg from '../assets/Live_Free-23(1).png'
 export const DESTINATIONS = [
   {
     id: 'rishikesh',
-    // name: 'Rishikesh',
+    name: 'Rishikesh',
     tagline: 'Rishikesh - Your Spiritual & Adventure Hub',
     desc: 'Located in Tapovan near Lakshman Jhula, our top-rated hostel offers a rooftop yoga space, live music, and hammocks—the perfect base camp for rafting and meeting backpackers.',
     path: '/rishikesh',
@@ -67,7 +67,7 @@ export const DESTINATIONS = [
   },
   {
     id: 'varanasi',
-    // name: 'Varanasi',
+    name: 'Varanasi',
     tagline: 'Varanasi - Soulful Vibe by the Ganges',
     desc: 'A five-minute walk from Assi Ghat, our Varanasi hub immerses you in spiritual culture. Enjoy Ganga Aarti, explore alleyways, and connect with global travelers.',
     path: '/varanasi',
@@ -76,7 +76,7 @@ export const DESTINATIONS = [
   },
   {
     id: 'dehradun',
-    // name: 'Dehradun',
+    name: 'Dehradun',
     tagline: 'Dehradun - The Perfect Getaway Town',
     desc: 'Nestled in the valley, our Dehradun property is the perfect place to explore the city and a Mussoorie stopover. Featuring AC rooms, Wi-Fi, social zones, and quiet nooks, it unites all travelers.',
     path: '/dehradun',

@@ -22,7 +22,6 @@ const SUSTAINABILITY_POLICIES = [
   'Filtered water dispensers with reusable bottles available to avoid excessive plastic consumption.',
   'Reusable cups for all beverages consumed at our establishments;',
   'Recent electronic equipment with low consumption and greater energy efficiency;',
-  'LED bulbs;',
   '  Reusing old recycled materials in renovations or new projects wherever possible.',
   ' Directions and information on public transport routes to reach our facilities.',
   'Encouraging virtual meetings whenever possible and offering sustainable travel options.',

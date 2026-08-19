@@ -12,6 +12,7 @@ import {
 import { DESTINATIONS, CITY_ROOMS, CITY_ITINERARY, CITY_PROPERTY_POLICY, CITY_MUST_READS } from '../data/siteData'
 import styles from './DestinationPage.module.css'
 import {Link, useNavigate} from "react-router-dom"
+import blogPosts from '../data/blogPosts.json'
 
 
 const GALLERY_FALLBACKS = [
@@ -51,7 +52,7 @@ const cld = (id, city) => `${city === 'rishikesh' ? CLD_RISHIKESH : CLD}/${id}`
 const CITY_META = {
   rishikesh: {
     tagline: 'Uttarakhand - Land of Spirituality and Adventure',
-    address: 'Laxman Jhula Road, Rishikesh.',
+    address: 'Laxman Jhula Road.',
     about: [`Located in Tapovan, just 400 meters away from Lakshman Jhula, Live Free Hostel perfectly blends high-energy adventure with mindful relaxation. Our expansive rooftop terrace offers panoramic views of the rolling green Himalayan foothills and the sacred Ganga River, serving as an idyllic backdrop for morning sunbathing or peaceful rooftop yoga classes.
 Throughout our vibrant and colorful multi-story property, active common areas invite travelers to bond over guitar sessions, shared board games, or competitive foosball and table tennis tournaments. Choose from spacious, bright dorms designed with individual privacy curtains and power outlets, or retreat to comfortable private rooms with ensuite bathrooms after a long day out.
 As a preferred launchpad and trusted base camp for massive “India Hikes” trekking expeditions, our expertly trained team makes transitioning between work and play effortless. Whether you are sipping espresso at our ground-floor, in-house cafe or coordinating a white-water rafting trip from our travel desk, this hostel transforms your mountain escape into an immersive community experience.
@@ -87,7 +88,7 @@ As a preferred launchpad and trusted base camp for massive “India Hikes” tre
   },
   dehradun: {
     tagline: 'Uttarakhand · Gateway to Himalayas',
-    address: 'Rajpur Road, Dehradun, Uttarakhand 248001',
+    address: 'Rajpur Road.',
     about: [`Located in a peaceful, tree-lined valley just minutes from the city's key transit lines, Live Free Hostel Dehradun serves as the ultimate gateway town launchpad and a productive work sanctuary. The absolute heart of our property is our expansive rooftop terrace café—a vibrant, active common area with beautiful, sweeping views of the surrounding green hills and shifting mountain mist. It is the perfect scenic backdrop where travellers, trekkers and remote professionals naturally gather to connect over fresh food, acoustic guitar strumming, or casual sundowner chats over a cup of coffee. This multi-functional rooftop café space seamlessly blend work, play, and community. Digital nomads can settle into quiet seating corners with stable Wi-Fi and plenty of accessible socket points, while others challenge new friends to high-energy table tennis or foosball matches, board games and casual poker nights. Accommodation options cater to every traveller’s preference, featuring clean, spacious, air-conditioned mixed and female-only dorms equipped with personal privacy curtains and secure storage lockers, alongside premium private rooms for peaceful downtime.
 As a preferred transit launchpad and trusted base camp for massive Indiahikes trekking expeditions, our expertly trained hospitality team is uniquely equipped to manage group logistics. Whether you are having a meal at the rooftop café with your travel squad, swapping trail stories under the open sky, or getting insider route tips from our 24/7 reception desk, this hostel transforms your valley stopover into an immersive community experience that feels just like home.
 `,'Dehradun offers backpackers lush river caves, sulphur springs, and a vibrant café culture. Nestled in the Himalayan foothills, it provides easy access to mountain treks, historic colonial architecture, and serene Buddhist monasteries. It is the perfect hub for nature lovers, adventure seekers, and travellers exploring northern India.'],
@@ -121,7 +122,7 @@ As a preferred transit launchpad and trusted base camp for massive Indiahikes tr
   },
   varanasi: {
     tagline: 'Uttar Pradesh · City of Light',
-    address: 'Near Assi Ghat, Varanasi.',
+    address: 'Near Assi Ghat.',
     about: [`Located in Nagwa just 500 metres away from the iconic Assi Ghat, Live Free Hostel Varanasi perfectly blends deep cultural immersion with contemporary backpacker comfort. Our expansive rooftop terrace offers serene views of the sacred Ganga River and its sprawling landscape, serving as an idyllic backdrop for morning tea or peaceful yoga sessions before diving into the high-energy streets.
 Throughout our vibrant colourful multi-story property, active common areas like our central indoor lounge invite travellers to bond over acoustic guitar sessions, shared board games, or competitive table tennis matches. Our lively open-air courtyard café acts as the social heartbeat of the property, where digital nomads and solo explorers network over reliable Wi-Fi, sip fresh espresso, 
 and enjoy pocket-friendly, home-style Indian comfort food. Choose from spacious, air-conditioned mixed or female-only dorms designed with sturdy metal bunk beds, individual privacy curtains, and multiple charging points, 
@@ -970,38 +971,48 @@ function PropertyPolicySection({ city }) {
   )
 }
 
-function MustReadsSection({ city }) {
+function MustReadsSection({ city, dest }) {
   const MotionLink = motion(Link);
-  const reads = CITY_MUST_READS?.[city] || []
+  // Real blog posts for this city, newest-first order as stored, capped to 3
+  const reads = blogPosts.filter(p => p.city === city).slice(0, 3)
   if (!reads.length) return null
   return (
     <section style={{ padding: '56px 0 64px', background: '#fafafa', borderTop: '1px solid #eee' }}>
       <div className="container">
         <h2 style={{ fontWeight: 800, fontSize: '0.8rem', letterSpacing: '3.5px', textTransform: 'uppercase', marginBottom: 32, color: 'var(--text)' }}>MUST READS</h2>
         <div className={styles.mustReadsGrid}>
-          {reads.map((item, i) => (
-            <MotionLink key={i} to="/blogs"
+          {reads.map((post, i) => (
+            <MotionLink key={post.slug} to={`/blog/${post.slug}?city=${city}`}
               initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.09 }} viewport={{ once: true }}
               style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', borderRadius: 14, overflow: 'hidden', background: '#fff', boxShadow: '0 2px 14px rgba(0,0,0,0.07)', border: '1px solid #eee', transition: 'transform 0.25s, box-shadow 0.25s' }}
               onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.boxShadow = '0 10px 28px rgba(0,0,0,0.11)' }}
               onMouseLeave={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = '0 2px 14px rgba(0,0,0,0.07)' }}
             >
-              <div style={{ height: 200, overflow: 'hidden', position: 'relative', flexShrink: 0 }}>
-                <img src={item.img} alt={item.title} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.4s' }}
-                  onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.06)'}
-                  onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
-                />
-                <span style={{ position: 'absolute', top: 14, left: 14, background: 'var(--primary)', color: '#fff', fontSize: '0.66rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', padding: '4px 11px', borderRadius: 99 }}>{item.tag}</span>
-              </div>
+              {post.cover && (
+                <div style={{ height: 200, overflow: 'hidden', position: 'relative', flexShrink: 0 }}>
+                  <img src={post.cover} alt={post.title} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.4s' }}
+                    onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.06)'}
+                    onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
+                  />
+                </div>
+              )}
               <div style={{ padding: '20px 22px 22px', flex: 1, display: 'flex', flexDirection: 'column' }}>
-                <h3 style={{ fontWeight: 700, fontSize: '0.95rem', color: 'var(--text)', marginBottom: 10, lineHeight: 1.45, flex: 1 }}>{item.title}</h3>
-                <p style={{ fontSize: '0.84rem', color: '#999', lineHeight: 1.65, marginBottom: 16 }}>{item.desc}</p>
+                <h3 style={{ fontWeight: 700, fontSize: '0.95rem', color: 'var(--text)', marginBottom: 10, lineHeight: 1.45, flex: 1 }}>{post.title}</h3>
+                <p style={{ fontSize: '0.84rem', color: '#999', lineHeight: 1.65, marginBottom: 16 }}>{post.excerpt}</p>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 5, fontSize: '0.8rem', fontWeight: 700, color: 'var(--primary)' }}>
                   Read more <ExternalLink size={12} />
                 </div>
               </div>
             </MotionLink>
           ))}
+        </div>
+ 
+        <div style={{ textAlign: 'center', marginTop: 40 }}>
+          <Link to={`/blogs?city=${city}`}
+            style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '13px 30px', borderRadius: 8, background: 'var(--primary)', color: '#fff', fontWeight: 700, fontSize: '0.85rem', textDecoration: 'none', transition: 'opacity 0.2s' }}
+            onMouseEnter={e => e.currentTarget.style.opacity = '0.88'}
+            onMouseLeave={e => e.currentTarget.style.opacity = '1'}
+          >Read Our Blogs →</Link>
         </div>
       </div>
     </section>
@@ -1056,7 +1067,7 @@ export default function DestinationPage({ city }) {
 
 
   return (
-    <>
+    <div key={city}>
     <SEO title={seoContent.title}
         description={seoContent.description}
         path={`/${city}`} 
@@ -1085,6 +1096,6 @@ export default function DestinationPage({ city }) {
           />
         )}
       </AnimatePresence>
-    </>
+    </div>
   )
 }

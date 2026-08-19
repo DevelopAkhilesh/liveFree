@@ -9,7 +9,6 @@ const PetFriendlyPage = lazy(() => import('./pages/PetFriendlyPage'))
 const AwardsPage = lazy(() => import('./pages/AwardsPage'))
 const DestinationPage = lazy(() => import('./pages/DestinationPage'))
 const GroupsPage = lazy(() => import('./pages/GroupsPage'))
-const ExperiencePage = lazy(() => import('./pages/ExperiencePage'))
 const ContactPage = lazy(() => import('./pages/ContactPage'))
 const HostelPolicy = lazy(() => import('./pages/HostelPolicy'))
 const LegalPage = lazy(() => import('./pages/LegalPage'))
@@ -40,7 +39,6 @@ export const router = createBrowserRouter(
         { path: 'dehradun', element: <Suspense fallback={<PageLoader />}><DestinationPage city="dehradun" /></Suspense> },
         { path: 'varanasi', element: <Suspense fallback={<PageLoader />}><DestinationPage city="varanasi" /></Suspense> },
         { path: 'groups', element: withSuspense(GroupsPage) },
-        { path: 'experience', element: withSuspense(ExperiencePage) },
         { path: 'contact', element: withSuspense(ContactPage) },
         { path: 'hostel-policy', element: withSuspense(HostelPolicy) },
         { path: 'privacy-policy', element: withSuspense(LegalPage) },
